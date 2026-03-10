@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">系统用户列表</h3>
+    <div class="card-tools">
+      <div class="input-group input-group-sm" style="width: 150px;">
+        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body table-responsive p-0">
+    <table class="table table-hover text-nowrap">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>用户名</th>
+          <th>部门</th>
+          <th>手机号</th>
+          <th>注册时间</th>
+          <th>状态</th>
+          <th>类型</th>
+          <th style="min-width: 220px;">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for u in users %}
+        <tr>
+          <td>{{ u.id }}</td>
+          <td>
+             <strong>{{ u.username }}</strong>
+             <br><small class="text-muted">{{ u.email }}</small>
+          </td>
+          <td>{{ u.department|default:"-" }}</td>
+          <td>{{ u.phone|default:"-" }}</td>
+          <td>{{ u.date_joined|date:"Y-m-d H:i" }}</td>
+
+          <td>
+            {% if u.is_active %}
+              <span class="badge badge-success">正常</span>
+            {% else %}
+              <span class="badge badge-secondary">已禁用/待审</span>
+            {% endif %}
+          </td>
+
+          <td>
+            {% if u.is_superuser %}
+              <span class="badge badge-danger">管理员</span>
+            {% else %}
+              <span class="badge badge-info">普通用户</span>
+            {% endif %}
+
+            <div class="mt-1">
+            {% for g in u.groups.all %}
+                <span class="badge badge-light border">{{ g.name }}</span>
+            {% endfor %}
+            </div>
+          </td>
+
+          <td>
+            {% if u.id != request.user.id %}
+                <a href="{% url 'toggle_user_status' u.id %}"
+                   class="btn btn-xs {% if u.is_active %}btn-outline-warning{% else %}btn-outline-success{% endif %}"
+                   title="{% if u.is_active %}禁用账户{% else %}激活/通过审核{% endif %}">
+                    <i class="fas {% if u.is_active %}fa-ban{% else %}fa-check{% endif %}"></i>
+                </a>
+            {% else %}
+                <button class="btn btn-xs btn-default disabled"><i class="fas fa-ban"></i></button>
+            {% endif %}
+
+            <a href="{% url 'user_edit_role' u.id %}" class="btn btn-xs btn-primary ml-1" title="分配角色">
+                <i class="fas fa-user-tag"></i>
+            </a>
+
+            <a href="{% url 'user_edit' u.id %}" class="btn btn-xs btn-info ml-1" title="编辑信息">
+                <i class="fas fa-edit"></i>
+            </a>
+
+            <a href="{% url 'admin_reset_password' u.id %}" class="btn btn-xs btn-warning ml-1" title="重置密码">
+                <i class="fas fa-key"></i>
+            </a>
+
+            {% if u.id != request.user.id %}
+                <a href="{% url 'delete_user' u.id %}"
+                   class="btn btn-xs btn-danger ml-1"
+                   onclick="return confirm('警告：确定要彻底删除用户 [{{ u.username }}] 吗？此操作不可恢复！')"
+                   title="删除用户">
+                    <i class="fas fa-trash"></i>
+                </a>
+            {% else %}
+                 <button class="btn btn-xs btn-default disabled ml-1"><i class="fas fa-trash"></i></button>
+            {% endif %}
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="8" class="text-center">暂无用户数据</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-footer clearfix">
+     <div class="text-muted text-sm float-right">共 {{ users.count }} 位用户</div>
+  </div>
+</div>
+{% endblock %}

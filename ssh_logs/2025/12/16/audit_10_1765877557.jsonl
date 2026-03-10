@@ -1,0 +1,9 @@
+{"time": 1765877552.375541, "data": "Last login: Wed Dec 17 01:32:24 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765877552.3897896, "data": "\u001b]0;root@test1:~\u0007\u001b[?1034h[root@test1 ~]# "}
+{"time": 1765877553.1594224, "data": "d"}
+{"time": 1765877553.306048, "data": "o"}
+{"time": 1765877553.3994834, "data": "c"}
+{"time": 1765877553.5177448, "data": "k"}
+{"time": 1765877553.6471653, "data": "e"}
+{"time": 1765877553.807904, "data": "r"}
+{"time": 1765877553.9744704, "data": "\r\n-bash: docker: command not found\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}

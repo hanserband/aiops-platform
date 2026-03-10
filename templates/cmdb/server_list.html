@@ -1,0 +1,424 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* 黑色终端风格日志框 */
+    .console-box {
+        background-color: #1e1e1e; color: #00ff00; padding: 15px;
+        font-family: 'Consolas', monospace; height: 350px; overflow-y: auto;
+        white-space: pre-wrap; font-size: 13px; border-radius: 4px;
+        border: 1px solid #444;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-secondary">
+            <div class="card-header">
+                <h3 class="card-title">服务器分组</h3>
+                <div class="card-tools">
+                    {% if request.user.is_superuser %}
+                    <button type="button" class="btn btn-tool" data-toggle="modal" data-target="#addGroupModal" title="新建分组">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="card-body p-2" style="min-height: 600px; overflow-y: auto;">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+                        <li class="nav-item">
+                            <a href="{% url 'server_list' %}" class="nav-link {% if not current_group_id %}active{% endif %}">
+                                <i class="fas fa-server nav-icon"></i> <p>全部主机</p>
+                            </a>
+                        </li>
+                        {% for group in root_groups %}
+                            {% include "cmdb/tree_node.html" with node=group %}
+                        {% empty %}
+                            <li class="nav-item"><a href="#" class="nav-link text-muted"><p class="text-sm pl-2">暂无分组</p></a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-list mr-1"></i>
+                    {% if current_group_id %} 分组视图 {% else %} 所有主机 {% endif %}
+                </h3>
+
+                <div class="card-tools">
+                    <form class="d-inline-block mr-2" method="get">
+                        {% if current_group_id %}
+                        <input type="hidden" name="group" value="{{ current_group_id }}">
+                        {% endif %}
+                        <div class="input-group input-group-sm" style="width: 200px;">
+                            <input type="text" name="q" class="form-control float-right" placeholder="IP / 主机名" value="{{ search_kw }}">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+
+                    {% if request.user.is_superuser or perms.cmdb.add_server %}
+                        <div class="btn-group mr-1">
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-file-excel text-success"></i> Excel 操作
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'server_export' %}">
+                                    <i class="fas fa-download mr-2"></i> 导出所有主机
+                                </a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#importModal">
+                                    <i class="fas fa-upload mr-2"></i> 导入主机
+                                </a>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-purple btn-sm" onclick="openInstallModal()">
+                            <i class="fas fa-robot"></i> 批量安装Agent
+                        </button>
+
+                        <button class="btn btn-danger btn-sm" onclick="uninstallAgent()">
+                            <i class="fas fa-trash"></i> 批量卸载Agent
+                        </button>
+
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#syncModal">
+                            <i class="fas fa-cloud-download-alt"></i> 同步阿里云
+                        </button>
+
+                        <a href="{% url 'server_add' %}" class="btn btn-primary btn-sm">
+                            <i class="fas fa-plus"></i> 手动录入
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap table-striped">
+                    <thead>
+                        <tr>
+                            <th style="width: 10px"><input type="checkbox" id="selectAll" onclick="toggleSelectAll()"></th>
+                            <th>ID</th>
+                            <th>主机名 / IP</th>
+                            <th>配置</th>
+                            <th>采集模式</th>
+                            <th>状态</th>
+                            <th style="width: 150px">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for server in servers %}
+                        <tr>
+                            <td><input type="checkbox" name="server_ids" value="{{ server.id }}"></td>
+                            <td>{{ server.id }}</td>
+                            <td>
+                                <div style="font-weight: 600;">{{ server.hostname }}</div>
+                                <div class="text-muted text-xs"><i class="fas fa-network-wired"></i> {{ server.ip_address }}:{{ server.port }}</div>
+                            </td>
+                            <td>
+                                <span class="badge bg-purple">{{ server.cpu_cores }}C</span>
+                                <span class="badge bg-purple">{{ server.memory_gb }}G</span>
+                            </td>
+                            <td>
+                                {% if server.use_agent %}
+                                    <span class="badge badge-info"><i class="fas fa-robot"></i> Agent</span>
+                                {% else %}
+                                    <span class="badge badge-secondary"><i class="fas fa-terminal"></i> SSH</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if server.status == 'Running' %}
+                                    <span class="badge badge-success">运行中</span>
+                                {% else %}
+                                    <span class="badge badge-danger">已停止</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="javascript:void(0);"
+                                   onclick="window.open('{% url 'webssh' server.id %}', 'webssh_{{ server.id }}', 'width=900,height=600,menubar=no,toolbar=no,location=no')"
+                                   class="btn btn-xs btn-dark" title="WebSSH">
+                                    <i class="fas fa-terminal"></i>
+                                </a>
+
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'server_edit' server.id %}" class="btn btn-xs btn-info" title="编辑">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="{% url 'server_delete' server.id %}" class="btn btn-xs btn-danger"
+                                       onclick="return confirm('确定删除？')" title="删除">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr><td colspan="7" class="text-center py-5 text-muted">暂无数据</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer clearfix">
+                <span class="text-muted text-sm">共 {{ servers.count }} 台主机</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="installModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-purple">
+                <h5 class="modal-title text-white"><i class="fas fa-robot"></i> 批量部署监控 Agent</h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> 系统将通过 SSH 连接选中服务器，自动安装 <code>psutil</code> 依赖并启动 Agent 服务 (端口 10050)。
+                    <br><small>注意：请确保目标服务器已配置 SSH 账号密码，且能访问外网 (pip install)。</small>
+                </div>
+                <div id="installLog" class="console-box" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="btnStartInstall" onclick="startInstall()">确认部署</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="importModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">批量导入主机 (Excel)</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="importForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>选择 Excel 文件 (.xlsx)</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="excelFile" name="file" accept=".xlsx">
+                            <label class="custom-file-label" for="excelFile">点击选择文件...</label>
+                        </div>
+                        <small class="form-text text-muted mt-2">
+                            <i class="fas fa-info-circle"></i> 提示：
+                            <ul>
+                                <li>建议先<a href="{% url 'server_export' %}"><b>导出模板</b></a>，在导出的文件上修改。</li>
+                                <li>系统将根据 <b>IP地址</b> 自动排重（已存在的IP会更新信息）。</li>
+                                <li>若“分组”不存在，系统将自动创建。</li>
+                            </ul>
+                        </small>
+                    </div>
+                </form>
+                <div id="importMsg" class="alert alert-secondary" style="display:none; white-space: pre-wrap;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-success" onclick="startImport()">开始导入</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if request.user.is_superuser %}
+<div class="modal fade" id="syncModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h5 class="modal-title"><i class="fas fa-cloud"></i> 同步阿里云 ECS</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form action="{% url 'sync_aliyun' %}" method="post">
+                {% csrf_token %}
+                <div class="modal-body">
+                    {% if cloud_accounts %}
+                        <div class="form-group">
+                            <label>选择云账号：</label>
+                            <select name="account_id" class="form-control">
+                                {% for acc in cloud_accounts %}
+                                    <option value="{{ acc.id }}">{{ acc.name }} ({{ acc.region }})</option>
+                                {% endfor %}
+                            </select>
+                            <small class="text-muted mt-2 d-block">
+                                <i class="fas fa-info-circle"></i> 将使用 API Key 拉取实例列表，可能耗时几秒。
+                            </small>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-triangle"></i> 尚未配置云账号。<br>
+                            请前往 <a href="{% url 'account_list' %}"><b>云账号管理</b></a> 添加。
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    {% if cloud_accounts %}
+                        <button type="submit" class="btn btn-warning">开始同步</button>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addGroupModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">新建分组</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form action="{% url 'group_add' %}" method="post">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>分组名称</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>上级目录</label>
+                        <select name="parent" class="form-control">
+                            <option value="">-- 根目录 --</option>
+                            {% for g in root_groups %}
+                                <option value="{{ g.id }}">{{ g.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary">创建</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<script>
+    // 全选
+    function toggleSelectAll() {
+        var status = document.getElementById('selectAll').checked;
+        var checkboxes = document.getElementsByName('server_ids');
+        for(var i=0; i<checkboxes.length; i++) checkboxes[i].checked = status;
+    }
+
+    // 安装 Agent 逻辑
+    function openInstallModal() {
+        if (document.querySelectorAll('input[name="server_ids"]:checked').length === 0) {
+            alert("请先勾选服务器"); return;
+        }
+        $('#installModal').modal('show');
+        $('#installLog').hide().text('');
+        $('#btnStartInstall').prop('disabled', false).text('确认部署');
+    }
+
+    function startInstall() {
+        var ids = [];
+        $('input[name="server_ids"]:checked').each(function() { ids.push($(this).val()); });
+
+        $('#btnStartInstall').prop('disabled', true).text('部署中...');
+        $('#installLog').show().text('正在连接 ' + ids.length + ' 台服务器...\n');
+
+        $.ajax({
+            url: '{% url "agent_install" %}',
+            type: 'POST',
+            data: { 'server_ids': ids },
+            headers: {'X-CSRFToken': '{{ csrf_token }}'},
+            success: function(res) {
+                $('#installLog').append(res.log);
+                $('#btnStartInstall').text('完成');
+                // 3秒后刷新
+                setTimeout(() => location.reload(), 3000);
+            },
+            error: function() {
+                $('#installLog').append('\n[Error] 请求失败');
+                $('#btnStartInstall').prop('disabled', false).text('重试');
+            }
+        });
+    }
+
+    // 卸载 Agent 逻辑 (新增)
+    function uninstallAgent() {
+        var ids = [];
+        $('input[name="server_ids"]:checked').each(function() { ids.push($(this).val()); });
+
+        if (ids.length === 0) {
+            alert("请至少选择一台主机！");
+            return;
+        }
+
+        if (!confirm("⚠️ 高危操作确认\n\n确定要卸载选中主机的 Agent 吗？\n1. 将停止 Agent 进程\n2. 将删除 /opt/ops_agent.py 文件\n3. 停止数据上报")) {
+            return;
+        }
+
+        // 使用 layer 或简单 alert，这里用简单逻辑演示
+        var btn = event.target;
+        $(btn).prop('disabled', true).text('卸载中...');
+
+        $.ajax({
+            url: '{% url "agent_uninstall" %}',
+            type: 'POST',
+            data: { 'server_ids': ids },
+            headers: {'X-CSRFToken': '{{ csrf_token }}'},
+            success: function(res) {
+                if (res.status) {
+                    alert("执行报告:\n\n" + res.log);
+                    location.reload();
+                } else {
+                    alert("操作失败: " + res.msg);
+                    $(btn).prop('disabled', false).text('批量卸载Agent');
+                }
+            },
+            error: function() {
+                alert("请求异常，请检查网络或控制台日志");
+                $(btn).prop('disabled', false).text('批量卸载Agent');
+            }
+        });
+    }
+
+    // 导入文件名显示优化
+    $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+
+    // 开始导入 (新增)
+    function startImport() {
+        var formData = new FormData($('#importForm')[0]);
+        if (!$('#excelFile').val()) {
+            alert("请先选择文件"); return;
+        }
+
+        $('#importMsg').show().removeClass('alert-danger alert-success').addClass('alert-secondary').text('正在上传并解析，请稍候...');
+
+        $.ajax({
+            url: '{% url "server_import" %}',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {'X-CSRFToken': '{{ csrf_token }}'},
+            success: function(res) {
+                if (res.status) {
+                    $('#importMsg').removeClass('alert-secondary').addClass('alert-success').text(res.msg);
+                    setTimeout(function() { location.reload(); }, 2000); // 2秒后刷新
+                } else {
+                    $('#importMsg').removeClass('alert-secondary').addClass('alert-danger').text('失败: ' + res.msg);
+                }
+            },
+            error: function() {
+                $('#importMsg').removeClass('alert-secondary').addClass('alert-danger').text('请求异常');
+            }
+        });
+    }
+</script>
+{% endblock %}

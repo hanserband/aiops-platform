@@ -1,0 +1,106 @@
+{"time": 1765655052.3147862, "data": "Last login: Sun Dec 14 03:42:42 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765655052.3253996, "data": "\u001b]0;root@localhost:~\u0007\u001b[?1034h[root@localhost ~]# "}
+{"time": 1765655054.549238, "data": "l"}
+{"time": 1765655054.7070978, "data": "s"}
+{"time": 1765655054.8332531, "data": "\r\nanaconda-ks.cfg  CpuOccupant.java  get-pip.py\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765655055.6039872, "data": "\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765655056.6503143, "data": "p"}
+{"time": 1765655056.943425, "data": "y"}
+{"time": 1765655057.7194955, "data": "h"}
+{"time": 1765655057.878662, "data": "o"}
+{"time": 1765655058.1093159, "data": "n"}
+{"time": 1765655059.3896308, "data": "3"}
+{"time": 1765655059.835961, "data": " "}
+{"time": 1765655061.060328, "data": "g"}
+{"time": 1765655061.9311514, "data": "g"}
+{"time": 1765655062.5661428, "data": "\b\u001b[K"}
+{"time": 1765655063.0252364, "data": "e"}
+{"time": 1765655063.1748016, "data": "t-pip.py "}
+{"time": 1765655064.3806465, "data": "\r\n-bash: pyhon3: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765655066.7441506, "data": "p"}
+{"time": 1765655066.9631019, "data": "y"}
+{"time": 1765655067.171497, "data": "t"}
+{"time": 1765655067.2869177, "data": "h"}
+{"time": 1765655067.4239295, "data": "o"}
+{"time": 1765655067.6415253, "data": "n"}
+{"time": 1765655067.8089094, "data": " "}
+{"time": 1765655068.800719, "data": "g"}
+{"time": 1765655069.094855, "data": "e"}
+{"time": 1765655069.261993, "data": "t"}
+{"time": 1765655069.504033, "data": "-pip.py "}
+{"time": 1765655070.2996404, "data": "\r\n"}
+{"time": 1765655070.3217893, "data": "ERROR: This script does not work on Python 2.7. The minimum supported Python version is 3.6. Please use https://bootstrap.pypa.io/pip/2.7/get-pip.py instead.\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765655073.2496314, "data": "y"}
+{"time": 1765655073.3845363, "data": "u"}
+{"time": 1765655073.5934715, "data": "m"}
+{"time": 1765655073.7297947, "data": " "}
+{"time": 1765655073.901498, "data": "i"}
+{"time": 1765655074.100757, "data": "n"}
+{"time": 1765655074.1942832, "data": "s"}
+{"time": 1765655074.4345407, "data": "t"}
+{"time": 1765655074.5709307, "data": "a"}
+{"time": 1765655074.71698, "data": "l"}
+{"time": 1765655074.8733227, "data": "l"}
+{"time": 1765655075.019808, "data": " "}
+{"time": 1765655075.808254, "data": "p"}
+{"time": 1765655076.0437312, "data": "y"}
+{"time": 1765655076.2827885, "data": "t"}
+{"time": 1765655076.418444, "data": "h"}
+{"time": 1765655076.5567787, "data": "o"}
+{"time": 1765655076.7335615, "data": "n"}
+{"time": 1765655076.909311, "data": "3"}
+{"time": 1765655077.106625, "data": " "}
+{"time": 1765655077.2951927, "data": "\r\n"}
+{"time": 1765655077.369969, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765655077.3917224, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765655083.4353676, "data": " * base: mirrors.aliyun.com\r\n * epel: d2lzkl7pfhq30w.cloudfront.net\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765655083.5647886, "data": "Package python3-3.6.8-21.el7_9.x86_64 already installed and latest version\r\nNothing to do\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765655090.9629602, "data": "p"}
+{"time": 1765655091.2446187, "data": "y"}
+{"time": 1765655091.4505816, "data": "t"}
+{"time": 1765655091.57557, "data": "h"}
+{"time": 1765655091.6804998, "data": "o"}
+{"time": 1765655091.8783252, "data": "n"}
+{"time": 1765655092.0054739, "data": "3"}
+{"time": 1765655092.1832807, "data": "\r\n"}
+{"time": 1765655092.194604, "data": "Python 3.6.8 (default, Nov 14 2023, 16:29:52) \r\n[GCC 4.8.5 20150623 (Red Hat 4.8.5-44)] on linux\r\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\r\n\u001b[?1034h>>> "}
+{"time": 1765655093.5545845, "data": "\r\nKeyboardInterrupt\r\n>>> "}
+{"time": 1765655094.949744, "data": "\r\nKeyboardInterrupt\r\n>>> "}
+{"time": 1765655095.5453498, "data": "e"}
+{"time": 1765655095.7689955, "data": "x"}
+{"time": 1765655095.9358258, "data": "i"}
+{"time": 1765655096.2179358, "data": "t"}
+{"time": 1765655096.674353, "data": "("}
+{"time": 1765655096.7693484, "data": ")"}
+{"time": 1765655097.081703, "data": "\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765655098.4003785, "data": "python3"}
+{"time": 1765655098.660507, "data": "\b\b\b\b\b\b\byum install python3 "}
+{"time": 1765655099.6824365, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[2Ppython get-pip.py\u001b[C"}
+{"time": 1765655101.2006245, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bhon3\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765655102.7270987, "data": "\r\n-bash: pyhon3: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765655103.4049957, "data": "pyhon3 get-pip.py "}
+{"time": 1765655103.6750684, "data": "\b"}
+{"time": 1765655104.187115, "data": "\b"}
+{"time": 1765655104.2197814, "data": "\b"}
+{"time": 1765655104.2510579, "data": "\b"}
+{"time": 1765655104.2828124, "data": "\b"}
+{"time": 1765655104.3154163, "data": "\b"}
+{"time": 1765655104.3469894, "data": "\b"}
+{"time": 1765655104.3787925, "data": "\b"}
+{"time": 1765655104.4115632, "data": "\b"}
+{"time": 1765655104.443277, "data": "\b"}
+{"time": 1765655104.4751775, "data": "\b"}
+{"time": 1765655104.518041, "data": "\b"}
+{"time": 1765655104.5394046, "data": "\b"}
+{"time": 1765655104.5823016, "data": "\b"}
+{"time": 1765655104.6150548, "data": "\b"}
+{"time": 1765655105.246083, "data": "\u001b[C"}
+{"time": 1765655105.976618, "data": "\b"}
+{"time": 1765655106.4960523, "data": "\b"}
+{"time": 1765655107.254078, "data": "\u001b[1@t"}
+{"time": 1765655107.4324288, "data": "\r\n"}
+{"time": 1765655108.744188, "data": "Collecting pip<22.0\r\n"}
+{"time": 1765655108.745187, "data": "  Using cached pip-21.3.1-py3-none-any.whl (1.7 MB)\r\n"}
+{"time": 1765655108.766824, "data": "Installing collected packages: pip\r\n"}
+{"time": 1765655109.2473605, "data": "Successfully installed pip-21.3.1\r\n\u001b[33mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv\u001b[0m\r\n"}
+{"time": 1765655109.2909682, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}

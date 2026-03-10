@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AiOps | 智能运维平台</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    :root {
+      --bg:       #0f1117;
+      --panel:    #161b27;
+      --border:   #232b3e;
+      --accent:   #3b82f6;
+      --accent2:  #22d3ee;
+      --text:     #e2e8f0;
+      --muted:    #64748b;
+      --success:  #10b981;
+      --warn:     #f59e0b;
+      --danger:   #ef4444;
+      --grid:     rgba(59,130,246,0.04);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* ── Left panel: live "ops dashboard" illustration ── */
+    .left-panel {
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px 56px;
+      border-right: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    /* subtle dot-grid background */
+    .left-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(59,130,246,0.12) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    /* top-left corner bracket */
+    .left-panel::after {
+      content: '';
+      position: absolute;
+      top: 32px; left: 32px;
+      width: 32px; height: 32px;
+      border-top: 2px solid var(--accent);
+      border-left: 2px solid var(--accent);
+      opacity: 0.5;
+    }
+
+    .brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .brand span { color: var(--accent); }
+
+    .platform-title {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .platform-title em {
+      font-style: normal;
+      color: var(--accent2);
+    }
+
+    .platform-sub {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 360px;
+      margin-bottom: 48px;
+    }
+
+    /* ── Metrics strip ── */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .metric-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .metric-card.ok::before   { background: var(--success); }
+    .metric-card.warn::before { background: var(--warn); }
+    .metric-card.info::before { background: var(--accent); }
+
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .metric-value {
+      font-size: 22px;
+      font-weight: 600;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .metric-card.ok   .metric-value { color: var(--success); }
+    .metric-card.warn .metric-value { color: var(--warn); }
+    .metric-card.info .metric-value { color: var(--accent2); }
+
+    .metric-delta {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── Mini log stream ── */
+    .log-stream {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      line-height: 1.9;
+      color: var(--muted);
+      overflow: hidden;
+      max-height: 140px;
+    }
+    .log-stream .log-line { display: flex; gap: 10px; }
+    .log-stream .ts  { color: #374151; flex-shrink: 0; }
+    .log-stream .lvl-ok   { color: var(--success); flex-shrink: 0; }
+    .log-stream .lvl-warn { color: var(--warn);    flex-shrink: 0; }
+    .log-stream .lvl-info { color: var(--accent);  flex-shrink: 0; }
+    .log-stream .msg { color: #94a3b8; }
+
+    /* blinking cursor line */
+    .log-cursor {
+      display: inline-block;
+      width: 6px; height: 12px;
+      background: var(--accent2);
+      margin-left: 4px;
+      vertical-align: middle;
+      animation: blink 1.1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* rolling log animation */
+    .log-inner {
+      animation: scroll-log 12s linear infinite;
+    }
+    @keyframes scroll-log {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+
+    /* ── Right panel: login form ── */
+    .right-panel {
+      width: 420px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 48px;
+      background: var(--panel);
+      position: relative;
+    }
+
+    .right-panel::after {
+      content: '';
+      position: absolute;
+      bottom: 32px; right: 32px;
+      width: 32px; height: 32px;
+      border-bottom: 2px solid var(--accent);
+      border-right: 2px solid var(--accent);
+      opacity: 0.3;
+    }
+
+    .form-heading {
+      margin-bottom: 32px;
+    }
+    .form-heading .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .form-heading h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .form-heading p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* alert */
+    .alert {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #fca5a5;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* form controls */
+    .field { margin-bottom: 18px; }
+    .field label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+    .input-wrap i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 13px;
+      pointer-events: none;
+    }
+
+    .field input[type=text],
+    .field input[type=password] {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      padding: 11px 14px 11px 38px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field input::placeholder { color: var(--muted); }
+    .field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+    }
+
+    .row-split {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+    }
+    .remember input[type=checkbox] {
+      accent-color: var(--accent);
+      width: 14px;
+      height: 14px;
+    }
+
+    .forgot { font-size: 13px; color: var(--accent); text-decoration: none; }
+    .forgot:hover { color: var(--accent2); }
+
+    .btn-login {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 13px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-login:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+    .btn-login:active { transform: translateY(0); }
+
+    .form-footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .form-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .form-footer a:hover { color: var(--accent2); }
+
+    /* status bar at bottom */
+    .status-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 10px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+    .status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--success);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .left-panel { display: none; }
+      .right-panel { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ LEFT: ops context ═══ -->
+<div class="left-panel">
+  <div class="brand"><span>//</span> AiOps &nbsp;·&nbsp; 智能运维平台 &nbsp;v3.2</div>
+
+  <div class="platform-title">
+    智能运维，<br><em>尽在掌握</em>
+  </div>
+  <p class="platform-sub">
+    基于大语言模型的下一代运维平台，集故障诊断、根因分析、
+    自动修复与容量预测于一体，让运维决策更快、更准、更智能。
+  </p>
+
+  <div class="metrics">
+    <div class="metric-card ok">
+      <div class="metric-label">服务可用率</div>
+      <div class="metric-value">99.97<span style="font-size:14px">%</span></div>
+      <div class="metric-delta">↑ 较昨日 +0.02%</div>
+    </div>
+    <div class="metric-card warn">
+      <div class="metric-label">活跃告警</div>
+      <div class="metric-value">3</div>
+      <div class="metric-delta">2 待处理 · 1 观察中</div>
+    </div>
+    <div class="metric-card info">
+      <div class="metric-label">AI 自愈成功</div>
+      <div class="metric-value">128</div>
+      <div class="metric-delta">今日累计</div>
+    </div>
+  </div>
+
+  <!-- scrolling log stream -->
+  <div class="log-stream">
+    <div class="log-inner">
+      <div class="log-line"><span class="ts">08:42:01</span><span class="lvl-ok ">[OK  ]</span><span class="msg">pod/api-gateway-7d9f restarted successfully</span></div>
+      <div class="log-line"><span class="ts">08:42:15</span><span class="lvl-info">[INFO]</span><span class="msg">AI diagnosis: memory pressure detected on node-03</span></div>
+      <div class="log-line"><span class="ts">08:43:02</span><span class="lvl-warn">[WARN]</span><span class="msg">CPU usage >80% · svc/order-processor · auto-scale triggered</span></div>
+      <div class="log-line"><span class="ts">08:43:18</span><span class="lvl-ok ">[OK  ]</span><span class="msg">scale-out complete: replicas 3→5</span></div>
+      <div class="log-line"><span class="ts">08:44:05</span><span class="lvl-info">[INFO]</span><span class="msg">root-cause report generated · ticket #20840</span></div>
+      <div class="log-line"><span class="ts">08:45:30</span><span class="lvl-ok ">[OK  ]</span><span class="msg">DB connection pool recovered · latency normal</span></div>
+      <div class="log-line"><span class="ts">08:46:11</span><span class="lvl-info">[INFO]</span><span class="msg">weekly capacity forecast updated</span></div>
+      <div class="log-line"><span class="ts">08:46:58</span><span class="lvl-warn">[WARN]</span><span class="msg">disk usage 78% · /data on storage-01</span></div>
+      <!-- duplicate for seamless loop -->
+      <div class="log-line"><span class="ts">08:42:01</span><span class="lvl-ok ">[OK  ]</span><span class="msg">pod/api-gateway-7d9f restarted successfully</span></div>
+      <div class="log-line"><span class="ts">08:42:15</span><span class="lvl-info">[INFO]</span><span class="msg">AI diagnosis: memory pressure detected on node-03</span></div>
+      <div class="log-line"><span class="ts">08:43:02</span><span class="lvl-warn">[WARN]</span><span class="msg">CPU usage >80% · svc/order-processor · auto-scale triggered</span></div>
+      <div class="log-line"><span class="ts">08:43:18</span><span class="lvl-ok ">[OK  ]</span><span class="msg">scale-out complete: replicas 3→5</span></div>
+      <div class="log-line"><span class="ts">08:44:05</span><span class="lvl-info">[INFO]</span><span class="msg">root-cause report generated · ticket #20840</span></div>
+      <div class="log-line"><span class="ts">08:45:30</span><span class="lvl-ok ">[OK  ]</span><span class="msg">DB connection pool recovered · latency normal</span></div>
+      <div class="log-line"><span class="ts">08:46:11</span><span class="lvl-info">[INFO]</span><span class="msg">weekly capacity forecast updated</span></div>
+      <div class="log-line"><span class="ts">08:46:58</span><span class="lvl-warn">[WARN]</span><span class="msg">disk usage 78% · /data on storage-01</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RIGHT: login form ═══ -->
+<div class="right-panel">
+
+  <div class="form-heading">
+    <div class="eyebrow">// 身份验证</div>
+    <h2>登录工作台</h2>
+    <p>请输入您的账号凭据以继续</p>
+  </div>
+
+  <!-- Django messages block -->
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert">
+      <i class="fas fa-exclamation-circle"></i>
+      {{ message }}
+    </div>
+    {% endfor %}
+  {% endif %}
+
+  <form action="" method="post">
+    {% csrf_token %}
+
+    <div class="field">
+      <label>用户名</label>
+      <div class="input-wrap">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" placeholder="输入用户名" required autocomplete="username">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>密码</label>
+      <div class="input-wrap">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" placeholder="输入密码" required autocomplete="current-password">
+      </div>
+    </div>
+
+    <div class="row-split">
+      <label class="remember">
+        <input type="checkbox" id="remember"> 记住我
+      </label>
+      <a href="#" class="forgot">忘记密码？</a>
+    </div>
+
+    <button type="submit" class="btn-login">
+      <i class="fas fa-sign-in-alt"></i> 登录
+    </button>
+  </form>
+
+  <div class="form-footer">
+    没有账号？ <a href="{% url 'register' %}">申请注册</a>
+  </div>
+
+  <div class="status-bar">
+    <div class="status-dot"></div>
+    系统运行正常 &nbsp;·&nbsp; 安全连接已加密 &nbsp;·&nbsp; AiOps v3.2
+  </div>
+</div>
+
+</body>
+</html>

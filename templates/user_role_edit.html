@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card card-info" style="max-width: 600px; margin: 0 auto;">
+    <div class="card-header"><h3 class="card-title">给 {{ target_user.username }} 分配角色</h3></div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="card-body">
+            {% for role in all_roles %}
+            <div class="custom-control custom-switch mb-3">
+                <input type="checkbox" class="custom-control-input" id="r_{{role.id}}" name="roles" value="{{role.id}}" {% if role.id in user_roles %}checked{% endif %}>
+                <label class="custom-control-label" for="r_{{role.id}}"><strong>{{ role.name }}</strong></label>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="card-footer text-right">
+            <button type="submit" class="btn btn-info">保存修改</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

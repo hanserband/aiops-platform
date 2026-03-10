@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSSH | {{ server.hostname }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.1.0/css/xterm.min.css" />
+
+    <style>
+        body { margin: 0; padding: 0; background-color: #1e1e1e; overflow: hidden; display: flex; flex-direction: column; height: 100vh; }
+
+        /* 1. 顶部工具栏样式 */
+        .ssh-toolbar {
+            height: 40px; background-color: #343a40; display: flex; align-items: center; padding: 0 15px;
+            border-bottom: 1px solid #4b545c; color: #fff; justify-content: space-between; flex-shrink: 0;
+            z-index: 10001;
+        }
+        .toolbar-left, .toolbar-right { display: flex; align-items: center; }
+
+        .server-info { font-weight: bold; margin-right: 20px; font-family: 'Segoe UI', sans-serif; }
+
+        .toolbar-btn {
+            background: transparent; border: 1px solid #6c757d; color: #ccc;
+            padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 13px; margin-left: 8px;
+            transition: all 0.2s; display: flex; align-items: center;
+        }
+        .toolbar-btn:hover { background-color: #495057; color: white; transform: translateY(-1px); }
+        .toolbar-btn.text-warning:hover { border-color: #ffc107; color: #ffc107; }
+        .toolbar-btn.text-info:hover { border-color: #17a2b8; color: #17a2b8; }
+        .toolbar-btn.text-danger:hover { border-color: #dc3545; background: #dc3545; color: white; }
+        .toolbar-btn.text-primary:hover { border-color: #007bff; color: #007bff; }
+
+        /* 2. 主体布局 (Terminal + Sidebar) */
+        .main-container { display: flex; flex: 1; overflow: hidden; position: relative; }
+
+        /* 终端容器 */
+        #terminal { flex: 1; height: 100%; overflow: hidden; position: relative; z-index: 1; }
+
+        /* === 水印层样式 === */
+        .watermark-layer {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 9999;
+            pointer-events: none;
+            background-repeat: repeat;
+            overflow: hidden;
+        }
+
+        /* 3. 脚本侧边栏 */
+        .script-sidebar {
+            width: 0; background-color: #2b2b2b; border-left: 1px solid #444;
+            transition: width 0.3s ease; display: flex; flex-direction: column; overflow: hidden;
+            z-index: 10002;
+        }
+        .script-sidebar.open { width: 300px; }
+
+        .sidebar-header {
+            padding: 10px; border-bottom: 1px solid #444; color: #fff; font-size: 14px;
+            display: flex; justify-content: space-between; align-items: center; background: #343a40;
+        }
+        .sidebar-search { padding: 10px; border-bottom: 1px solid #444; }
+        .sidebar-search input {
+            background: #1e1e1e; border: 1px solid #555; color: #fff; width: 100%;
+            padding: 5px 10px; border-radius: 3px; outline: none; font-size: 13px;
+        }
+
+        .script-list { flex: 1; overflow-y: auto; padding: 5px; }
+        .script-item {
+            padding: 8px 10px; border-bottom: 1px solid #3a3a3a; color: #ccc; cursor: pointer;
+            transition: background 0.2s; font-size: 13px; display: flex; flex-direction: column;
+        }
+        .script-item:hover { background-color: #3a3a3a; }
+        .script-name { font-weight: bold; color: #e0e0e0; margin-bottom: 4px; display: flex; align-items: center; }
+        .script-desc { font-size: 11px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .script-actions { margin-top: 5px; display: flex; gap: 5px; }
+        .action-btn {
+            border: 1px solid #555; background: #222; color: #aaa; font-size: 11px; padding: 2px 8px;
+            border-radius: 3px; cursor: pointer; flex: 1; text-align: center;
+        }
+        .action-btn:hover { background: #444; color: #fff; }
+        .btn-run:hover { border-color: #28a745; color: #28a745; }
+        .btn-paste:hover { border-color: #17a2b8; color: #17a2b8; }
+
+        /* 4. 悬浮按钮 (AI 解释) */
+        #ai-float-btn {
+            position: absolute; display: none; z-index: 10000;
+            background: #ffc107; color: #1f2d3d; border: none;
+            padding: 6px 12px; border-radius: 20px; font-size: 13px;
+            cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            font-weight: bold; transition: all 0.2s;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+        #ai-float-btn:hover { background: #ffca2c; transform: scale(1.05); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Markdown 样式 */
+        .markdown-body { font-size: 14px; line-height: 1.6; color: #333; }
+        .markdown-body pre { background: #f4f4f4; padding: 10px; border-radius: 4px; }
+        .markdown-body code { color: #e83e8c; background: #f8f9fa; padding: 2px 4px; border-radius: 2px; }
+
+        /* 文件管理器 */
+        .table-hover tbody tr:hover { background-color: #f1f1f1; }
+        .cursor-pointer { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="ssh-toolbar">
+        <div class="toolbar-left">
+            <div class="server-info">
+                <i class="fas fa-terminal mr-2"></i>{{ server.hostname }}
+                <span class="text-muted text-xs ml-1">({{ server.ip_address }})</span>
+            </div>
+        </div>
+
+        <div class="toolbar-right">
+            <button class="toolbar-btn text-info" onclick="shareSession()" title="生成协同链接">
+                <i class="fas fa-share-alt mr-1"></i> 协同
+            </button>
+            <button class="toolbar-btn text-warning" onclick="$('#aiModal').modal('show')" title="自然语言转命令">
+                <i class="fas fa-robot mr-1"></i> AI 助手
+            </button>
+            <button class="toolbar-btn text-primary" onclick="openFileManager()" title="文件管理器">
+                <i class="fas fa-folder-open mr-1"></i> 文件管理
+            </button>
+            <button class="toolbar-btn text-danger" onclick="window.close()" style="margin-left: 15px;">
+                <i class="fas fa-power-off"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div id="terminal"></div>
+        <div id="watermark" class="watermark-layer"></div>
+        <button id="ai-float-btn" onclick="explainSelection()">
+            <i class="fas fa-magic"></i> AI 解释
+        </button>
+
+        <div class="script-sidebar" id="scriptSidebar">
+            <div class="sidebar-header">
+                <span><i class="fas fa-code mr-2"></i>快捷脚本</span>
+                <i class="fas fa-times" style="cursor: pointer;" onclick="toggleScriptSidebar()"></i>
+            </div>
+            <div class="sidebar-search">
+                <input type="text" id="scriptSearch" placeholder="搜索脚本..." onkeyup="filterScripts()">
+            </div>
+            <div class="script-list" id="scriptListContainer">
+                {% for s in scripts %}
+                <div class="script-item" data-name="{{ s.name }}">
+                    <div class="script-name">
+                        {% if s.script_type == 'py' %}
+                            <i class="fab fa-python text-info mr-2"></i>
+                        {% else %}
+                            <i class="fas fa-terminal text-secondary mr-2"></i>
+                        {% endif %}
+                        {{ s.name }}
+                    </div>
+                    {% if s.description %}
+                    <div class="script-desc" title="{{ s.description }}">{{ s.description }}</div>
+                    {% endif %}
+                    <div class="script-actions">
+                        <div class="action-btn btn-paste" onclick="useScript('{{ s.id }}', false)">
+                            <i class="fas fa-paste"></i> 粘贴
+                        </div>
+                        <div class="action-btn btn-run" onclick="useScript('{{ s.id }}', true)">
+                            <i class="fas fa-play"></i> 执行
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="text-center text-muted p-3" style="font-size: 12px;">暂无脚本，请在脚本管理中添加</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_DB = {
+            {% for s in scripts %}
+                "{{ s.id }}": "{{ s.content|escapejs }}",
+            {% endfor %}
+        };
+    </script>
+
+    <div class="modal fade" id="fileManagerModal" tabindex="-1" aria-hidden="true" style="color:#333">
+        <div class="modal-dialog modal-xl" style="max-width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header bg-light py-2">
+                    <h5 class="modal-title" style="font-size: 16px;">
+                        <i class="fas fa-server text-primary mr-2"></i>文件浏览器
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="d-flex justify-content-between align-items-center p-2 border-bottom bg-white">
+                        <div class="d-flex align-items-center flex-grow-1 mr-3">
+                            <button class="btn btn-sm btn-light mr-2 border" onclick="goUpDir()" title="上级目录">
+                                <i class="fas fa-level-up-alt"></i>
+                            </button>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend"><span class="input-group-text bg-light">路径</span></div>
+                                <input type="text" id="fmCurrentPath" class="form-control" value="/" onkeydown="if(event.keyCode==13) loadFileList(this.value)">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" onclick="loadFileList($('#fmCurrentPath').val())"><i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-outline-secondary mr-1" onclick="loadFileList()"><i class="fas fa-sync-alt"></i></button>
+                            <button class="btn btn-sm btn-outline-success mr-1" onclick="fmCreateDir()"><i class="fas fa-folder-plus"></i> 新建</button>
+                            <button class="btn btn-sm btn-outline-primary" onclick="$('#fmUploadInput').click()"><i class="fas fa-upload"></i> 上传</button>
+                            <input type="file" id="fmUploadInput" style="display:none" onchange="fmUploadFile()">
+                        </div>
+                    </div>
+                    <div style="height: 500px; overflow-y: auto;">
+                        <table class="table table-hover table-sm table-striped mb-0" style="font-size: 13px;">
+                            <thead class="thead-light" style="position: sticky; top: 0;">
+                                <tr><th style="width: 40px;"></th><th>文件名</th><th style="width: 100px;">大小</th><th style="width: 150px;">修改时间</th><th style="width: 120px; text-align: right;">操作</th></tr>
+                            </thead>
+                            <tbody id="fileListBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer py-1 px-3 bg-light justify-content-start">
+                    <span class="text-muted small" id="fmStatus">就绪</span>
+                    <div class="progress ml-auto" style="width: 200px; height: 15px; display: none;" id="fmProgressBox">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" id="fmProgressBar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="aiModal" tabindex="-1" style="color:#333;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title"><i class="fas fa-brain mr-2"></i>AI 智能命令生成</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="small text-muted">选择模型：</label>
+                        <select id="aiModelSelect" class="form-control form-control-sm">
+                            {% for m in ai_models %}
+                                <option value="{{ m.id }}">{{ m.name }} ({{ m.model_name }})</option>
+                            {% empty %}
+                                <option value="">未配置模型</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>描述你的需求：</label>
+                        <textarea class="form-control" id="aiPrompt" rows="3" placeholder="例如：&#10;1. 查找 /var/log 下大于 100M 的文件" style="font-size: 14px;"></textarea>
+                    </div>
+                    <button class="btn btn-warning btn-block font-weight-bold mb-3" id="btnGenCmd" onclick="askAiCommand()">
+                        <i class="fas fa-bolt mr-1"></i> 生成命令 (Ctrl+Enter)
+                    </button>
+                    <div class="form-group" id="aiResultGroup" style="display:none;">
+                        <label>生成的命令：</label>
+                        <textarea class="form-control" id="generatedCmd" rows="2" style="font-family: 'Consolas', monospace; color: #00ff00; background: #222; font-size: 13px;"></textarea>
+                        <div class="mt-2 text-right">
+                            <button class="btn btn-outline-dark btn-sm mr-1" onclick="sendToTerm(false)"><i class="fas fa-paste"></i> 粘贴</button>
+                            <button class="btn btn-success btn-sm" onclick="sendToTerm(true)"><i class="fas fa-play"></i> 执行</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="explainModal" tabindex="-1" style="color:#333">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title text-white"><i class="fas fa-search mr-2"></i>智能日志分析</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3 p-2 bg-light rounded border">
+                        <div class="d-flex align-items-center flex-grow-1">
+                            <label class="mb-0 mr-2 small text-muted">分析模型:</label>
+                            <select id="explainModelSelect" class="form-control form-control-sm" style="max-width: 250px;">
+                                {% for m in ai_models %}
+                                    <option value="{{ m.id }}">{{ m.name }}</option>
+                                {% empty %}
+                                    <option value="">默认模型</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button class="btn btn-info btn-sm ml-2" onclick="startLogAnalysis()"><i class="fas fa-sync-alt mr-1"></i> 重新分析</button>
+                    </div>
+                    <div id="explainLoading" class="text-center py-5">
+                        <div class="spinner-border text-info"></div>
+                        <p class="mt-3 text-muted">AI 正在分析...</p>
+                    </div>
+                    <div id="explainContent" class="markdown-body" style="display:none; padding:15px; border:1px solid #eee; border-radius:4px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="riskModal" tabindex="-1" data-backdrop="static" data-keyboard="false" style="color:#333">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-danger">
+                <div class="modal-header bg-danger">
+                    <h5 class="modal-title text-white"><i class="fas fa-exclamation-triangle mr-2"></i>高危操作警告</h5>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger font-weight-bold">系统检测到您正在尝试执行敏感命令：</p>
+                    <div class="alert alert-secondary font-monospace" id="riskCmdDisplay" style="word-break: break-all; background:#f8d7da; color:#721c24;"></div>
+                    <div class="card card-outline card-warning collapsed-card" id="riskAiCard">
+                        <div class="card-header p-2">
+                            <h3 class="card-title" style="font-size:14px;"><i class="fas fa-robot mr-1"></i> AI 风险评估</h3>
+                            <div class="card-tools" style="float: right;">
+                                <select id="riskModelSelect" class="form-control form-control-sm d-inline-block" style="width: 120px; height:24px; padding:0 5px;">
+                                    {% for m in ai_models %}
+                                    <option value="{{ m.id }}">{{ m.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button type="button" class="btn btn-tool btn-sm bg-warning text-dark ml-1" onclick="assessRisk()"><i class="fas fa-play"></i> 评估</button>
+                            </div>
+                        </div>
+                        <div class="card-body p-2" id="riskAiResult" style="display:none; max-height: 200px; overflow-y: auto; font-size:13px;"></div>
+                    </div>
+                    <div class="form-check mt-3">
+                        <input type="checkbox" class="form-check-input" id="confirmCheck">
+                        <label class="form-check-label text-sm" for="confirmCheck">我已知晓风险。</label>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-secondary" onclick="decideRisk(false)">取消操作</button>
+                    <button type="button" class="btn btn-danger" id="btnForceRun" disabled onclick="decideRisk(true)">
+                        <i class="fas fa-skull mr-1"></i> 强制执行
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.1.0/lib/xterm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.7.0/lib/xterm-addon-fit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        // === 1. 初始化终端 ===
+        const term = new Terminal({
+            cursorBlink: true,
+            theme: { background: '#1e1e1e', foreground: '#f0f0f0' },
+            fontSize: 14,
+            fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+            scrollback: 2000,
+        });
+        const fitAddon = new FitAddon.FitAddon();
+        term.loadAddon(fitAddon);
+        term.open(document.getElementById('terminal'));
+
+        setTimeout(() => fitAddon.fit(), 100);
+
+        // ============================================
+        // [核心修复] 强制复制逻辑
+        // ============================================
+        term.attachCustomKeyEventHandler((arg) => {
+            // 拦截 Ctrl+C (KeyC 或 key 'c'/'C')
+            if (arg.ctrlKey && (arg.code === "KeyC" || arg.key === "c" || arg.key === "C") && arg.type === "keydown") {
+                const selection = term.getSelection();
+                if (selection) {
+                    // 使用"暴力"复制法：创建一个隐藏的 textarea，选中并复制
+                    // 这比 navigator.clipboard 更兼容且能确保焦点在正确位置执行 execCommand
+                    const textArea = document.createElement("textarea");
+                    textArea.value = selection;
+                    textArea.style.position = "fixed";
+                    textArea.style.left = "-9999px";
+                    textArea.style.top = "0";
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+
+                    try {
+                        document.execCommand('copy');
+                    } catch (err) {
+                        console.error('Fallback copy error', err);
+                    }
+
+                    document.body.removeChild(textArea);
+                    term.focus(); // 归还焦点给终端
+
+                    return false; // 拦截事件，阻止发送 SIGINT
+                }
+            }
+
+            // 拦截 Ctrl+V (粘贴)
+            if (arg.ctrlKey && (arg.code === "KeyV" || arg.key === "v" || arg.key === "V") && arg.type === "keydown") {
+                 navigator.clipboard.readText().then(text => {
+                     if (socket.readyState === WebSocket.OPEN) {
+                        socket.send(JSON.stringify({'data': text}));
+                        term.focus();
+                     }
+                 }).catch(err => console.error(err));
+                 return false;
+            }
+
+            return true; // 其他按键放行
+        });
+        // ============================================
+
+        // === 2. 水印生成 ===
+        function initWatermark() {
+            const username = "{{ request.user.username }}";
+            const now = new Date().toLocaleString('zh-CN', { hour12: false });
+            const text = `${username} @ ${now}`;
+            const canvas = document.createElement('canvas');
+            canvas.width = 300; canvas.height = 180;
+            const ctx = canvas.getContext('2d');
+            ctx.font = '16px "Microsoft YaHei", monospace';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            ctx.rotate(-25 * Math.PI / 180);
+            ctx.fillText(text, 0, 0);
+            const wDiv = document.getElementById('watermark');
+            if(wDiv) wDiv.style.backgroundImage = `url(${canvas.toDataURL('image/png')})`;
+        }
+        initWatermark();
+        setInterval(initWatermark, 60000);
+
+        // === WebSocket ===
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomId = urlParams.get('room');
+        window.currentRoomId = roomId || null;
+        let wsUrl = `${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${window.location.host}/ws/ssh/{{ server.id }}/`;
+        if (roomId) wsUrl += `?room=${roomId}`;
+
+        const socket = new WebSocket(wsUrl);
+
+        socket.onopen = () => {
+            socket.send(JSON.stringify({'action': 'connect'}));
+            socket.send(JSON.stringify({'action': 'resize', 'cols': term.cols, 'rows': term.rows}));
+        };
+
+        socket.onmessage = (e) => {
+            const msg = JSON.parse(e.data);
+            if(msg.data) term.write(msg.data);
+            if(msg.message) term.write(msg.message);
+            if(msg.action === 'room_info') window.currentRoomId = msg.room_id;
+            if(msg.action === 'risk_warning') showRiskModal(msg.command);
+        };
+
+        socket.onclose = () => term.write('\r\n\x1b[31m[System] Connection closed.\x1b[0m');
+        socket.onerror = () => term.write('\r\n\x1b[31m[System] Connection error.\x1b[0m');
+
+        term.onData(d => { if(socket.readyState === WebSocket.OPEN) socket.send(JSON.stringify({'data': d})); });
+
+        window.addEventListener('resize', () => {
+            fitAddon.fit(); initWatermark();
+            if(socket.readyState === WebSocket.OPEN) socket.send(JSON.stringify({'action': 'resize', 'cols': term.cols, 'rows': term.rows}));
+        });
+
+        // 脚本库
+        function toggleScriptSidebar() {
+            const sidebar = document.getElementById('scriptSidebar');
+            sidebar.classList.toggle('open');
+            setTimeout(() => fitAddon.fit(), 310);
+        }
+        function filterScripts() {
+            const val = document.getElementById('scriptSearch').value.toLowerCase();
+            document.querySelectorAll('.script-item').forEach(item => {
+                const name = item.getAttribute('data-name').toLowerCase();
+                item.style.display = name.includes(val) ? 'flex' : 'none';
+            });
+        }
+        function useScript(scriptId, execute) {
+            const content = SCRIPT_DB[scriptId];
+            if (!content) return;
+            const dataToSend = execute ? content + '\r' : content;
+            if (socket.readyState === WebSocket.OPEN) {
+                socket.send(JSON.stringify({'data': dataToSend}));
+                term.focus();
+            } else alert("终端未连接");
+        }
+
+        // 文件管理
+        let currentPath = "/";
+        function openFileManager() { $('#fileManagerModal').modal('show'); loadFileList(currentPath); }
+        function loadFileList(path) {
+            if(!path) path = $('#fmCurrentPath').val();
+            $('#fmStatus').text('正在加载...');
+            $('#fileListBody').html('<tr><td colspan="5" class="text-center p-3 text-muted"><i class="fas fa-spinner fa-spin"></i> Loading...</td></tr>');
+            $.ajax({
+                url: '{% url "server_file_ops" server.id %}', data: { 'action': 'list', 'path': path },
+                success: function(res) {
+                    if(res.status) {
+                        currentPath = res.cwd; $('#fmCurrentPath').val(currentPath);
+                        renderTable(res.files); $('#fmStatus').text(`加载完成，共 ${res.files.length} 个项目`);
+                    } else { alert('加载失败: ' + res.msg); $('#fmStatus').text('加载失败'); }
+                }, error: function() { $('#fmStatus').text('网络错误'); }
+            });
+        }
+        function renderTable(files) {
+            const tbody = $('#fileListBody'); tbody.empty();
+            files.forEach(f => {
+                const icon = f.type === 'dir' ? '<i class="fas fa-folder text-warning"></i>' : '<i class="fas fa-file-alt text-secondary"></i>';
+                const nameLink = f.type === 'dir' ? `<a href="javascript:void(0)" onclick="enterDir('${f.name}')" class="font-weight-bold text-dark">${f.name}</a>` : `<span class="text-dark">${f.name}</span>`;
+                let actions = `
+                    <button class="btn btn-xs btn-link text-primary" onclick="fmRename('${f.name}')" title="重命名"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-xs btn-link text-danger" onclick="fmDelete('${f.name}')" title="删除"><i class="fas fa-trash"></i></button>
+                `;
+                if (f.type !== 'dir') actions = `<button class="btn btn-xs btn-link text-success" onclick="fmDownload('${f.name}')" title="下载"><i class="fas fa-download"></i></button>` + actions;
+                tbody.append(`<tr><td class="text-center">${icon}</td><td>${nameLink}</td><td>${f.size}</td><td>${f.mtime}</td><td class="text-right">${actions}</td></tr>`);
+            });
+        }
+        function enterDir(name) { loadFileList(currentPath.endsWith('/') ? currentPath + name : currentPath + '/' + name); }
+        function goUpDir() {
+            if (currentPath === '/') return;
+            let parts = currentPath.split('/'); parts.pop();
+            loadFileList(parts.length === 1 && parts[0] === "" ? '/' : parts.join('/') || '/');
+        }
+        function fmCreateDir() {
+            const name = prompt("请输入文件夹名称:");
+            if (name) performAction('mkdir', currentPath.endsWith('/') ? currentPath + name : currentPath + '/' + name);
+        }
+        function fmRename(oldName) {
+            const newName = prompt("重命名为:", oldName);
+            if (newName && newName !== oldName) {
+                let p1 = currentPath.endsWith('/') ? currentPath + oldName : currentPath + '/' + oldName;
+                let p2 = currentPath.endsWith('/') ? currentPath + newName : currentPath + '/' + newName;
+                $.post('{% url "server_file_ops" server.id %}', { 'action': 'rename', 'path': p1, 'new_path': p2, 'csrfmiddlewaretoken': '{{ csrf_token }}' }, res => { if(res.status) loadFileList(); else alert(res.msg); });
+            }
+        }
+        function fmDelete(name) {
+            if(confirm(`确定删除 "${name}" 吗？`)) performAction('delete', currentPath.endsWith('/') ? currentPath + name : currentPath + '/' + name);
+        }
+        function performAction(action, path) {
+            $.post('{% url "server_file_ops" server.id %}', { 'action': action, 'path': path, 'csrfmiddlewaretoken': '{{ csrf_token }}' }, res => { if(res.status) loadFileList(); else alert(res.msg); });
+        }
+        function fmDownload(name) {
+            let p = currentPath.endsWith('/') ? currentPath + name : currentPath + '/' + name;
+            const iframe = document.createElement('iframe'); iframe.style.display = 'none';
+            iframe.src = `{% url 'server_file_download' server.id %}?filepath=${encodeURIComponent(p)}`;
+            document.body.appendChild(iframe); $('#fmStatus').text(`下载: ${name}...`);
+            setTimeout(() => { document.body.removeChild(iframe); $('#fmStatus').text('就绪'); }, 5000);
+        }
+        function fmUploadFile() {
+            const file = document.getElementById('fmUploadInput').files[0];
+            if(!file) return;
+            let fd = new FormData(); fd.append('file_data', file); fd.append('remote_path', currentPath); fd.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+            $('#fmProgressBox').show(); $('#fmStatus').text(`上传 ${file.name}...`);
+            $.ajax({
+                url: '{% url "server_file_upload" server.id %}', type: 'POST', data: fd, processData:false, contentType:false,
+                xhr: function(){ var xhr = new window.XMLHttpRequest(); xhr.upload.addEventListener("progress", evt => { if (evt.lengthComputable) $('#fmProgressBar').width(Math.round(evt.loaded/evt.total*100)+'%'); }, false); return xhr; },
+                success: res => { $('#fmProgressBox').hide(); $('#fmProgressBar').width('0%'); document.getElementById('fmUploadInput').value = ''; if(res.status) { $('#fmStatus').text('上传成功'); loadFileList(); } else { alert(res.msg); $('#fmStatus').text('上传失败'); } },
+                error: () => { $('#fmProgressBox').hide(); alert("网络错误"); }
+            });
+        }
+
+        // AI 命令
+        function askAiCommand() {
+            const prompt = $('#aiPrompt').val().trim(); const modelId = $('#aiModelSelect').val();
+            if(!prompt) { alert("请输入需求"); return; }
+            const btn = $('#btnGenCmd'); const originHtml = btn.html();
+            btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> AI 思考中...'); $('#aiResultGroup').hide();
+            $.ajax({
+                url: '/ai/chat/command/', type: 'POST',
+                data: { 'requirement': prompt, 'os': '{{ server.os_name|default:"Linux" }}', 'model_id': modelId, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: res => { btn.prop('disabled', false).html(originHtml); if(res.status) { $('#aiResultGroup').fadeIn(); $('#generatedCmd').val(res.command); } else alert('AI Error: ' + res.msg); },
+                error: () => { btn.prop('disabled', false).html(originHtml); alert('Network Error'); }
+            });
+        }
+        function sendToTerm(execute) {
+            const cmd = $('#generatedCmd').val(); if(!cmd) return;
+            const data = execute ? cmd + '\r' : cmd;
+            if (socket.readyState === WebSocket.OPEN) { socket.send(JSON.stringify({'data': data})); $('#aiModal').modal('hide'); term.focus(); }
+        }
+
+        // AI 解释
+        const floatBtn = document.getElementById('ai-float-btn'); let currentSelectionText = "";
+        term.onSelectionChange(() => {
+            if (term.hasSelection()) { floatBtn.style.display = 'block'; floatBtn.style.top = '60px'; floatBtn.style.right = '300px'; }
+            else { floatBtn.style.display = 'none'; }
+        });
+        function explainSelection() {
+            currentSelectionText = term.getSelection().trim(); if (!currentSelectionText) return;
+            $('#explainModal').modal('show'); floatBtn.style.display = 'none'; startLogAnalysis();
+        }
+        function startLogAnalysis() {
+            if (!currentSelectionText) return;
+            $('#explainLoading').show(); $('#explainContent').hide();
+            $.ajax({
+                url: '/ai/chat/explain/', type: 'POST',
+                data: { 'content': currentSelectionText, 'model_id': $('#explainModelSelect').val(), 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: res => { $('#explainLoading').hide(); if(res.status) $('#explainContent').html(marked.parse(res.analysis)).show(); else $('#explainContent').html('<div class="text-danger">'+res.msg+'</div>').show(); },
+                error: () => { $('#explainLoading').hide(); $('#explainContent').text('请求失败').show(); }
+            });
+        }
+
+        // 协同
+        function shareSession() {
+            if (!window.currentRoomId) { alert("正在初始化..."); return; }
+            const el = document.createElement('textarea'); el.value = `${window.location.origin}${window.location.pathname}?room=${window.currentRoomId}`;
+            document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el);
+            alert(`🔗 协同链接已复制！`);
+        }
+
+        // 风险拦截
+        let currentRiskCmd = "", currentAiAdvice = "";
+        function showRiskModal(cmd) {
+            currentRiskCmd = cmd; currentAiAdvice = ""; $('#riskCmdDisplay').text(cmd); $('#riskAiResult').hide();
+            $('#confirmCheck').prop('checked', false); $('#btnForceRun').prop('disabled', true); $('#riskModal').modal('show');
+        }
+        $('#confirmCheck').change(function() { $('#btnForceRun').prop('disabled', !this.checked); });
+        function assessRisk() {
+            $('#riskAiResult').show().html('<i class="fas fa-spinner fa-spin"></i> AI 正在分析...');
+            $.ajax({
+                url: '{% url "assess_risk" %}', type: 'POST',
+                data: { 'command': currentRiskCmd, 'model_id': $('#riskModelSelect').val(), 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: res => { if(res.status) { currentAiAdvice = res.assessment; $('#riskAiResult').html(marked.parse(res.assessment)); } else $('#riskAiResult').html('<span class="text-danger">'+res.msg+'</span>'); },
+                error: () => $('#riskAiResult').html('<span class="text-danger">请求失败</span>')
+            });
+        }
+        function decideRisk(isConfirmed) {
+            socket.send(JSON.stringify({'action': isConfirmed ? 'confirm_risk' : 'cancel_risk', 'ai_advice': currentAiAdvice}));
+            $('#riskModal').modal('hide'); term.focus();
+        }
+        $('#aiPrompt').keydown(e => { if(e.ctrlKey && e.keyCode === 13) askAiCommand(); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{"time": 1773073249.0160768, "data": "\r\nWelcome to Alibaba Cloud Elastic Compute Service !\r\n\r\n    * Enhanced with OS AI Extensions *\r\n\r\n      * python3 is default to python3.12 in /opt/aiext/bin\r\n      * /usr/bin/python3 is still linked to python3.6\r\n      * run 'deactivate_py312' to fall back to python3.6\r\n\r\nLast login: Tue Mar 10 00:14:11 2026 from 59.64.129.211\r\r\n"}
+{"time": 1773073249.0181317, "data": "\u001b]0;root@iZ0zewa3apqhymZ:~\u0007[root@iZ0zewa3apqhymZ ~]# "}
+{"time": 1773073277.783637, "data": "find /var/log -type f -"}
+{"time": 1773073277.815871, "data": "size +500M\r\n"}
+{"time": 1773073277.8312283, "data": "\u001b]0;root@iZ0zewa3apqhymZ:~\u0007[root@iZ0zewa3apqhymZ ~]# "}
+{"time": 1773073282.6575482, "data": "\r\n\u001b]0;root@iZ0zewa3apqhymZ:~\u0007[root@iZ0zewa3apqhymZ ~]# "}
+{"time": 1773073298.7289197, "data": "d"}
+{"time": 1773073298.760296, "data": "ate\r\n"}
+{"time": 1773073298.7623737, "data": "Tue Mar 10 12:21:38 AM CST 2026\r\n\u001b]0;root@iZ0zewa3apqhymZ:~\u0007[root@iZ0zewa3apqhymZ ~]# "}

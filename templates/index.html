@@ -1,0 +1,922 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   Design tokens — matches login page exactly
+═══════════════════════════════════════════ */
+:root {
+  --bg:        #0f1117;
+  --panel:     #161b27;
+  --panel2:    #1c2333;
+  --border:    #232b3e;
+  --accent:    #3b82f6;
+  --accent2:   #22d3ee;
+  --text:      #e2e8f0;
+  --muted:     #64748b;
+  --success:   #10b981;
+  --warn:      #f59e0b;
+  --danger:    #ef4444;
+  --mono:      'IBM Plex Mono', monospace;
+  --sans:      'IBM Plex Sans', sans-serif;
+}
+
+/* ── Base overrides ── */
+body, .content-wrapper, .wrapper {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: var(--sans) !important;
+}
+
+/* Dot-grid ambient texture on page background */
+.content-wrapper {
+  background-image: radial-gradient(circle, rgba(59,130,246,0.07) 1px, transparent 1px) !important;
+  background-size: 28px 28px !important;
+}
+
+/* ── Section fade-in on load ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.dash-row { animation: fade-up 0.4s ease both; }
+.dash-row:nth-child(1) { animation-delay: 0.05s; }
+.dash-row:nth-child(2) { animation-delay: 0.15s; }
+.dash-row:nth-child(3) { animation-delay: 0.25s; }
+.dash-row:nth-child(4) { animation-delay: 0.35s; }
+
+/* ── Page header bar ── */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.dash-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.dash-header-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.dash-header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dash-header-title i { color: var(--accent); font-size: 16px; }
+
+/* Server selector */
+.server-select {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 7px 12px;
+  min-width: 240px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.server-select:focus { border-color: var(--accent); }
+.server-select option { background: var(--panel); }
+
+/* ── Cards ── */
+.d-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  height: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  position: relative;
+}
+.d-card:hover {
+  border-color: rgba(59,130,246,0.3);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+}
+
+/* accent top stripe per card */
+.d-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--border);
+  transition: background 0.3s;
+}
+.d-card.accent-blue::before   { background: var(--accent); }
+.d-card.accent-cyan::before   { background: var(--accent2); }
+.d-card.accent-green::before  { background: var(--success); }
+.d-card.accent-warn::before   { background: var(--warn); }
+.d-card.accent-danger::before { background: var(--danger); }
+
+.d-card-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.d-card-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.d-card-title i { color: var(--accent); }
+.d-card-body { padding: 18px; }
+
+/* ── Metric cards ── */
+.metric-card-inner { padding: 18px 18px 0; }
+.metric-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.metric-label-text {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.status-pill {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+.pill-ok   { background: rgba(16,185,129,0.12); color: var(--success); border: 1px solid rgba(16,185,129,0.25); }
+.pill-warn { background: rgba(245,158,11,0.12);  color: var(--warn);    border: 1px solid rgba(245,158,11,0.25); }
+.pill-info { background: rgba(59,130,246,0.12);  color: var(--accent);  border: 1px solid rgba(59,130,246,0.25); }
+
+.metric-big {
+  font-family: var(--mono);
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.metric-big .unit { font-size: 14px; color: var(--muted); margin-left: 2px; }
+.metric-sub { font-size: 11px; color: var(--muted); margin-bottom: 10px; }
+.spark-wrap { height: 44px; }
+
+/* online bar */
+.online-bar-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.online-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--success), var(--accent2));
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* ── Info grid ── */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.info-item {
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+.info-item-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 5px;
+}
+.info-item-val {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.status-dot-live {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  margin-right: 5px;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ── Buttons ── */
+.btn-diag {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  background: rgba(59,130,246,0.1);
+  color: var(--accent);
+  border: 1px solid rgba(59,130,246,0.3);
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.btn-diag:hover {
+  background: rgba(59,130,246,0.2);
+  border-color: var(--accent);
+  color: var(--accent2);
+}
+.btn-go {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-go:hover { background: #2563eb; color: #fff; }
+
+/* badge */
+.d-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+.badge-warn-soft { background: rgba(245,158,11,0.12); color: var(--warn); border: 1px solid rgba(245,158,11,0.2); }
+.badge-muted     { background: var(--panel2); color: var(--muted); border: 1px solid var(--border); }
+
+/* ── No-agent placeholder ── */
+.no-agent-box {
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  min-height: 220px; text-align: center; padding: 32px;
+}
+.no-agent-icon {
+  width: 52px; height: 52px; border-radius: 12px;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: var(--warn); margin-bottom: 16px;
+}
+.no-agent-box h5 { color: var(--text); font-size: 15px; margin-bottom: 8px; }
+.no-agent-box p  { color: var(--muted); font-size: 12px; line-height: 1.7; margin-bottom: 16px; }
+
+/* ── ECharts dark theme overrides ── */
+/* Applied via echarts init options directly in JS */
+
+/* ── AI Modal ── */
+.ai-modal .modal-content {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+}
+.ai-modal .modal-header {
+  background: var(--panel2);
+  border-bottom: 1px solid var(--border);
+  border-radius: 10px 10px 0 0;
+  padding: 14px 20px;
+}
+.ai-modal .modal-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+.ai-modal .modal-body  { padding: 20px; }
+.ai-modal .modal-footer {
+  border-top: 1px solid var(--border);
+  background: var(--panel2);
+  border-radius: 0 0 10px 10px;
+  padding: 12px 20px;
+}
+.ai-modal .close { color: var(--muted); opacity: 1; }
+.ai-modal .close:hover { color: var(--text); }
+
+.ai-model-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  display: block;
+}
+.ai-model-select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 12px;
+  outline: none;
+}
+.ai-model-select:focus { border-color: var(--accent); }
+
+.ai-divider { border-color: var(--border); margin: 16px 0; }
+
+/* spinner */
+.ai-loading-box {
+  text-align: center;
+  padding: 32px 0;
+}
+.ai-loading-box p { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 14px; }
+.spinner-ring {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* markdown result */
+.markdown-body {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text);
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.markdown-body p { margin-bottom: 10px; }
+.markdown-body ul { padding-left: 18px; margin-bottom: 10px; }
+.markdown-body li { margin-bottom: 4px; }
+.markdown-body pre {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  overflow-x: auto;
+  color: var(--accent2);
+}
+.markdown-body h3, .markdown-body h4 {
+  color: var(--accent2);
+  font-size: 14px;
+  margin: 14px 0 6px;
+}
+.markdown-body strong { color: var(--text); }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* Alert override */
+.d-alert-danger {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #fca5a5;
+}
+</style>
+
+<!-- ═══ Page header ═══ -->
+<div class="dash-row dash-header">
+  <div class="dash-header-left">
+    <div>
+      <div class="dash-header-eyebrow">// AiOps · 智能运维平台</div>
+      <div class="dash-header-title">
+        {% if current_server_id %}
+          <i class="fas fa-server"></i> {{ sys_info.hostname }}
+        {% else %}
+          <i class="fas fa-th-large"></i> 集群概览
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <span style="font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;">监控视图</span>
+    <select class="server-select" onchange="window.location.href='?server_id='+this.value">
+      <option value="" {% if not current_server_id %}selected{% endif %}>— 集群聚合 (Cluster Avg) —</option>
+      {% for s in all_servers %}
+      <option value="{{ s.id }}" {% if current_server_id == s.id %}selected{% endif %}>
+        {{ s.hostname }} · {{ s.ip_address }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+<!-- ═══ Row 1: Metric cards ═══ -->
+<div class="row mb-3 dash-row">
+  <!-- CPU -->
+  <div class="col-md-3 col-sm-6 mb-3 mb-md-0">
+    <div class="d-card accent-blue" style="cursor:default;">
+      <div class="metric-card-inner">
+        <div class="metric-label-row">
+          <span class="metric-label-text">CPU 使用率</span>
+          <span class="status-pill pill-ok">{% if current_server_id %}Node{% else %}Avg{% endif %}</span>
+        </div>
+        <div class="metric-big">
+          {% if sys_info.has_agent %}{{ metrics.cpu }}<span class="unit">%</span>{% else %}<span style="color:var(--muted)">—</span>{% endif %}
+        </div>
+        <div class="metric-sub">实时采集 · 1分钟均值</div>
+      </div>
+      <div class="spark-wrap px-0"><div id="spark-cpu" style="width:100%;height:44px;"></div></div>
+    </div>
+  </div>
+
+  <!-- Memory -->
+  <div class="col-md-3 col-sm-6 mb-3 mb-md-0">
+    <div class="d-card accent-cyan">
+      <div class="metric-card-inner">
+        <div class="metric-label-row">
+          <span class="metric-label-text">内存使用率</span>
+          <span class="status-pill pill-warn">{% if current_server_id %}Node{% else %}Avg{% endif %}</span>
+        </div>
+        <div class="metric-big">
+          {% if sys_info.has_agent %}{{ metrics.mem }}<span class="unit">%</span>{% else %}<span style="color:var(--muted)">—</span>{% endif %}
+        </div>
+        <div class="metric-sub">物理内存 · 已用/总量</div>
+      </div>
+      <div class="spark-wrap px-0"><div id="spark-mem" style="width:100%;height:44px;"></div></div>
+    </div>
+  </div>
+
+  <!-- Health -->
+  <div class="col-md-3 col-sm-6 mb-3 mb-md-0">
+    <div class="d-card accent-green">
+      <div class="metric-card-inner">
+        <div class="metric-label-row">
+          <span class="metric-label-text">系统健康度</span>
+          <span class="status-pill pill-ok">Score</span>
+        </div>
+        <div class="metric-big">
+          {% if sys_info.has_agent %}{{ metrics.health }}<span class="unit">分</span>{% else %}<span style="color:var(--muted)">—</span>{% endif %}
+        </div>
+        <div class="metric-sub">综合评分 · AI 加权</div>
+      </div>
+      <div class="spark-wrap px-0"><div id="spark-health" style="width:100%;height:44px;"></div></div>
+    </div>
+  </div>
+
+  <!-- Online servers -->
+  <div class="col-md-3 col-sm-6">
+    <a href="{% url 'server_list' %}" style="text-decoration:none;display:block;height:100%;">
+      <div class="d-card accent-green" style="cursor:pointer;">
+        <div class="metric-card-inner">
+          <div class="metric-label-row">
+            <span class="metric-label-text">在线服务器</span>
+            <span class="status-pill pill-ok">Running</span>
+          </div>
+          <div class="metric-big">
+            {{ running_count }}<span class="unit"> / {{ server_count }}</span>
+          </div>
+          <div class="metric-sub">{{ metrics.online_rate }}% 在线率</div>
+        </div>
+        <div style="padding: 0 0 14px;">
+          <div class="online-bar-track mx-3">
+            <div class="online-bar-fill" style="width:{{ metrics.online_rate }}%;"></div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ═══ Row 2: Sys info + Gauges ═══ -->
+<div class="row mb-3 dash-row">
+  <!-- System info -->
+  <div class="col-md-6 mb-3 mb-md-0">
+    <div class="d-card" style="height:100%;">
+      <div class="d-card-header">
+        <div class="d-card-title"><i class="fas fa-info-circle"></i> 系统详细信息</div>
+        {% if current_server_id and sys_info.has_agent %}
+          <button class="btn-diag" onclick="openDiagnoseModal()">
+            <i class="fas fa-robot"></i> AI 智能诊断
+          </button>
+        {% elif not sys_info.has_agent %}
+          <span class="d-badge badge-warn-soft"><i class="fas fa-exclamation-triangle mr-1"></i>数据未接入</span>
+        {% else %}
+          <span class="d-badge badge-muted">切换到单机视图可使用诊断</span>
+        {% endif %}
+      </div>
+      <div class="d-card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-item-label">主机名</div>
+            <div class="info-item-val" title="{{ sys_info.hostname }}">{{ sys_info.hostname }}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">操作系统</div>
+            <div class="info-item-val" title="{{ sys_info.os }}">{{ sys_info.os }}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">CPU 规格 / 架构</div>
+            <div class="info-item-val" title="{{ sys_info.cpu_model }}">{{ sys_info.cpu_model }}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">IP 地址</div>
+            <div class="info-item-val">{{ sys_info.ip|default:'-' }}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">运行状态 / 核心数</div>
+            <div class="info-item-val">
+              <span class="status-dot-live"></span>{{ sys_info.uptime }} / {{ sys_info.cores }} Cores
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">
+              {% if current_server_id %}平均负载 (Load 1min){% else %}集群平均负载{% endif %}
+            </div>
+            <div class="info-item-val">
+              {{ sys_info.load }}
+              {% if not current_server_id %}<small style="color:var(--muted);font-weight:400;"> (均值)</small>{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if sys_info.has_agent %}
+  <!-- Load gauge -->
+  <div class="col-md-3 mb-3 mb-md-0">
+    <div class="d-card" style="height:100%;">
+      <div class="d-card-header">
+        <div class="d-card-title"><i class="fas fa-tachometer-alt"></i> 实时负载 (Load)</div>
+      </div>
+      <div class="d-card-body d-flex justify-content-center align-items-center" style="height:200px;">
+        <div id="chart-load" style="width:100%;height:100%;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Disk gauge -->
+  <div class="col-md-3">
+    <div class="d-card" style="height:100%;">
+      <div class="d-card-header">
+        <div class="d-card-title"><i class="fas fa-hdd"></i> 磁盘使用率 (Disk /)</div>
+      </div>
+      <div class="d-card-body d-flex justify-content-center align-items-center" style="height:200px;">
+        <div id="chart-disk" style="width:100%;height:100%;"></div>
+      </div>
+    </div>
+  </div>
+
+  {% else %}
+  <!-- No agent -->
+  <div class="col-md-6">
+    <div class="d-card" style="height:100%;">
+      <div class="d-card-header">
+        <div class="d-card-title"><i class="fas fa-satellite-dish"></i> 监控状态</div>
+      </div>
+      <div class="no-agent-box">
+        <div class="no-agent-icon"><i class="fas fa-microchip"></i></div>
+        <h5>未安装监控 Agent</h5>
+        <p>该服务器尚未向平台发送任何监控数据。<br>请前往主机列表部署 Agent。</p>
+        <a href="{% url 'server_list' %}" class="btn-go">前往安装</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- ═══ Row 3: Trend charts ═══ -->
+{% if sys_info.has_agent %}
+<div class="row dash-row">
+  <div class="col-md-4 mb-3 mb-md-0">
+    <div class="d-card">
+      <div class="d-card-header">
+        <div class="d-card-title"><i class="fas fa-chart-area"></i> 资源趋势 (CPU &amp; Memory)</div>
+      </div>
+      <div class="d-card-body">
+        <div id="chart-trend" style="width:100%;height:300px;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3 mb-md-0">
+    <div class="d-card">
+      <div class="d-card-header">
+        <div class="d-card-title"><i class="fas fa-network-wired"></i> 网络流量 (Inbound &amp; Outbound)</div>
+      </div>
+      <div class="d-card-body">
+        <div id="chart-network" style="width:100%;height:300px;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="d-card">
+      <div class="d-card-header">
+        <div class="d-card-title"><i class="fas fa-database"></i> 磁盘 I/O (Read &amp; Write)</div>
+      </div>
+      <div class="d-card-body">
+        <div id="chart-disk-io" style="width:100%;height:300px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- ═══ AI Diagnose Modal ═══ -->
+<div class="modal fade ai-modal" id="aiModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title"><i class="fas fa-robot mr-2" style="color:var(--accent);"></i>AI 运维专家分析</div>
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <label class="ai-model-label">选择分析模型</label>
+        <select id="diagModelSelect" class="ai-model-select">
+          {% for m in ai_models %}
+          <option value="{{ m.id }}">{{ m.name }} · {{ m.model_name }}</option>
+          {% empty %}
+          <option value="">未配置模型 (使用默认)</option>
+          {% endfor %}
+        </select>
+        <hr class="ai-divider">
+
+        <div id="aiLoading" class="ai-loading-box" style="display:none;">
+          <div class="spinner-ring"></div>
+          <p>正在读取监控指标并进行深度分析...</p>
+        </div>
+        <div id="aiContent" class="markdown-body" style="display:none;"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-diag" onclick="startDiagnose()"><i class="fas fa-play mr-1"></i>开始分析</button>
+        <button type="button" class="btn-go" data-dismiss="modal" style="background:var(--panel2);border:1px solid var(--border);color:var(--muted);">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── shared dark theme for all ECharts ── */
+const EC_THEME = {
+  backgroundColor: 'transparent',
+  textStyle: { color: '#64748b', fontFamily: "'IBM Plex Mono', monospace", fontSize: 11 },
+  axisLine:  { lineStyle: { color: '#232b3e' } },
+  splitLine: { lineStyle: { type: 'dashed', color: '#1c2333' } },
+  tooltip: {
+    backgroundColor: '#1c2333',
+    borderColor: '#232b3e',
+    borderWidth: 1,
+    textStyle: { color: '#e2e8f0', fontSize: 12, fontFamily: "'IBM Plex Mono', monospace" },
+    extraCssText: 'border-radius:6px;'
+  },
+  legend: {
+    textStyle: { color: '#64748b', fontSize: 11, fontFamily: "'IBM Plex Mono', monospace" },
+    bottom: 0
+  }
+};
+
+const serverId = "{{ current_server_id|default:'' }}";
+
+/* ── AI Diagnose ── */
+function openDiagnoseModal() {
+  $('#aiModal').modal('show');
+  $('#aiContent').hide();
+  $('#aiLoading').hide();
+}
+
+function startDiagnose() {
+  if (!serverId) return;
+  const modelId = document.getElementById('diagModelSelect').value;
+  $('#aiLoading').show();
+  $('#aiContent').hide();
+  $.ajax({
+    url: '/ai/diagnose/' + serverId + '/',
+    type: 'POST',
+    data: { 'model_id': modelId },
+    headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+    success: function(res) {
+      $('#aiLoading').hide();
+      if (res.status) {
+        $('#aiContent').html(marked.parse(res.analysis)).show();
+      } else {
+        $('#aiContent').html('<div class="d-alert-danger">分析失败：' + res.msg + '</div>').show();
+      }
+    },
+    error: function() {
+      $('#aiLoading').hide();
+      $('#aiContent').html('<div class="d-alert-danger">网络请求失败，请检查网络或 Key 配置</div>').show();
+    }
+  });
+}
+
+/* ── Chart init ── */
+document.addEventListener("DOMContentLoaded", function () {
+  const hasAgent = "{{ sys_info.has_agent|yesno:'true,false' }}";
+  if (hasAgent === 'false') return;
+
+  const dates    = {{ trend_dates|safe }};
+  const cpuData  = {{ trend_cpu|default:"[]" }};
+  const memData  = {{ trend_mem|default:"[]" }};
+  const netIn    = {{ trend_net_in|default:"[]" }};
+  const netOut   = {{ trend_net_out|default:"[]" }};
+  const diskData = {{ trend_disk|default:"[]" }};
+  const diskRead  = {{ trend_disk_read|default:"[]" }};
+  const diskWrite = {{ trend_disk_write|default:"[]" }};
+
+  /* Sparklines */
+  initSpark('spark-cpu',    '#3b82f6', cpuData);
+  initSpark('spark-mem',    '#22d3ee', memData);
+  initSpark('spark-health', '#10b981', [100]);
+
+  /* Trend: CPU & Mem */
+  var cTrend = initChart('chart-trend');
+  cTrend.setOption({
+    ...baseOption(dates),
+    legend: { ...EC_THEME.legend, data: ['CPU', 'Memory'] },
+    yAxis: { ...baseYAxis(), max: 100 },
+    series: [
+      lineSerie('CPU',    cpuData, '#3b82f6'),
+      lineSerie('Memory', memData, '#22d3ee'),
+    ]
+  });
+
+  /* Network */
+  var cNet = initChart('chart-network');
+  cNet.setOption({
+    ...baseOption(dates),
+    legend: { ...EC_THEME.legend, data: ['Inbound', 'Outbound'] },
+    yAxis: { ...baseYAxis(), name: 'KB/s' },
+    series: [
+      lineSerie('Inbound',  netIn,  '#10b981'),
+      lineSerie('Outbound', netOut, '#f59e0b'),
+    ]
+  });
+
+  /* Disk I/O */
+  var cDiskIO = initChart('chart-disk-io');
+  cDiskIO.setOption({
+    ...baseOption(dates),
+    legend: { ...EC_THEME.legend, data: ['Read', 'Write'] },
+    yAxis: { ...baseYAxis(), name: 'KB/s' },
+    series: [
+      lineSerie('Read',  diskRead,  '#22d3ee'),
+      lineSerie('Write', diskWrite, '#a855f7'),
+    ]
+  });
+
+  /* Load gauge */
+  var cLoad = initChart('chart-load');
+  var maxLoad = {{ sys_info.cores }} > 0 ? {{ sys_info.cores }} : 4;
+  cLoad.setOption({
+    backgroundColor: 'transparent',
+    series: [{
+      type: 'gauge', max: maxLoad,
+      progress: { show: true, width: 7, itemStyle: { color: '#3b82f6' } },
+      axisLine: { lineStyle: { width: 7, color: [[1, '#1c2333']] } },
+      axisTick: { show: false },
+      splitLine: { length: 5, lineStyle: { width: 1, color: '#232b3e' } },
+      axisLabel: { distance: 10, fontSize: 10, color: '#64748b', fontFamily: "'IBM Plex Mono', monospace" },
+      pointer: { itemStyle: { color: '#3b82f6' } },
+      detail: {
+        valueAnimation: true, fontSize: 20,
+        offsetCenter: [0, '70%'],
+        fontFamily: "'IBM Plex Mono', monospace",
+        color: '#e2e8f0'
+      },
+      title: { offsetCenter: [0, '90%'], fontSize: 11, color: '#64748b' },
+      data: [{ value: {{ sys_info.load|default:0 }}, name: 'Load' }]
+    }]
+  });
+
+  /* Disk usage gauge */
+  var cDisk = initChart('chart-disk');
+  var lastDisk = diskData.length > 0 ? diskData[diskData.length - 1] : 0;
+  var diskColor = lastDisk > 90 ? '#ef4444' : lastDisk > 75 ? '#f59e0b' : '#10b981';
+  cDisk.setOption({
+    backgroundColor: 'transparent',
+    series: [{
+      type: 'gauge',
+      progress: { show: true, width: 7, itemStyle: { color: diskColor } },
+      axisLine: { lineStyle: { width: 7, color: [[1, '#1c2333']] } },
+      pointer: { show: false },
+      axisTick: { show: false },
+      splitLine: { show: false },
+      axisLabel: { show: false },
+      detail: {
+        valueAnimation: true, fontSize: 22,
+        offsetCenter: [0, '0%'],
+        formatter: '{value}%',
+        fontFamily: "'IBM Plex Mono', monospace",
+        color: diskColor
+      },
+      title: { offsetCenter: [0, '28%'], fontSize: 11, color: '#64748b' },
+      data: [{ value: lastDisk, name: '已用' }]
+    }]
+  });
+
+  window.addEventListener('resize', function () {
+    [cTrend, cNet, cDiskIO, cLoad, cDisk].forEach(c => c.resize());
+  });
+});
+
+/* ── Helpers ── */
+function initChart(id) {
+  return echarts.init(document.getElementById(id), null, { renderer: 'canvas' });
+}
+
+function initSpark(id, color, data) {
+  if (!data || !data.length) data = [0];
+  echarts.init(document.getElementById(id)).setOption({
+    grid: { top: 0, bottom: 0, left: 0, right: 0 },
+    xAxis: { show: false, data: data, boundaryGap: false },
+    yAxis: { show: false },
+    series: [{
+      type: 'line', smooth: true, showSymbol: false,
+      lineStyle: { width: 2, color: color },
+      areaStyle: {
+        opacity: 0.15,
+        color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+          colorStops: [{ offset: 0, color: color }, { offset: 1, color: 'transparent' }] }
+      },
+      data: data
+    }]
+  });
+}
+
+function baseOption(dates) {
+  return {
+    backgroundColor: 'transparent',
+    tooltip: { ...EC_THEME.tooltip, trigger: 'axis' },
+    grid: { left: '3%', right: '4%', bottom: '14%', top: '6%', containLabel: true },
+    xAxis: {
+      type: 'category', boundaryGap: false, data: dates,
+      axisLine: { lineStyle: { color: '#232b3e' } },
+      axisLabel: { color: '#64748b', fontSize: 10, fontFamily: "'IBM Plex Mono', monospace" },
+      splitLine: { show: false }
+    }
+  };
+}
+
+function baseYAxis() {
+  return {
+    type: 'value',
+    axisLine: { show: false },
+    axisLabel: { color: '#64748b', fontSize: 10, fontFamily: "'IBM Plex Mono', monospace" },
+    splitLine: { lineStyle: { type: 'dashed', color: '#1c2333' } }
+  };
+}
+
+function lineSerie(name, data, color) {
+  return {
+    name, type: 'line', smooth: true, showSymbol: false,
+    itemStyle: { color },
+    lineStyle: { color, width: 2 },
+    areaStyle: {
+      opacity: 0.12,
+      color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+        colorStops: [{ offset: 0, color }, { offset: 1, color: 'transparent' }] }
+    },
+    data
+  };
+}
+</script>
+{% endblock %}

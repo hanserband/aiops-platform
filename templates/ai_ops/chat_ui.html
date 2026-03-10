@@ -1,0 +1,318 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+
+<style>
+    /* === 整体布局 === */
+    .chat-container {
+        height: calc(100vh - 120px);
+        display: flex;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        border: 1px solid #e0e0e0;
+    }
+
+    /* === 左侧侧边栏 (会话列表) === */
+    .chat-sidebar {
+        width: 260px;
+        background: #f8f9fa;
+        border-right: 1px solid #e9ecef;
+        display: flex;
+        flex-direction: column;
+    }
+    .session-list { flex: 1; overflow-y: auto; padding: 10px; }
+    .session-item {
+        padding: 10px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-bottom: 5px;
+        color: #333;
+        transition: 0.2s;
+        position: relative;
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .session-item:hover { background: #e2e6ea; }
+    .session-item.active { background: #007bff; color: #fff; box-shadow: 0 2px 5px rgba(0,123,255,0.3); }
+
+    .session-del {
+        position: absolute; right: 10px; top: 12px;
+        display: none; font-size: 12px;
+    }
+    .session-item:hover .session-del { display: block; color: #dc3545; }
+    .session-item.active .session-del { color: #fff; }
+
+    /* === 右侧主区域 === */
+    .chat-main { flex: 1; display: flex; flex-direction: column; background: #fff; }
+
+    /* 顶部工具栏 (模型选择) */
+    .chat-header {
+        height: 50px;
+        padding: 0 20px;
+        border-bottom: 1px solid #e9ecef;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+    }
+
+    /* 消息滚动区 */
+    .chat-box {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        background: #fff;
+    }
+
+    /* 消息气泡样式 */
+    .msg-row { display: flex; margin-bottom: 25px; }
+    .msg-row.user { justify-content: flex-end; }
+
+    .msg-avatar {
+        width: 36px; height: 36px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 18px; margin: 0 12px; flex-shrink: 0;
+    }
+    .msg-user-avatar { background: #007bff; color: #fff; }
+    .msg-ai-avatar { background: #17a2b8; color: #fff; }
+
+    .msg-content {
+        max-width: 75%;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.6;
+        position: relative;
+        word-wrap: break-word;
+    }
+    .msg-row.user .msg-content { background: #007bff; color: #fff; border-top-right-radius: 0; }
+    .msg-row.ai .msg-content { background: #f8f9fa; color: #333; border-top-left-radius: 0; border: 1px solid #f0f0f0; }
+
+    /* 输入框区域 */
+    .chat-input-area { padding: 20px; border-top: 1px solid #e9ecef; position: relative; background: #fff; }
+    textarea.chat-input {
+        width: 100%; height: 90px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        padding: 12px;
+        resize: none;
+        outline: none;
+        font-size: 14px;
+        transition: border-color 0.2s;
+    }
+    textarea.chat-input:focus { border-color: #80bdff; box-shadow: 0 0 0 3px rgba(0,123,255,0.1); }
+    .send-btn { position: absolute; bottom: 30px; right: 30px; }
+
+    /* Markdown 样式修正 */
+    .markdown-body { background: transparent !important; font-size: 14px; font-family: inherit; }
+    .msg-row.user .markdown-body { color: #fff; }
+    .msg-row.user .markdown-body code { color: #e83e8c; background: rgba(255,255,255,0.9); }
+    .msg-row.user .markdown-body pre { background: rgba(0,0,0,0.1); color: #fff; }
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <div class="chat-container">
+            <div class="chat-sidebar">
+                <div class="p-3 border-bottom">
+                    <button class="btn btn-outline-primary btn-block btn-sm" onclick="createSession()">
+                        <i class="fas fa-plus"></i> 新建会话
+                    </button>
+                </div>
+                <div class="session-list">
+                    {% for s in sessions %}
+                    <div class="session-item {% if s.id == current_session.id %}active{% endif %}"
+                         onclick="location.href='?session_id={{ s.id }}'">
+                        <i class="far fa-comments mr-2"></i> {{ s.title|truncatechars:12 }}
+                        <i class="fas fa-trash session-del" onclick="deleteSession(event, {{ s.id }})" title="删除会话"></i>
+                    </div>
+                    {% empty %}
+                    <div class="text-center text-muted mt-4 text-sm">
+                        <i class="fas fa-inbox mb-2"></i><br>暂无历史会话
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="chat-main">
+                {% if current_session %}
+                    <div class="chat-header">
+                        <div class="text-muted font-weight-bold">
+                            <i class="fas fa-hashtag mr-1"></i> {{ current_session.title }}
+                        </div>
+                        <div class="form-inline">
+                            <label class="mr-2 small text-muted">AI 模型:</label>
+                            <select id="modelSelect" class="form-control form-control-sm" style="min-width: 160px;">
+                                {% for m in ai_models %}
+                                    <option value="{{ m.id }}"
+                                        {% if current_session.ai_model_id == m.id %}selected{% endif %}>
+                                        {{ m.name }}
+                                    </option>
+                                {% empty %}
+                                    <option value="">未配置模型</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="chat-box" id="chatBox">
+                        {% for msg in chat_messages %}
+                            {% if msg.role == 'user' %}
+                            <div class="msg-row user">
+                                <div class="msg-content">{{ msg.content }}</div>
+                                <div class="msg-avatar msg-user-avatar"><i class="fas fa-user"></i></div>
+                            </div>
+                            {% else %}
+                            <div class="msg-row ai">
+                                <div class="msg-avatar msg-ai-avatar"><i class="fas fa-robot"></i></div>
+                                <div class="msg-content markdown-body" id="msg_{{ msg.id }}"></div>
+                                <script>
+                                    // 渲染 Markdown
+                                    document.getElementById('msg_{{ msg.id }}').innerHTML = marked.parse(`{{ msg.content|escapejs }}`);
+                                </script>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="chat-input-area">
+                        <div class="input-wrapper">
+                            <textarea class="chat-input" id="userInput"
+                                      placeholder="请输入您的问题... (Ctrl + Enter 发送)"
+                                      onkeydown="handleKey(event)"></textarea>
+                            <button class="btn btn-primary send-btn shadow-sm" onclick="sendMessage()">
+                                <i class="fas fa-paper-plane mr-1"></i> 发送
+                            </button>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="d-flex justify-content-center align-items-center h-100 flex-column text-muted">
+                        <div class="bg-light rounded-circle p-4 mb-3">
+                            <i class="fas fa-robot fa-3x text-primary"></i>
+                        </div>
+                        <h5>欢迎使用 AiOps AI 助手</h5>
+                        <p class="mb-4">请点击左上角的 <b>“新建会话”</b> 开始对话</p>
+                        <div class="text-sm">
+                            支持: Shell 脚本生成 · Log 错误排查 · SQL 优化 · 故障诊断
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const sessionId = "{{ current_session.id|default:'' }}";
+    const chatBox = document.getElementById('chatBox');
+
+    // 页面加载后自动滚动到底部
+    if (chatBox) chatBox.scrollTop = chatBox.scrollHeight;
+
+    function createSession() {
+        fetch('{% url "create_session" %}')
+            .then(res => res.json())
+            .then(data => {
+                if(data.status) location.href = '?session_id=' + data.session_id;
+            });
+    }
+
+    function deleteSession(e, id) {
+        e.stopPropagation(); // 阻止冒泡，防止触发点击会话
+        if(!confirm('确定删除此会话及其所有记录？')) return;
+        fetch('/ai/chat/delete/' + id + '/')
+            .then(res => res.json())
+            .then(data => { location.href = '/ai/chat/'; });
+    }
+
+    function handleKey(e) {
+        if (e.ctrlKey && e.keyCode === 13) sendMessage();
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('userInput');
+        const content = input.value.trim();
+        const modelId = document.getElementById('modelSelect').value;
+
+        if (!content) return;
+        if (!modelId) { alert("请先在右上角选择或配置一个 AI 模型！"); return; }
+
+        // 1. 界面先显示用户消息
+        appendMessage('user', content);
+        input.value = '';
+
+        // 2. 显示 Loading 动画
+        const loadingId = appendLoading();
+
+        // 3. 发送请求
+        fetch('{% url "send_msg" %}', {
+            method: 'POST',
+            body: JSON.stringify({
+                session_id: sessionId,
+                content: content,
+                model_id: modelId // 传递选择的模型ID
+            }),
+            headers: { 'X-CSRFToken': '{{ csrf_token }}' }
+        })
+        .then(res => res.json())
+        .then(data => {
+            removeLoading(loadingId);
+            if (data.status) {
+                appendMessage('ai', data.reply);
+            } else {
+                appendMessage('ai', '**系统错误:** ' + (data.error || '请求失败'));
+            }
+        })
+        .catch(err => {
+            removeLoading(loadingId);
+            appendMessage('ai', '**网络异常:** 请检查服务器日志');
+        });
+    }
+
+    function appendMessage(role, text) {
+        const div = document.createElement('div');
+        div.className = `msg-row ${role}`;
+
+        let avatarHtml = role === 'user'
+            ? '<div class="msg-avatar msg-user-avatar"><i class="fas fa-user"></i></div>'
+            : '<div class="msg-avatar msg-ai-avatar"><i class="fas fa-robot"></i></div>';
+
+        // 如果是用户消息，直接显示文本；如果是 AI 消息，使用 Markdown 解析
+        let contentHtml = role === 'user'
+            ? `<div class="msg-content">${text}</div>`
+            : `<div class="msg-content markdown-body">${marked.parse(text)}</div>`;
+
+        div.innerHTML = role === 'user' ? contentHtml + avatarHtml : avatarHtml + contentHtml;
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function appendLoading() {
+        const id = 'loading_' + Date.now();
+        const div = document.createElement('div');
+        div.id = id;
+        div.className = 'msg-row ai';
+        div.innerHTML = `
+            <div class="msg-avatar msg-ai-avatar"><i class="fas fa-robot"></i></div>
+            <div class="msg-content" style="color: #666;">
+                <i class="fas fa-circle-notch fa-spin mr-1"></i> 正在思考...
+            </div>
+        `;
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return id;
+    }
+
+    function removeLoading(id) {
+        const el = document.getElementById(id);
+        if (el) el.remove();
+    }
+</script>
+{% endblock %}

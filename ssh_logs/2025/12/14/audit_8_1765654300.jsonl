@@ -1,0 +1,344 @@
+{"time": 1765653857.941345, "data": "Last login: Sun Dec 14 03:24:04 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765653857.9520292, "data": "\u001b]0;root@localhost:~\u0007\u001b[?1034h[root@localhost ~]# "}
+{"time": 1765653859.3154147, "data": "yum install python -y"}
+{"time": 1765653859.6900818, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[3Ppip install psutil"}
+{"time": 1765653860.4942567, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[4Pnetstat -lntup"}
+{"time": 1765653861.6192477, "data": "\r\n"}
+{"time": 1765653861.6410525, "data": "Active Internet connections (only servers)\r\nProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    \r\ntcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      903/sshd            \r\ntcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1088/master         \r\ntcp6       0      0 :::22                   :::*                    LISTEN      903/sshd            \r\ntcp6       0      0 ::1:25                  :::*                    LISTEN      1088/master         \r\nudp        0      0 0.0.0.0:68              0.0.0.0:*                           722/dhclient        \r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653862.904248, "data": "netstat -lntup"}
+{"time": 1765653863.4833117, "data": "\r\nActive Internet connections (only servers)\r\nProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    \r\ntcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      903/sshd            \r\ntcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1088/master         \r\ntcp6       0      0 :::22                   :::*                    LISTEN      903/sshd            \r\ntcp6       0      0 ::1:25                  :::*                    LISTEN      1088/master         \r\nudp        0      0 0.0.0.0:68              0.0.0.0:*                           722/dhclient        \r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653865.4105208, "data": "p"}
+{"time": 1765653865.6179643, "data": "i"}
+{"time": 1765653865.753779, "data": "p"}
+{"time": 1765653866.126546, "data": " "}
+{"time": 1765653866.325022, "data": "i"}
+{"time": 1765653866.6065805, "data": "n"}
+{"time": 1765653866.789418, "data": "s"}
+{"time": 1765653866.9950287, "data": "t"}
+{"time": 1765653867.1105216, "data": "a"}
+{"time": 1765653867.241507, "data": "l"}
+{"time": 1765653867.3780398, "data": "l"}
+{"time": 1765653867.5347595, "data": " "}
+{"time": 1765653870.331753, "data": "p"}
+{"time": 1765653870.5312963, "data": "s"}
+{"time": 1765653877.8564005, "data": "\b\u001b[K"}
+{"time": 1765653878.0447092, "data": "\b\u001b[K"}
+{"time": 1765653880.1855812, "data": "psutil "}
+{"time": 1765653881.5707932, "data": "\r\n-bash: pip: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653883.6331177, "data": "\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653884.8909085, "data": "y"}
+{"time": 1765653885.0073597, "data": "u"}
+{"time": 1765653885.2351475, "data": "m"}
+{"time": 1765653885.380835, "data": " "}
+{"time": 1765653885.558371, "data": "i"}
+{"time": 1765653885.7876172, "data": "n"}
+{"time": 1765653885.9625046, "data": "s"}
+{"time": 1765653886.1301258, "data": "t"}
+{"time": 1765653886.2666326, "data": "a"}
+{"time": 1765653886.3196738, "data": "l"}
+{"time": 1765653886.4551585, "data": "l"}
+{"time": 1765653886.6537707, "data": " "}
+{"time": 1765653887.4244287, "data": "p"}
+{"time": 1765653887.5920036, "data": "i"}
+{"time": 1765653887.7180648, "data": "p"}
+{"time": 1765653888.337939, "data": " "}
+{"time": 1765653888.650512, "data": "-"}
+{"time": 1765653888.9313576, "data": "y"}
+{"time": 1765653889.0994654, "data": "\r\n"}
+{"time": 1765653889.1431022, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765653889.165617, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765653892.1848035, "data": " * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765653892.19661, "data": "No package \u001b[1mpip\u001b(B\u001b[m available.\r\n"}
+{"time": 1765653892.2391555, "data": "Error: Nothing to do\r\n"}
+{"time": 1765653892.2505229, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653895.4949481, "data": "p"}
+{"time": 1765653895.6935675, "data": "i"}
+{"time": 1765653895.818707, "data": "p"}
+{"time": 1765653897.538723, "data": "3"}
+{"time": 1765653897.7087393, "data": "\r\n-bash: pip3: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653902.9704776, "data": "^C\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654050.869963, "data": "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py"}
+{"time": 1765654051.942067, "data": "\r\n"}
+{"time": 1765654051.9751596, "data": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\r\n                                 Dload  Upload   Total   Spent    Left  Speed\r\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0"}
+{"time": 1765654052.5187242, "data": "\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0"}
+{"time": 1765654053.4994655, "data": "\r  1 2131k    1 32272    0     0  20969      0  0:01:44  0:00:01  0:01:43 20969"}
+{"time": 1765654054.4410133, "data": "\r 45 2131k   45  979k    0     0   393k      0  0:00:05  0:00:02  0:00:03  393k"}
+{"time": 1765654054.7431989, "data": "\r100 2131k  100 2131k    0     0   762k      0  0:00:02  0:00:02 --:--:--  762k\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654058.2775626, "data": "p"}
+{"time": 1765654058.6019561, "data": "y"}
+{"time": 1765654058.799951, "data": "t"}
+{"time": 1765654058.8514059, "data": "h"}
+{"time": 1765654059.0167575, "data": "o"}
+{"time": 1765654059.2141957, "data": "n"}
+{"time": 1765654059.360984, "data": "3"}
+{"time": 1765654059.5575423, "data": "\r\n-bash: python3: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654061.2652833, "data": "y"}
+{"time": 1765654061.416825, "data": "u"}
+{"time": 1765654061.6369786, "data": "m"}
+{"time": 1765654061.7526605, "data": " "}
+{"time": 1765654061.9630015, "data": "i"}
+{"time": 1765654062.162536, "data": "n"}
+{"time": 1765654062.2267034, "data": "s"}
+{"time": 1765654062.41412, "data": "t"}
+{"time": 1765654062.560103, "data": "a"}
+{"time": 1765654062.6243017, "data": "l"}
+{"time": 1765654062.7779567, "data": "l"}
+{"time": 1765654062.9443588, "data": " "}
+{"time": 1765654063.8643427, "data": "p"}
+{"time": 1765654064.2097273, "data": "y"}
+{"time": 1765654064.3975432, "data": "t"}
+{"time": 1765654064.5027735, "data": "h"}
+{"time": 1765654064.6466076, "data": "o"}
+{"time": 1765654064.8129723, "data": "n"}
+{"time": 1765654064.9809887, "data": "3"}
+{"time": 1765654065.954684, "data": "\r\n"}
+{"time": 1765654066.0206242, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765654066.0319517, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765654069.0700223, "data": " * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765654069.145013, "data": "Resolving Dependencies\r\n--> Running transaction check\r\n---> Package python3.x86_64 0:3.6.8-21.el7_9 will be installed\r\n--> Processing Dependency: python3-libs(x86-64) = 3.6.8-21.el7_9 for package: python3-3.6.8-21.el7_9.x86_64\r\n"}
+{"time": 1765654069.2292676, "data": "--> Processing Dependency: python3-setuptools for package: python3-3.6.8-21.el7_9.x86_64\r\n"}
+{"time": 1765654069.2305624, "data": "--> Processing Dependency: python3-pip for package: python3-3.6.8-21.el7_9.x86_64\r\n--> Processing Dependency: libpython3.6m.so.1.0()(64bit) for package: python3-3.6.8-21.el7_9.x86_64\r\n--> Running transaction check\r\n---> Package python3-libs.x86_64 0:3.6.8-21.el7_9 will be installed\r\n--> Processing Dependency: libtirpc.so.1()(64bit) for package: python3-libs-3.6.8-21.el7_9.x86_64\r\n"}
+{"time": 1765654069.2421134, "data": "---> Package python3-pip.noarch 0:9.0.3-8.el7 will be installed\r\n---> Package python3-setuptools.noarch 0:39.2.0-10.el7 will be installed\r\n--> Running transaction check\r\n---> Package libtirpc.x86_64 0:0.2.4-0.16.el7 will be installed\r\n"}
+{"time": 1765654069.353319, "data": "--> Finished Dependency Resolution\r\n"}
+{"time": 1765654069.4190736, "data": "\r\nDependencies Resolved\r\n\r\n================================================================================\r\n Package                  Arch         Version              Repository     Size\r\n================================================================================\r\nInstalling:\r\n python3                  x86_64       3.6.8-21.el7_9       updates        71 k\r\nInstalling for dependencies:\r\n libtirpc                 x86_64       0.2.4-0.16.el7       base           89 k\r\n python3-libs             x86_64       3.6.8-21.el7_9       updates       7.0 M\r\n python3-pip              noarch       9.0.3-8.el7          base          1.6 M\r\n python3-setuptools       noarch       39.2.0-10.el7        base          629 k\r\n\r\nTransaction Summary\r\n================================================================================\r\nInstall  1 Package (+4 Dependent packages)\r\n\r\nTotal download size: 9.3 M\r\nInstalled size: 48 M\r\nIs this ok [y/d/N]: "}
+{"time": 1765654070.5602446, "data": "y"}
+{"time": 1765654070.6969779, "data": "\r\nDownloading packages:\r\n"}
+{"time": 1765654070.8104239, "data": "\r(1/5): libtirpc-0.2.4-0.16.el7.x86_64.rpm                  |  89 kB   00:00     \r\n"}
+{"time": 1765654070.904403, "data": "\r(2/5): python3-3.6.8-21.el7_9.x86_64.rpm                   |  71 kB   00:00     \r\n"}
+{"time": 1765654070.9873216, "data": "\r(3/5): python3-setuptools-39.2.0-10.el7.noarch.rpm         | 629 kB   00:00     \r\n"}
+{"time": 1765654071.1424277, "data": "\r(5/5): python3-pip-9.0.3-8 19% [===             ]  0.0 B/s | 1.8 MB   --:-- ETA \r"}
+{"time": 1765654071.2776935, "data": "\r(4/5): python3-pip-9.0.3-8.el7.noarch.rpm                  | 1.6 MB   00:00     \r\n"}
+{"time": 1765654071.4544375, "data": "\r(5/5): python3-libs-3.6.8- 54% [========-       ] 4.3 MB/s | 5.1 MB   00:01 ETA \r"}
+{"time": 1765654071.766709, "data": "\r(5/5): python3-libs-3.6.8- 67% [==========-     ] 4.2 MB/s | 6.3 MB   00:00 ETA \r"}
+{"time": 1765654072.0790033, "data": "\r(5/5): python3-libs-3.6.8- 85% [=============-  ] 4.3 MB/s | 8.0 MB   00:00 ETA \r"}
+{"time": 1765654072.2763891, "data": "\r(5/5): python3-libs-3.6.8-21.el7_9.x86_64.rpm              | 7.0 MB   00:01     \r\n"}
+{"time": 1765654072.2889886, "data": "--------------------------------------------------------------------------------\r\nTotal                                              5.9 MB/s | 9.3 MB  00:01     \r\nRunning transaction check\r\n"}
+{"time": 1765654072.2993944, "data": "Running transaction test\r\n"}
+{"time": 1765654072.331959, "data": "Transaction test succeeded\r\nRunning transaction\r\n"}
+{"time": 1765654072.3751576, "data": "\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [                             ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [##########                   ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [####################         ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [###########################  ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [############################ ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_64                               1/5 \r\n"}
+{"time": 1765654072.396571, "data": "\r  Installing : python3-setuptools-39.2.0-10 [                             ] 2/5"}
+{"time": 1765654072.4086912, "data": "\r  Installing : python3-setuptools-39.2.0-10 [#                            ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##                           ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [###                          ] 2/5"}
+{"time": 1765654072.4202812, "data": "\r  Installing : python3-setuptools-39.2.0-10 [####                         ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#####                        ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [######                       ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#######                      ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [########                     ] 2/5"}
+{"time": 1765654072.4317155, "data": "\r  Installing : python3-setuptools-39.2.0-10 [#########                    ] 2/5"}
+{"time": 1765654072.4420564, "data": "\r  Installing : python3-setuptools-39.2.0-10 [##########                   ] 2/5"}
+{"time": 1765654072.4542773, "data": "\r  Installing : python3-setuptools-39.2.0-10 [###########                  ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [############                 ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#############                ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##############               ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [###############              ] 2/5"}
+{"time": 1765654072.4648936, "data": "\r  Installing : python3-setuptools-39.2.0-10 [################             ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#################            ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##################           ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [###################          ] 2/5"}
+{"time": 1765654072.4898121, "data": "\r  Installing : python3-setuptools-39.2.0-10 [####################         ] 2/5"}
+{"time": 1765654072.491332, "data": "\r  Installing : python3-setuptools-39.2.0-10 [#####################        ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [######################       ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#######################      ] 2/5"}
+{"time": 1765654072.505406, "data": "\r  Installing : python3-setuptools-39.2.0-10 [########################     ] 2/5"}
+{"time": 1765654072.5064569, "data": "\r  Installing : python3-setuptools-39.2.0-10 [#########################    ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##########################   ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [###########################  ] 2/5"}
+{"time": 1765654072.5176325, "data": "\r  Installing : python3-setuptools-39.2.0-10 [############################ ] 2/5\r  Installing : python3-setuptools-39.2.0-10.el7.noarch                      2/5 \r\n"}
+{"time": 1765654072.529451, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [                             ] 3/5"}
+{"time": 1765654072.5412865, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#                            ] 3/5"}
+{"time": 1765654072.5531135, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [##                           ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [###                          ] 3/5"}
+{"time": 1765654072.5984101, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [####                         ] 3/5"}
+{"time": 1765654072.59958, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#####                        ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [######                       ] 3/5"}
+{"time": 1765654072.6218224, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#######                      ] 3/5"}
+{"time": 1765654072.633249, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [########                     ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [#########                    ] 3/5"}
+{"time": 1765654072.6802156, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [##########                   ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [###########                  ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [############                 ] 3/5"}
+{"time": 1765654072.6812062, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#############                ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [##############               ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [###############              ] 3/5"}
+{"time": 1765654072.6930113, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [################             ] 3/5"}
+{"time": 1765654072.726634, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#################            ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [##################           ] 3/5"}
+{"time": 1765654072.7422023, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [###################          ] 3/5"}
+{"time": 1765654072.7572691, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [####################         ] 3/5"}
+{"time": 1765654072.758267, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#####################        ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [######################       ] 3/5"}
+{"time": 1765654072.7811873, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#######################      ] 3/5"}
+{"time": 1765654072.803654, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [########################     ] 3/5"}
+{"time": 1765654072.8049397, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#########################    ] 3/5"}
+{"time": 1765654072.8435059, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [##########################   ] 3/5"}
+{"time": 1765654072.845094, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [###########################  ] 3/5"}
+{"time": 1765654072.856629, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [############################ ] 3/5"}
+{"time": 1765654072.8783727, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noarch                               3/5 \r\n"}
+{"time": 1765654072.8998222, "data": "\r  Installing : python3-3.6.8-21.el7_9.x86_6 [                             ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [#######                      ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [################             ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [#################            ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [####################         ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [############################ ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_64                                4/5 \r\n"}
+{"time": 1765654072.911716, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [                             ] 5/5"}
+{"time": 1765654072.967659, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#                            ] 5/5"}
+{"time": 1765654072.982389, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##                           ] 5/5"}
+{"time": 1765654073.0050929, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###                          ] 5/5"}
+{"time": 1765654073.048745, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [####                         ] 5/5"}
+{"time": 1765654073.1045256, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#####                        ] 5/5"}
+{"time": 1765654073.15105, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [######                       ] 5/5"}
+{"time": 1765654073.166565, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#######                      ] 5/5"}
+{"time": 1765654073.1996427, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [########                     ] 5/5"}
+{"time": 1765654073.2602594, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#########                    ] 5/5"}
+{"time": 1765654073.2900667, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##########                   ] 5/5"}
+{"time": 1765654073.3125372, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###########                  ] 5/5"}
+{"time": 1765654073.375656, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [############                 ] 5/5"}
+{"time": 1765654073.4454014, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#############                ] 5/5"}
+{"time": 1765654073.4889498, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##############               ] 5/5"}
+{"time": 1765654073.5731661, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###############              ] 5/5"}
+{"time": 1765654073.6354325, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [################             ] 5/5"}
+{"time": 1765654073.6888068, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#################            ] 5/5"}
+{"time": 1765654073.7322447, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##################           ] 5/5"}
+{"time": 1765654073.776786, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###################          ] 5/5"}
+{"time": 1765654073.809051, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [####################         ] 5/5"}
+{"time": 1765654073.8305447, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#####################        ] 5/5"}
+{"time": 1765654073.9323773, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [######################       ] 5/5"}
+{"time": 1765654073.975193, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#######################      ] 5/5"}
+{"time": 1765654074.0180118, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [########################     ] 5/5"}
+{"time": 1765654074.0290291, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#########################    ] 5/5"}
+{"time": 1765654074.061324, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##########################   ] 5/5"}
+{"time": 1765654074.1045022, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###########################  ] 5/5"}
+{"time": 1765654074.1583343, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [############################ ] 5/5"}
+{"time": 1765654074.1900833, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9.x86_64                           5/5 \r\n"}
+{"time": 1765654074.2125907, "data": "\r  Verifying  : libtirpc-0.2.4-0.16.el7.x86_64                               1/5 \r\n"}
+{"time": 1765654074.224583, "data": "\r  Verifying  : python3-libs-3.6.8-21.el7_9.x86_64                           2/5 \r\n\r  Verifying  : python3-3.6.8-21.el7_9.x86_64                                3/5 \r\n\r  Verifying  : python3-setuptools-39.2.0-10.el7.noarch                      4/5 \r\n\r  Verifying  : python3-pip-9.0.3-8.el7.noarch                               5/5 \r\n"}
+{"time": 1765654074.2915893, "data": "\r\nInstalled:\r\n  python3.x86_64 0:3.6.8-21.el7_9                                               \r\n\r\nDependency Installed:\r\n  libtirpc.x86_64 0:0.2.4-0.16.el7   python3-libs.x86_64 0:3.6.8-21.el7_9       \r\n  python3-pip.noarch 0:9.0.3-8.el7   python3-setuptools.noarch 0:39.2.0-10.el7  \r\n\r\nComplete!\r\n"}
+{"time": 1765654074.2931256, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654075.572993, "data": "p"}
+{"time": 1765654075.7478762, "data": "i"}
+{"time": 1765654075.894468, "data": "p"}
+{"time": 1765654076.260883, "data": "\r\n-bash: pip: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654105.6729372, "data": "yum install python3-pip"}
+{"time": 1765654106.70925, "data": "\r\n"}
+{"time": 1765654106.7725708, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765654106.817696, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765654109.839749, "data": " * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765654109.932759, "data": "Package python3-pip-9.0.3-8.el7.noarch already installed and latest version\r\nNothing to do\r\n"}
+{"time": 1765654109.9343736, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654114.2514687, "data": "pip"}
+{"time": 1765654114.3778331, "data": "\r\n-bash: pip: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654115.0036352, "data": "\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654123.6923258, "data": "easy_install pip"}
+{"time": 1765654124.771098, "data": "\r\n-bash: easy_install: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654126.2395267, "data": "easy_install pip"}
+{"time": 1765654126.569571, "data": "\b"}
+{"time": 1765654127.048327, "data": "\b"}
+{"time": 1765654127.1014547, "data": "\b"}
+{"time": 1765654127.1217802, "data": "\b"}
+{"time": 1765654127.1533532, "data": "\b"}
+{"time": 1765654127.1856117, "data": "\b"}
+{"time": 1765654127.2186327, "data": "\b"}
+{"time": 1765654127.249633, "data": "\b"}
+{"time": 1765654127.281481, "data": "\b"}
+{"time": 1765654127.3135924, "data": "\b"}
+{"time": 1765654127.3826272, "data": "\b"}
+{"time": 1765654127.3949842, "data": "\b"}
+{"time": 1765654127.4282742, "data": "\b"}
+{"time": 1765654127.4609354, "data": "\b"}
+{"time": 1765654128.0255513, "data": "\b"}
+{"time": 1765654128.2350764, "data": "\b"}
+{"time": 1765654170.5100665, "data": "^C\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654171.9931288, "data": "which pip"}
+{"time": 1765654172.7647603, "data": "\r\n"}
+{"time": 1765654172.7657595, "data": "/usr/bin/which: no pip in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654185.4608347, "data": "python3 --version"}
+{"time": 1765654186.8753276, "data": "\r\nPython 3.6.8\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654195.7005942, "data": "pip"}
+{"time": 1765654195.8280644, "data": "\r\n-bash: pip: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654216.1166086, "data": "yum install epel-release"}
+{"time": 1765654217.5582504, "data": "\r\n"}
+{"time": 1765654217.6112652, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765654217.6329722, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765654220.6695476, "data": " * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765654220.7646923, "data": "Resolving Dependencies\r\n--> Running transaction check\r\n---> Package epel-release.noarch 0:7-11 will be installed\r\n"}
+{"time": 1765654220.8923147, "data": "--> Finished Dependency Resolution\r\n"}
+{"time": 1765654221.001535, "data": "\r\nDependencies Resolved\r\n"}
+{"time": 1765654221.017181, "data": "\r\n================================================================================\r\n Package                Arch             Version         Repository        Size\r\n================================================================================\r\nInstalling:\r\n epel-release           noarch           7-11            extras            15 k\r\n\r\nTransaction Summary\r\n================================================================================\r\nInstall  1 Package\r\n\r\nTotal download size: 15 k\r\nInstalled size: 24 k\r\nIs this ok [y/d/N]: "}
+{"time": 1765654223.297759, "data": "y"}
+{"time": 1765654224.179873, "data": "\r\n"}
+{"time": 1765654224.1816041, "data": "Downloading packages:\r\n"}
+{"time": 1765654224.2796965, "data": "\repel-release-7-11.noarch.rpm                               |  15 kB   00:00     \r\n"}
+{"time": 1765654224.2812016, "data": "Running transaction check\r\nRunning transaction test\r\nTransaction test succeeded\r\nRunning transaction\r\n\r  Installing : epel-release-7-11.noarch [                                 ] 1/1\r  Installing : epel-release-7-11.noarch [##                               ] 1/1\r  Installing : epel-release-7-11.noarch [###                              ] 1/1\r  Installing : epel-release-7-11.noarch [####                             ] 1/1\r  Installing : epel-release-7-11.noarch [########                         ] 1/1\r  Installing : epel-release-7-11.noarch [################################ ] 1/1\r  Installing : epel-release-7-11.noarch                                     1/1 \r\n"}
+{"time": 1765654224.2912643, "data": "\r  Verifying  : epel-release-7-11.noarch                                     1/1 \r\n"}
+{"time": 1765654224.363487, "data": "\r\nInstalled:\r\n  epel-release.noarch 0:7-11                                                    \r\n\r\nComplete!\r\n"}
+{"time": 1765654224.378837, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654230.1475768, "data": "yum install python3-pip"}
+{"time": 1765654231.154688, "data": "\r\n"}
+{"time": 1765654231.219142, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765654231.241531, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765654236.4459913, "data": "\repel/x86_64/metalink                                     | 4.5 kB     00:00     \r\n"}
+{"time": 1765654239.528494, "data": " * base: mirrors.aliyun.com\r\n * epel: d2lzkl7pfhq30w.cloudfront.net\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765654240.572424, "data": "\repel                                                     | 4.3 kB     00:00     \r\n"}
+{"time": 1765654241.1337698, "data": "\r(2/3): epel/x86_64/updatei 0% [                 ]  0.0 B/s |    0 B   --:-- ETA \r"}
+{"time": 1765654241.7154326, "data": "\r(2/3): epel/x86_64/updatei 0% [                 ]  0.0 B/s |  57 kB   --:-- ETA \r"}
+{"time": 1765654242.0886595, "data": "\r(2/3): epel/x86_64/updatei 3% [-                ] 316 kB/s | 360 kB   00:31 ETA \r"}
+{"time": 1765654242.1617184, "data": "\r(1/3): epel/x86_64/group                                   | 399 kB   00:01     \r\n"}
+{"time": 1765654242.6708703, "data": "\r(2/3): epel/x86_64/updatei 7% [=                ] 372 kB/s | 822 kB   00:25 ETA \r"}
+{"time": 1765654242.7771173, "data": "\r(2/3): epel/x86_64/updateinfo                              | 1.0 MB   00:02     \r\n"}
+{"time": 1765654243.1000175, "data": "\r(3/3): epel/x86_64/primary 22% [===-            ] 635 kB/s | 2.2 MB   00:12 ETA \r"}
+{"time": 1765654243.423211, "data": "\r(3/3): epel/x86_64/primary 31% [=====           ] 782 kB/s | 3.2 MB   00:09 ETA \r"}
+{"time": 1765654243.7380817, "data": "\r(3/3): epel/x86_64/primary 31% [=====           ] 738 kB/s | 3.2 MB   00:09 ETA \r"}
+{"time": 1765654244.049855, "data": "\r(3/3): epel/x86_64/primary 50% [========        ] 1.1 MB/s | 5.1 MB   00:04 ETA \r"}
+{"time": 1765654244.385145, "data": "\r(3/3): epel/x86_64/primary 78% [============-   ] 1.5 MB/s | 7.9 MB   00:01 ETA \r"}
+{"time": 1765654244.7924876, "data": "\r(3/3): epel/x86_64/primary 90% [==============  ] 1.7 MB/s | 9.1 MB   00:00 ETA \r"}
+{"time": 1765654244.8450394, "data": "\r(3/3): epel/x86_64/primary_db                              | 8.7 MB   00:04     \r\n"}
+{"time": 1765654245.160203, "data": "Package python3-pip-9.0.3-8.el7.noarch already installed and latest version\r\nNothing to do\r\n"}
+{"time": 1765654245.192149, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654249.2509406, "data": "pip"}
+{"time": 1765654249.3477674, "data": "\r\n-bash: pip: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654249.942285, "data": "\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654257.9322567, "data": "python3 get-pip.py"}
+{"time": 1765654258.7117207, "data": "\r\n"}
+{"time": 1765654258.7415528, "data": "ERROR: This script does not work on Python 3.6. The minimum supported Python version is 3.9. Please use https://bootstrap.pypa.io/pip/3.6/get-pip.py instead.\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654262.161376, "data": "l"}
+{"time": 1765654262.288279, "data": "s"}
+{"time": 1765654262.498272, "data": "\r\nanaconda-ks.cfg  CpuOccupant.java  get-pip.py\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654280.8732865, "data": "curl https://bootstrap.pypa.io/pip/3.6/get-pip.py -o get-pip \r.py"}
+{"time": 1765654282.0747857, "data": "\r\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\r\n                                 Dload  Upload   Total   Spent    Left  Speed\r\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0"}
+{"time": 1765654282.5037045, "data": "\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0"}
+{"time": 1765654283.522346, "data": "\r  1 2108k    1 32768    0     0  22836      0  0:01:34  0:00:01  0:01:33 22834"}
+{"time": 1765654284.503474, "data": "\r 47 2108k   47  992k    0     0   412k      0  0:00:05  0:00:02  0:00:03  412k"}
+{"time": 1765654284.772128, "data": "\r100 2108k  100 2108k    0     0   781k      0  0:00:02  0:00:02 --:--:--  780k\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654286.8804266, "data": "ls"}
+{"time": 1765654287.2155373, "data": "\r\nanaconda-ks.cfg  CpuOccupant.java  get-pip.py\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654287.601221, "data": "\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654288.595825, "data": "ls"}
+{"time": 1765654288.9402227, "data": "\b\bcurl https://bootstrap.pypa.io/pip/3.6/get-pip.py -o get-pip.\r.py"}
+{"time": 1765654289.6993732, "data": "\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cls\u001b[K\r\n\r\u001b[K\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765654290.630803, "data": "\b\bpython3 get-pip.py"}
+{"time": 1765654291.6405787, "data": "\r\n"}
+{"time": 1765654292.99395, "data": "Collecting pip<22.0\r\n"}
+{"time": 1765654293.3389356, "data": "  Downloading pip-21.3.1-py3-none-any.whl (1.7 MB)\r\n\u001b[?25l\r"}
+{"time": 1765654293.3686604, "data": "\r     |\u258f                               | 10 kB 1.6 MB/s eta 0:00:02"}
+{"time": 1765654293.3707695, "data": "\r     |\u258d                               | 20 kB 805 kB/s eta 0:00:03\r     |\u258b                               | 30 kB 1.2 MB/s eta 0:00:02"}
+{"time": 1765654293.423509, "data": "\r     |\u258a                               | 40 kB 486 kB/s eta 0:00:04"}
+{"time": 1765654293.4600074, "data": "\r     |\u2588                               | 51 kB 523 kB/s eta 0:00:04\r     |\u2588\u258f                              | 61 kB 627 kB/s eta 0:00:03"}
+{"time": 1765654293.4615128, "data": "\r     |\u2588\u258e                              | 71 kB 683 kB/s eta 0:00:03\r     |\u2588\u258c                              | 81 kB 707 kB/s eta 0:00:03\r     |\u2588\u258a                              | 92 kB 795 kB/s eta 0:00:03"}
+{"time": 1765654293.5236678, "data": "\r     |\u2588\u2588                              | 102 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588                              | 112 kB 622 kB/s eta 0:00:03"}
+{"time": 1765654293.5387313, "data": "\r     |\u2588\u2588\u258e                             | 122 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u258c                             | 133 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u258b                             | 143 kB 622 kB/s eta 0:00:03"}
+{"time": 1765654293.540306, "data": "\r     |\u2588\u2588\u2589                             | 153 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588                             | 163 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u258e                            | 174 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u258d                            | 184 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u258b                            | 194 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2589                            | 204 kB 622 kB/s eta 0:00:03"}
+{"time": 1765654293.5702224, "data": "\r     |\u2588\u2588\u2588\u2588                            | 215 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u258f                           | 225 kB 622 kB/s eta 0:00:03"}
+{"time": 1765654293.601238, "data": "\r     |\u2588\u2588\u2588\u2588\u258d                           | 235 kB 622 kB/s eta 0:00:03"}
+{"time": 1765654293.6018429, "data": "\r     |\u2588\u2588\u2588\u2588\u258b                           | 245 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u258a                           | 256 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588                           | 266 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u258f                          | 276 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u258e                          | 286 kB 622 kB/s eta 0:00:03"}
+{"time": 1765654293.6130884, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u258c                          | 296 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u258a                          | 307 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588                          | 317 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588                          | 327 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u258e                         | 337 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u258c                         | 348 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u258b                         | 358 kB 622 kB/s eta 0:00:03"}
+{"time": 1765654293.6248527, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2589                         | 368 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588                         | 378 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e                        | 389 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d                        | 399 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b                        | 409 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589                        | 419 kB 622 kB/s eta 0:00:03"}
+{"time": 1765654293.636505, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                        | 430 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f                       | 440 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d                       | 450 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c                       | 460 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a                       | 471 kB 622 kB/s eta 0:00:03\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                       | 481 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.6689517, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f                      | 491 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e                      | 501 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.6797025, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c                      | 512 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a                      | 522 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589                      | 532 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                      | 542 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e                     | 552 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.6807063, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c                     | 563 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.6807063, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b                     | 573 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589                     | 583 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.6918583, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                     | 593 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f                    | 604 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d                    | 614 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b                    | 624 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589                    | 634 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                    | 645 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f                   | 655 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d                   | 665 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.6928623, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c                   | 675 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a                   | 686 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.7088025, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                   | 696 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.7088025, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f                  | 706 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e                  | 716 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c                  | 727 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a                  | 737 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589                  | 747 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                  | 757 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e                 | 768 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c                 | 778 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b                 | 788 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589                 | 798 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588    "}
+{"time": 1765654293.711061, "data": "             | 808 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.7224572, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f                | 819 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d                | 829 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b                | 839 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589                | 849 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                | 860 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f               | 870 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d               | 880 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c               | 890 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a               | 901 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588               | 911 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588"}
+{"time": 1765654293.7234602, "data": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588               | 921 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e              | 931 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c              | 942 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a              | 952 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589              | 962 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588              | 972 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e             | 983 kB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d             | 993 kB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.7442236, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b             | 1.0 MB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589             | 1.0 MB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.7567422, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588             | 1.0 MB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f            | 1.0 MB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d            | 1.0 MB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b            | 1.1 MB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a            | 1.1 MB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588            | 1.1 MB 622 kB/s eta 0:00:02"}
+{"time": 1765654293.7567422, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f           | 1.1 MB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d           | 1.1 MB 622 kB/s eta 0:00:02\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c           | 1.1 MB 622 kB/s eta 0:00:01"}
+{"time": 1765654293.7691712, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a           | 1.1 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588           | 1.1 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588           | 1.1 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e          | 1.1 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c          | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a          | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589          | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588          | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e         | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588"}
+{"time": 1765654293.7701747, "data": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d         | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b         | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589         | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588         | 1.2 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f        | 1.2 MB 622 kB/s eta 0:00:01"}
+{"time": 1765654293.7718205, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d        | 1.3 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b        | 1.3 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a        | 1.3 MB 622 kB/s eta 0:00:01"}
+{"time": 1765654293.7835774, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588        | 1.3 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f       | 1.3 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d       | 1.3 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c       | 1.3 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a       | 1.3 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588       | 1.3 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588       | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e      | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588"}
+{"time": 1765654293.7845814, "data": "\u258c      | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b      | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589      | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588      | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e     | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d     | 1.4 MB 622 kB/s eta 0:00:01"}
+{"time": 1765654293.7845814, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b     | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589     | 1.4 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588     | 1.5 MB 622 kB/s eta 0:00:01"}
+{"time": 1765654293.7965095, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f    | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d    | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b    | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a    | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588    | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f   | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e   | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c   | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588"}
+{"time": 1765654293.797013, "data": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a   | 1.5 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588   | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588   | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e  | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c  | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b  | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589  | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588  | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588"}
+{"time": 1765654293.7980332, "data": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d | 1.6 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b | 1.6 MB 622 kB/s eta 0:00:01"}
+{"time": 1765654293.8249414, "data": "\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589 | 1.7 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 | 1.7 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f| 1.7 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d| 1.7 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b| 1.7 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a| 1.7 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 1.7 MB 622 kB/s eta 0:00:01\r     |\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588|"}
+{"time": 1765654293.825946, "data": " 1.7 MB 622 kB/s            \r\n"}
+{"time": 1765654293.9399288, "data": "\u001b[?25hCollecting wheel\r\n"}
+{"time": 1765654294.0266995, "data": "  Downloading wheel-0.37.1-py2.py3-none-any.whl (35 kB)\r\n"}
+{"time": 1765654294.0392747, "data": "Installing collected packages: wheel, pip\r\n"}
+{"time": 1765654294.0721366, "data": "  Attempting uninstall: pip\r\n    Found existing installation: pip 9.0.3\r\n"}
+{"time": 1765654294.0956347, "data": "    Uninstalling pip-9.0.3:\r\n"}
+{"time": 1765654294.1754081, "data": "      Successfully uninstalled pip-9.0.3\r\n"}
+{"time": 1765654294.6552055, "data": "Successfully installed pip-21.3.1 wheel-0.37.1\r\n\u001b[33mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv\u001b[0m\r\n"}
+{"time": 1765654295.1477435, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765654297.3083684, "data": "pip"}
+{"time": 1765654297.4142995, "data": "\r\n"}
+{"time": 1765654297.560917, "data": "\r\nUsage:   \r\n  pip <command> [options]\r\n\r\nCommands:\r\n  install                     Install packages.\r\n  download                    Download packages.\r\n  uninstall                   Uninstall packages.\r\n  freeze                      Output installed packages in requirements format.\r\n  list                        List installed packages.\r\n  show                        Show information about installed packages.\r\n  check                       Verify installed packages have compatible dependencies.\r\n  config                      Manage local and global configuration.\r\n  search                      Search PyPI for packages.\r\n  cache                       Inspect and manage pip's wheel cache.\r\n  index                       Inspect information available from package indexes.\r\n  wheel                       Build wheels from your requirements.\r\n  hash                        Compute hashes of package archives.\r\n  completion                  A helper command used for command completion.\r\n  debug                       Sh"}
+{"time": 1765654297.587273, "data": "ow information useful for debugging.\r\n  help                        Show help for commands.\r\n\r\nGeneral Options:\r\n  -h, --help                  Show help.\r\n  --debug                     Let unhandled exceptions propagate outside the\r\n                              main subroutine, instead of logging them to\r\n                              stderr.\r\n  --isolated                  Run pip in an isolated mode, ignoring\r\n                              environment variables and user configuration.\r\n  -v, --verbose               Give more output. Option is additive, and can be\r\n                              used up to 3 times.\r\n  -V, --version               Show version and exit.\r\n  -q, --quiet                 Give less output. Option is additive, and can be\r\n                              used up to 3 times (corresponding to WARNING,\r\n                              ERROR, and CRITICAL logging levels).\r\n  --log <path>                Path to a verbose appending log.\r\n  --no-input                  Disable prompting for input"}
+{"time": 1765654297.602882, "data": ".\r\n  --proxy <proxy>             Specify a proxy in the form\r\n                              [user:passwd@]proxy.server:port.\r\n  --retries <retries>         Maximum number of retries each connection should\r\n                              attempt (default 5 times).\r\n  --timeout <sec>             Set the socket timeout (default 15 seconds).\r\n  --exists-action <action>    Default action when a path already exists:\r\n                              (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.\r\n  --trusted-host <hostname>   Mark this host or host:port pair as trusted,\r\n                              even though it does not have valid or any HTTPS.\r\n  --cert <path>               Path to PEM-encoded CA certificate bundle. If\r\n                              provided, overrides the default. See 'SSL\r\n                              Certificate Verification' in pip documentation\r\n                              for more information.\r\n  --client-cert <path>        Path to SSL client certificate, a single file\r\n                  "}
+{"time": 1765654297.6038814, "data": "            containing the private key and the certificate\r\n                              in PEM format.\r\n  --cache-dir <dir>           Store the cache data in <dir>.\r\n  --no-cache-dir              Disable the cache.\r\n  --disable-pip-version-check\r\n                              Don't periodically check PyPI to determine\r\n                              whether a new version of pip is available for\r\n                              download. Implied with --no-index.\r\n  --no-color                  Suppress colored output.\r\n  --no-python-version-warning\r\n                              Silence deprecation warnings for upcoming\r\n                              unsupported Pythons.\r\n  --use-feature <feature>     Enable new functionality, that may be backward\r\n                              incompatible.\r\n  --use-deprecated <feature>  Enable deprecated functionality, that will be\r\n                              removed in the future.\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}

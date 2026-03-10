@@ -1,0 +1,46 @@
+{"time": 1765809988.681019, "data": "Last login: Tue Dec 16 06:20:09 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765809988.6952882, "data": "\u001b]0;root@test1:~\u0007\u001b[?1034h[root@test1 ~]# "}
+{"time": 1765809990.6978772, "data": "yum"}
+{"time": 1765809990.892332, "data": " "}
+{"time": 1765809991.0189965, "data": "i"}
+{"time": 1765809991.2346203, "data": "n"}
+{"time": 1765809991.3332033, "data": "s"}
+{"time": 1765809991.5119107, "data": "t"}
+{"time": 1765809991.650934, "data": "a"}
+{"time": 1765809991.7182655, "data": "l"}
+{"time": 1765809991.8582835, "data": "l"}
+{"time": 1765809991.9663618, "data": " "}
+{"time": 1765809993.224379, "data": "p"}
+{"time": 1765809993.468061, "data": "y"}
+{"time": 1765809993.629063, "data": "e"}
+{"time": 1765809994.5432732, "data": "\b\u001b[K"}
+{"time": 1765809995.0134661, "data": "t"}
+{"time": 1765809995.1629946, "data": "h"}
+{"time": 1765809995.3222578, "data": "o"}
+{"time": 1765809995.490009, "data": "n"}
+{"time": 1765809995.627971, "data": "3"}
+{"time": 1765809996.3692672, "data": "-"}
+{"time": 1765809996.622936, "data": "p"}
+{"time": 1765809996.8035681, "data": "i"}
+{"time": 1765809996.9577262, "data": "p"}
+{"time": 1765809997.3002708, "data": "\r\n"}
+{"time": 1765809997.3569202, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765809997.372944, "data": "Existing lock /var/run/yum.pid: another copy is running as pid 116006.\r\nAnother app is currently holding the yum lock; waiting for it to exit...\r\n  The other application is: yum\r\n    Memory :  30 M RSS (428 MB VSZ)\r\n    Started: Tue Dec 16 06:42:07 2025 - 04:28 ago\r\n    State  : Sleeping, pid: 116006\r\n"}
+{"time": 1765809999.3792439, "data": "Another app is currently holding the yum lock; waiting for it to exit...\r\n  The other application is: yum\r\n    Memory :  30 M RSS (428 MB VSZ)\r\n    Started: Tue Dec 16 06:42:07 2025 - 04:30 ago\r\n    State  : Sleeping, pid: 116006\r\n"}
+{"time": 1765809999.9212255, "data": "^C"}
+{"time": 1765809999.9247286, "data": "\r\n\r\nExiting on user cancel.\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765810000.764626, "data": "yum install python3-pip"}
+{"time": 1765810000.980077, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[4Pps -ef|grep install"}
+{"time": 1765810001.7236104, "data": "\r\n"}
+{"time": 1765810001.7289734, "data": "root     115932 115886  0 06:41 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     115938 115932  0 06:41 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     117342 117269  0 06:46 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765810002.2007146, "data": "ps -ef|grep install"}
+{"time": 1765810002.435749, "data": "\r\nroot     115932 115886  0 06:41 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     115938 115932  0 06:41 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     117350 117269  0 06:46 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765810231.2635899, "data": "ps -ef|grep install"}
+{"time": 1765810231.6024857, "data": "\r\n"}
+{"time": 1765810231.6090496, "data": "root     115932 115886  0 06:41 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     115938 115932  0 06:41 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     118404 117269  0 06:50 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765810232.0524032, "data": "ps -ef|grep install"}
+{"time": 1765810232.2457843, "data": "\r\n"}
+{"time": 1765810232.2517145, "data": "root     115932 115886  0 06:41 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     115938 115932  0 06:41 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     118406 117269  0 06:50 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765810447.4526968, "data": "ps -ef|grep install"}
+{"time": 1765810447.7594683, "data": "\r\n"}
+{"time": 1765810447.7907305, "data": "root     119491 117269  0 06:54 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}

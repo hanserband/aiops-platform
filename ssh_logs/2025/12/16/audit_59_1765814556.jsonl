@@ -1,0 +1,55 @@
+{"time": 1765814519.321229, "data": "Last login: Tue Dec 16 07:48:01 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765814519.3517573, "data": "\u001b]0;root@test1:~\u0007\u001b[?1034h[root@test1 ~]# "}
+{"time": 1765814520.3233984, "data": "tail -f /tmp/k8s_agent_install.log "}
+{"time": 1765814520.8517225, "data": "\r\nLoaded plugins: fastestmirror\r\nCleaning repos: base docker-ce-stable epel extras kubernetes updates\r\nCleaning up list of fastest mirrors\r\nLoaded plugins: fastestmirror\r\nDetermining fastest mirrors\r\nRetrieving key from https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg\r\nImporting GPG key 0x13EDEF05:\r\n Userid     : \"Rapture Automatic Signing Key (cloud-rapture-signing-key-2022-03-07-08_01_01.pub)\"\r\n Fingerprint: a362 b822 f6de dc65 2817 ea46 b53d c80d 13ed ef05\r\n From       : https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg\r\n"}
+{"time": 1765814522.2409942, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814523.279011, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814524.5387592, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814538.3887815, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814539.0867913, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814539.6020257, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814539.9283547, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814540.364368, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814540.8744032, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814540.9132345, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814540.9457185, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814540.9507651, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.0081959, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.0357666, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.0516765, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.112809, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.128418, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.1769147, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.1924834, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.2376924, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.241691, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.2805269, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.32943, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814541.5599947, "data": "s"}
+{"time": 1765814541.5969112, "data": "l;"}
+{"time": 1765814541.7160425, "data": "d"}
+{"time": 1765814541.7990115, "data": "l"}
+{"time": 1765814541.8020124, "data": "s"}
+{"time": 1765814541.8277218, "data": "a"}
+{"time": 1765814542.1266036, "data": "\r\n-bash: sl: command not found\r\n-bash: dlsa: command not found\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814543.924551, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814544.588455, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814546.4357588, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814547.9148219, "data": "sl;dlsa"}
+{"time": 1765814548.0956185, "data": "\b\b\b\b\b\b\btail -f /tmp/k8s_agent_install.log "}
+{"time": 1765814548.5875068, "data": "\r\nLoaded plugins: fastestmirror\r\nCleaning repos: base docker-ce-stable epel extras kubernetes updates\r\nCleaning up list of fastest mirrors\r\nLoaded plugins: fastestmirror\r\nDetermining fastest mirrors\r\nRetrieving key from https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg\r\nImporting GPG key 0x13EDEF05:\r\n Userid     : \"Rapture Automatic Signing Key (cloud-rapture-signing-key-2022-03-07-08_01_01.pub)\"\r\n Fingerprint: a362 b822 f6de dc65 2817 ea46 b53d c80d 13ed ef05\r\n From       : https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg\r\n"}
+{"time": 1765814550.0105696, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814550.7720041, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814551.199955, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814551.5085285, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814551.7894235, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814552.589949, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814552.9170501, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814553.2040422, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814553.4687247, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814553.6940603, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814554.0388875, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814554.2290204, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814554.555701, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814555.2961705, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814555.5485365, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}

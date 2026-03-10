@@ -1,0 +1,88 @@
+{"time": 1765644244.2607872, "data": "Last login: Sun Dec 14 00:35:06 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765644244.27234, "data": "\u001b]0;root@localhost:~\u0007\u001b[?1034h[root@localhost ~]# "}
+{"time": 1765644245.602575, "data": "n"}
+{"time": 1765644245.7391412, "data": "e"}
+{"time": 1765644245.9749174, "data": "t"}
+{"time": 1765644246.1196325, "data": "s"}
+{"time": 1765644247.040815, "data": "t"}
+{"time": 1765644247.1553826, "data": "a"}
+{"time": 1765644247.2819479, "data": "t"}
+{"time": 1765644247.8424418, "data": " "}
+{"time": 1765644248.224562, "data": "-"}
+{"time": 1765644248.4342358, "data": "l"}
+{"time": 1765644248.6558588, "data": "n"}
+{"time": 1765644248.82221, "data": "t"}
+{"time": 1765644249.06229, "data": "u"}
+{"time": 1765644249.2171195, "data": "p"}
+{"time": 1765644249.8911781, "data": "|"}
+{"time": 1765644250.3269684, "data": "g"}
+{"time": 1765644250.4403932, "data": "r"}
+{"time": 1765644250.5448728, "data": "e"}
+{"time": 1765644250.7015128, "data": "p"}
+{"time": 1765644250.909709, "data": " "}
+{"time": 1765644251.931528, "data": "\b\u001b[K"}
+{"time": 1765644252.0878856, "data": "\b\u001b[K"}
+{"time": 1765644252.3070202, "data": "\b\u001b[K"}
+{"time": 1765644252.474187, "data": "\b\u001b[K"}
+{"time": 1765644252.6315298, "data": "\b\u001b[K"}
+{"time": 1765644252.8077173, "data": "\b\u001b[K"}
+{"time": 1765644253.7866316, "data": "\b\u001b[K"}
+{"time": 1765644255.1072125, "data": "p"}
+{"time": 1765644255.3907404, "data": "\r\n-bash: netstat: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765644257.2772708, "data": "y"}
+{"time": 1765644257.3920019, "data": "u"}
+{"time": 1765644257.5694945, "data": "m"}
+{"time": 1765644257.7564564, "data": " "}
+{"time": 1765644257.9031212, "data": "i"}
+{"time": 1765644258.0378184, "data": "s"}
+{"time": 1765644258.1116517, "data": "n"}
+{"time": 1765644258.3086202, "data": "t"}
+{"time": 1765644258.4031389, "data": "a"}
+{"time": 1765644258.5180364, "data": "l"}
+{"time": 1765644258.6632054, "data": "l"}
+{"time": 1765644258.9022956, "data": "\b\u001b[K"}
+{"time": 1765644259.0378788, "data": "\b\u001b[K"}
+{"time": 1765644259.2050877, "data": "\b\u001b[K"}
+{"time": 1765644259.375254, "data": "\b\u001b[K"}
+{"time": 1765644259.5113115, "data": "\b\u001b[K"}
+{"time": 1765644259.6663022, "data": "\b\u001b[K"}
+{"time": 1765644260.9727998, "data": "n"}
+{"time": 1765644261.3673298, "data": "s"}
+{"time": 1765644261.534107, "data": "t"}
+{"time": 1765644261.6708283, "data": "a"}
+{"time": 1765644261.8055944, "data": "l"}
+{"time": 1765644261.954245, "data": "l"}
+{"time": 1765644262.1195028, "data": " "}
+{"time": 1765644263.208221, "data": "n"}
+{"time": 1765644263.389577, "data": "e"}
+{"time": 1765644263.5768442, "data": "t"}
+{"time": 1765644263.9366286, "data": "-"}
+{"time": 1765644264.2894104, "data": "t"}
+{"time": 1765644264.6829202, "data": "o"}
+{"time": 1765644264.7988334, "data": "o"}
+{"time": 1765644264.9889262, "data": "l"}
+{"time": 1765644265.095566, "data": "s"}
+{"time": 1765644266.3119078, "data": " "}
+{"time": 1765644266.6077182, "data": "-"}
+{"time": 1765644266.8365564, "data": "y"}
+{"time": 1765644266.997455, "data": "\r\n"}
+{"time": 1765644267.050564, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765644267.0726602, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765644270.1025896, "data": " * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765644270.2088363, "data": "Resolving Dependencies\r\n--> Running transaction check\r\n---> Package net-tools.x86_64 0:2.0-0.25.20131004git.el7 will be installed\r\n"}
+{"time": 1765644270.323974, "data": "--> Finished Dependency Resolution\r\n"}
+{"time": 1765644270.3886619, "data": "\r\nDependencies Resolved\r\n\r\n================================================================================\r\n Package         Arch         Version                          Repository  Size\r\n================================================================================\r\nInstalling:\r\n net-tools       x86_64       2.0-0.25.20131004git.el7         base       306 k\r\n\r\nTransaction Summary\r\n================================================================================\r\nInstall  1 Package\r\n\r\nTotal download size: 306 k\r\nInstalled size: 917 k\r\nDownloading packages:\r\n"}
+{"time": 1765644270.5458665, "data": "\rnet-tools-2.0-0.25.20131004git.el7.x86_64.rpm              | 306 kB   00:00     \r\n"}
+{"time": 1765644270.55743, "data": "Running transaction check\r\nRunning transaction test\r\n"}
+{"time": 1765644270.5690782, "data": "Transaction test succeeded\r\nRunning transaction\r\n"}
+{"time": 1765644270.590015, "data": "\r  Installing : net-tools-2.0-0.25.20131004g [                             ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [#                            ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [###                          ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [####                         ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [######                       ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [########                     ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [###########                  ] 1/1"}
+{"time": 1765644270.6016037, "data": "\r  Installing : net-tools-2.0-0.25.20131004g [############                 ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [#############                ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [##############               ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [################             ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [##################           ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [####################         ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [######################       ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [#######################      ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [########################     ] 1/1\r  Installing : net-tools-2.0-0.25.20131004g [##########################   ] 1/1"}
+{"time": 1765644270.613182, "data": "\r  Installing : net-tools-2.0-0.25.20131004g [###########################  ] 1/1"}
+{"time": 1765644270.6248415, "data": "\r  Installing : net-tools-2.0-0.25.20131004g [############################ ] 1/1\r  Installing : net-tools-2.0-0.25.20131004git.el7.x86_64                    1/1 \r\n"}
+{"time": 1765644270.6889036, "data": "\r  Verifying  : net-tools-2.0-0.25.20131004git.el7.x86_64                    1/1 \r\n"}
+{"time": 1765644270.731413, "data": "\r\nInstalled:\r\n  net-tools.x86_64 0:2.0-0.25.20131004git.el7                                   \r\n\r\nComplete!\r\n"}
+{"time": 1765644270.7425723, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765644272.1548438, "data": "yum install net-tools -y"}
+{"time": 1765644272.342262, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[10Pnetstat -lntup"}
+{"time": 1765644273.0890322, "data": "\r\n"}
+{"time": 1765644273.1011999, "data": "Active Internet connections (only servers)\r\nProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    \r\ntcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      852/sshd            \r\ntcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1020/master         \r\ntcp6       0      0 :::22                   :::*                    LISTEN      852/sshd            \r\ntcp6       0      0 ::1:25                  :::*                    LISTEN      1020/master         \r\nudp        0      0 0.0.0.0:68              0.0.0.0:*                           670/dhclient        \r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}

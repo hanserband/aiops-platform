@@ -1,0 +1,332 @@
+{"time": 1765811807.1412852, "data": "Last login: Tue Dec 16 06:46:26 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765811807.1686845, "data": "\u001b]0;root@test1:~\u0007\u001b[?1034h[root@test1 ~]# "}
+{"time": 1765811809.2560976, "data": "ps -ef|grep install"}
+{"time": 1765811810.432895, "data": "\r\n"}
+{"time": 1765811810.4390645, "data": "root     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     125773 125733  0 07:16 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765811812.4239209, "data": "ps -ef|grep install"}
+{"time": 1765811812.6970582, "data": "\r\n"}
+{"time": 1765811812.70409, "data": "root     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     125775 125733  0 07:16 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765811864.0049682, "data": "ps -ef|grep install"}
+{"time": 1765811864.308316, "data": "\r\n"}
+{"time": 1765811864.3133168, "data": "root     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     126001 125733  0 07:17 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765811864.855026, "data": "ps -ef|grep install"}
+{"time": 1765811865.0764127, "data": "\r\n"}
+{"time": 1765811865.105005, "data": "root     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     126003 125733  0 07:17 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765811865.480591, "data": "ps -ef|grep install"}
+{"time": 1765811865.7437763, "data": "\r\n"}
+{"time": 1765811865.7742853, "data": "root     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     126007 125733  0 07:17 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765811866.149382, "data": "ps -ef|grep install"}
+{"time": 1765811866.4242215, "data": "\r\nroot     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     126009 125733  0 07:17 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765811867.4347758, "data": "ps -ef|grep install"}
+{"time": 1765811867.669299, "data": "\r\nroot     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     126011 125733  0 07:17 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812227.2124982, "data": "ps -ef|grep install"}
+{"time": 1765812227.4264202, "data": "\r\n"}
+{"time": 1765812227.43242, "data": "root     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     127692 125733  0 07:23 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812228.141127, "data": "ps -ef|grep install"}
+{"time": 1765812228.3602426, "data": "\r\n"}
+{"time": 1765812228.3692205, "data": "root     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     127698 125733  0 07:23 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812228.9515622, "data": "ps -ef|grep install"}
+{"time": 1765812229.1517746, "data": "\r\n"}
+{"time": 1765812229.1882563, "data": "root     124696 124616  0 07:13 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124702 124696  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     127714 125733  0 07:23 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812231.9316266, "data": "kill"}
+{"time": 1765812232.145538, "data": " "}
+{"time": 1765812232.5261335, "data": "-"}
+{"time": 1765812232.8210485, "data": "9"}
+{"time": 1765812233.0238774, "data": " "}
+{"time": 1765812237.402237, "data": "124696"}
+{"time": 1765812238.4208546, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812240.1650069, "data": "kill -9 124696"}
+{"time": 1765812240.8172684, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\bps -ef|grep install"}
+{"time": 1765812241.1151428, "data": "\r\nroot     124702      1  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     127762 125733  0 07:23 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812242.1098635, "data": "ps -ef|grep install"}
+{"time": 1765812242.3461146, "data": "\r\nroot     124702      1  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124703 124702  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     127764 125733  0 07:23 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812243.4180584, "data": "k"}
+{"time": 1765812243.5731113, "data": "i"}
+{"time": 1765812243.7761717, "data": "l"}
+{"time": 1765812243.903481, "data": "l"}
+{"time": 1765812244.0951385, "data": " "}
+{"time": 1765812245.4611702, "data": "-"}
+{"time": 1765812245.7251, "data": "9"}
+{"time": 1765812245.9897308, "data": " "}
+{"time": 1765812249.6417747, "data": "124702"}
+{"time": 1765812250.3074186, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812250.8362155, "data": "kill -9 124702"}
+{"time": 1765812251.0095072, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\bps -ef|grep install"}
+{"time": 1765812251.3525896, "data": "\r\n"}
+{"time": 1765812251.3586059, "data": "root     124703      1  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     127808 125733  0 07:24 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812252.2083964, "data": "ps -ef|grep install"}
+{"time": 1765812252.456391, "data": "\r\n"}
+{"time": 1765812252.462898, "data": "root     124703      1  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     127810 125733  0 07:24 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812253.3593624, "data": "k"}
+{"time": 1765812253.5459614, "data": "i"}
+{"time": 1765812253.7136354, "data": "l"}
+{"time": 1765812253.8651755, "data": "l"}
+{"time": 1765812254.0551424, "data": " "}
+{"time": 1765812255.1912403, "data": "-"}
+{"time": 1765812256.4183846, "data": "9"}
+{"time": 1765812257.9319885, "data": "\b"}
+{"time": 1765812258.0686753, "data": " 9\b"}
+{"time": 1765812258.6508417, "data": "\u001b[C"}
+{"time": 1765812259.4200666, "data": " "}
+{"time": 1765812265.3427348, "data": "124703"}
+{"time": 1765812266.035548, "data": "\r\n-bash: kill: : invalid signal specification\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812267.5671303, "data": "t"}
+{"time": 1765812267.57113, "data": "a"}
+{"time": 1765812267.6984696, "data": "i"}
+{"time": 1765812267.8874664, "data": "l"}
+{"time": 1765812268.0104318, "data": " "}
+{"time": 1765812268.210191, "data": "-"}
+{"time": 1765812268.3963635, "data": "f"}
+{"time": 1765812268.537172, "data": " "}
+{"time": 1765812271.0995922, "data": "/"}
+{"time": 1765812271.5378785, "data": "t"}
+{"time": 1765812271.9195147, "data": "m"}
+{"time": 1765812272.0904334, "data": "p"}
+{"time": 1765812272.1873198, "data": "/"}
+{"time": 1765812273.5584137, "data": "k"}
+{"time": 1765812273.8354847, "data": "8"}
+{"time": 1765812273.953688, "data": "\u0007s_"}
+{"time": 1765812274.776218, "data": "a"}
+{"time": 1765812274.9773903, "data": "gent_install.log "}
+{"time": 1765812275.4653685, "data": "\r\n"}
+{"time": 1765812275.4718823, "data": "http://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/repomd.xml: [Errno 12] Timeout on https://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/repomd.xml: (28, 'Operation timed out after 30634 milliseconds with 0 out of 0 bytes received')\r\nTrying other mirror.\r\nhttps://download.docker.com/linux/centos/7/x86_64/stable/repodata/584a6ee7473f9faed45708e35d8806aa962bbaebb1d5f5a41af669580983a5dc-filelists.sqlite.bz2: [Errno 14] curl#35 - \"TCP connection reset by peer\"\r\nTrying other mirror.\r\nhttps://download.docker.com/linux/centos/7/x86_64/stable/repodata/65c4f66e2808d328890505c3c2f13bb35a96f457d1c21a6346191c4dc07e6080-updateinfo.xml.gz: [Errno 14] curl#35 - \"TCP connection reset by peer\"\r\nTrying other mirror.\r\nhttp://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/1e0f3b42efd8b5d54a6aa9feb1f03c7de2bb414b92268c3db5965bd38648b2da-filelists.sqlite.gz: [Errno 12] Timeout on https://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/1e0f3b42efd8b5d54a6aa9feb1f03c7de2bb414b92268c3db5965bd38648b2da-filelists.sqlite.gz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')\r\nTrying other mirror.\r\nhttp://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/ee7ce72544e0fca006120c613404d937cc3da9d09c7d80aea269df31639f310c-updateinfo.xml.bz2: [Errno 12] Timeout on https://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/ee7ce72544e0fca006120c613404d937cc3da9d09c7d80aea269df31639f310c-updateinfo.xml.bz2: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')\r\nTrying other mirror.\r\n"}
+{"time": 1765812282.462487, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812283.26985, "data": "tail -f /tmp/k8s_agent_install.log "}
+{"time": 1765812283.4784782, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[20Pkill - 9 124703"}
+{"time": 1765812284.5159116, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bps -ef|grep install"}
+{"time": 1765812284.9750195, "data": "\r\n"}
+{"time": 1765812284.980024, "data": "root     124703      1  0 07:13 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     124704 124703  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     127955 125733  0 07:24 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812286.0552437, "data": "k"}
+{"time": 1765812286.2464044, "data": "i"}
+{"time": 1765812286.448499, "data": "l"}
+{"time": 1765812286.5782673, "data": "l"}
+{"time": 1765812286.7280917, "data": " "}
+{"time": 1765812287.1952684, "data": "-"}
+{"time": 1765812287.4261532, "data": "9"}
+{"time": 1765812287.6119142, "data": " "}
+{"time": 1765812289.501551, "data": "1"}
+{"time": 1765812289.7484245, "data": "2"}
+{"time": 1765812291.4920754, "data": "4"}
+{"time": 1765812291.589882, "data": "7"}
+{"time": 1765812292.0563352, "data": "0"}
+{"time": 1765812292.2361374, "data": "3"}
+{"time": 1765812292.941193, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812293.5793774, "data": "kill -9 124703"}
+{"time": 1765812293.7834733, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\bps -ef|grep install"}
+{"time": 1765812294.3453276, "data": "\r\n"}
+{"time": 1765812294.3758533, "data": "root     124704      1  0 07:13 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     128022 125733  0 07:24 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812295.8137758, "data": "j"}
+{"time": 1765812296.1970632, "data": "\b\u001b[K"}
+{"time": 1765812296.458901, "data": "k"}
+{"time": 1765812296.656119, "data": "i"}
+{"time": 1765812296.84551, "data": "l"}
+{"time": 1765812296.9841943, "data": "l"}
+{"time": 1765812297.153519, "data": " "}
+{"time": 1765812297.2939246, "data": "-"}
+{"time": 1765812297.6189384, "data": "9"}
+{"time": 1765812297.7584038, "data": " "}
+{"time": 1765812298.3594115, "data": "1"}
+{"time": 1765812298.569186, "data": "2"}
+{"time": 1765812300.1382136, "data": "4"}
+{"time": 1765812300.3063405, "data": "7"}
+{"time": 1765812300.755873, "data": "0"}
+{"time": 1765812300.9589186, "data": "4"}
+{"time": 1765812301.1090775, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812301.5349593, "data": "kill -9 124704"}
+{"time": 1765812301.682977, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\bps -ef|grep install"}
+{"time": 1765812302.0012305, "data": "\r\n"}
+{"time": 1765812302.0057344, "data": "root     128050 125733  0 07:24 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812344.661859, "data": "ps -ef|grep install"}
+{"time": 1765812344.9804382, "data": "\r\n"}
+{"time": 1765812345.0240252, "data": "root     128241 128195  0 07:25 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     128247 128241  0 07:25 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     128248 128247  0 07:25 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     128249 128248  0 07:25 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     128296 125733  0 07:25 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812345.5211747, "data": "ps -ef|grep install"}
+{"time": 1765812345.7411458, "data": "\r\n"}
+{"time": 1765812345.7478971, "data": "root     128241 128195  0 07:25 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     128247 128241  0 07:25 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     128248 128247  0 07:25 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     128249 128248  0 07:25 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\nroot     128300 125733  0 07:25 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812346.3639483, "data": "ps -ef|grep install"}
+{"time": 1765812346.5555968, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[5Pkill -9 124704"}
+{"time": 1765812346.7824874, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\bps -ef|grep install"}
+{"time": 1765812347.2602892, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[5Pkill -9 124703"}
+{"time": 1765812347.4806144, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\bps -ef|grep install"}
+{"time": 1765812348.0416887, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Ctail -f /tmp/k8s_agent_install.log "}
+{"time": 1765812348.229041, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[20Pkill - 9 124703"}
+{"time": 1765812348.7278128, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\btail -f /tmp/k8s_agent_install.log "}
+{"time": 1765812349.2839243, "data": "\r\nAnother app is currently holding the yum lock; waiting for it to exit...\r\n  The other application is: yum\r\n    Memory :  28 M RSS (963 MB VSZ)\r\n    Started: Tue Dec 16 07:13:25 2025 - 12:19 ago\r\n    State  : Sleeping, pid: 124770\r\nAnother app is currently holding the yum lock; waiting for it to exit...\r\n  The other application is: yum\r\n    Memory :  28 M RSS (963 MB VSZ)\r\n    Started: Tue Dec 16 07:13:25 2025 - 12:21 ago\r\n    State  : Sleeping, pid: 124770\r\n"}
+{"time": 1765812350.9219022, "data": "Another app is currently holding the yum lock; waiting for it to exit...\r\n  The other application is: yum\r\n    Memory :  28 M RSS (963 MB VSZ)\r\n    Started: Tue Dec 16 07:13:25 2025 - 12:23 ago\r\n    State  : Sleeping, pid: 124770\r\n"}
+{"time": 1765812352.9294696, "data": "Another app is currently holding the yum lock; waiting for it to exit...\r\n  The other application is: yum\r\n    Memory :  28 M RSS (963 MB VSZ)\r\n    Started: Tue Dec 16 07:13:25 2025 - 12:25 ago\r\n    State  : Sleeping, pid: 124770\r\n"}
+{"time": 1765812353.9143274, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812359.0351708, "data": " "}
+{"time": 1765812359.773511, "data": "\b\u001b[K"}
+{"time": 1765812359.900754, "data": "\u0007"}
+{"time": 1765812360.3389585, "data": "k"}
+{"time": 1765812360.5072567, "data": "i"}
+{"time": 1765812360.727831, "data": "l"}
+{"time": 1765812360.8773103, "data": "l"}
+{"time": 1765812361.0163226, "data": " "}
+{"time": 1765812361.2661405, "data": "-"}
+{"time": 1765812361.5498285, "data": "9"}
+{"time": 1765812361.721347, "data": " "}
+{"time": 1765812363.5419183, "data": "124770"}
+{"time": 1765812364.240254, "data": "\\"}
+{"time": 1765812364.7073476, "data": "\b\u001b[K"}
+{"time": 1765812364.9751475, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812365.3731694, "data": "kill -9 124770"}
+{"time": 1765812365.552185, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\btail -f /tmp/k8s_agent_install.log "}
+{"time": 1765812365.911495, "data": "\r\nAnother app is currently holding the yum lock; waiting for it to exit...\r\n  The other application is: yum\r\n    Memory :  28 M RSS (963 MB VSZ)\r\n    Started: Tue Dec 16 07:13:25 2025 - 12:35 ago\r\n    State  : Sleeping, pid: 124770\r\nAnother app is currently holding the yum lock; waiting for it to exit...\r\n  The other application is: yum\r\n    Memory :  28 M RSS (963 MB VSZ)\r\n    Started: Tue Dec 16 07:13:25 2025 - 12:37 ago\r\n    State  : Sleeping, pid: 124770\r\n"}
+{"time": 1765812366.9536483, "data": "Cleaning repos: base docker-ce-stable epel extras kubernetes updates\r\n"}
+{"time": 1765812366.9591582, "data": "Cleaning up list of fastest mirrors\r\n"}
+{"time": 1765812367.0509658, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765812367.0569856, "data": "Determining fastest mirrors\r\n"}
+{"time": 1765812372.5104544, "data": " * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765812408.1370368, "data": "https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 12] Timeout on https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: (28, 'Operation timed out after 30001 milliseconds with 0 out of 0 bytes received')\r\nTrying other mirror.\r\n"}
+{"time": 1765812409.288639, "data": "https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 14] curl#35 - \"TCP connection reset by peer\"\r\nTrying other mirror.\r\n\r\n\r\n One of the configured repositories failed (Docker CE Stable - x86_64),\r\n and yum doesn't have enough cached data to continue. At this point the only\r\n safe thing yum can do is fail. There are a few ways to work \"fix\" this:\r\n\r\n     1. Contact the upstream for the repository and get them to fix the problem.\r\n\r\n     2. Reconfigure the baseurl/etc. for the repository, to point to a working\r\n        upstream. This is most often useful if you are using a newer\r\n        distribution release than is supported by the repository (and the\r\n        packages for the previous distribution release still work).\r\n\r\n     3. Run the command with the repository temporarily disabled\r\n            yum --disablerepo=docker-ce-stable ...\r\n\r\n     4. Disable the repository permanently, so yum won't use it by default. Yum\r\n        will then just ignore the repository until you permanently enable it\r\n        again or use --enablerepo for temporary usage:\r\n\r\n            yum-config-manager --disable docker-ce-stable\r\n        or\r\n            subscription-manager repos --disable=docker-ce-stable\r\n\r\n     5. Configure the failing repository to be skipped, if it is unavailable.\r\n        Note that yum will try to contact the repo. when it runs most commands,\r\n        so will have to try and fail each time (and thus. yum will be be much\r\n        slower). If it is a very temporary problem though, this is often a nice\r\n        compromise:\r\n\r\n            yum-config-manager --save --setopt=docker-ce-stable.skip_if_unavailable=true\r\n\r\nfailure: repodata/repomd.xml from docker-ce-stable: [Errno 256] No more mirrors to try.\r\nhttps://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 12] Timeout on https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: (28, 'Operation timed out after 30001 milliseconds with 0 out of 0 bytes received')\r\nhttps://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 14] curl#35 - \"TCP connection reset by peer\"\r\n"}
+{"time": 1765812738.2832673, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812738.5158205, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812740.739309, "data": "r"}
+{"time": 1765812740.929696, "data": "m"}
+{"time": 1765812741.0488343, "data": " "}
+{"time": 1765812741.2475476, "data": "-"}
+{"time": 1765812741.365203, "data": "r"}
+{"time": 1765812741.5733533, "data": "f"}
+{"time": 1765812741.6905954, "data": " "}
+{"time": 1765812742.2817035, "data": "/"}
+{"time": 1765812742.4613225, "data": "e"}
+{"time": 1765812742.6650639, "data": "tc/"}
+{"time": 1765812743.8700438, "data": "y"}
+{"time": 1765812743.976824, "data": "u"}
+{"time": 1765812744.2342687, "data": "m"}
+{"time": 1765812744.3403924, "data": "\u0007"}
+{"time": 1765812745.0073571, "data": "."}
+{"time": 1765812745.166814, "data": "\u0007"}
+{"time": 1765812745.4199297, "data": "e"}
+{"time": 1765812745.576245, "data": "\u0007"}
+{"time": 1765812745.8054025, "data": "\u0007"}
+{"time": 1765812746.1494155, "data": "\b\u001b[K"}
+{"time": 1765812746.3686066, "data": "r"}
+{"time": 1765812746.5053024, "data": "epos.d/"}
+{"time": 1765812747.0460901, "data": "\u0007"}
+{"time": 1765812747.2370331, "data": "\r\nCentOS-Base.repo           CentOS-Vault.repo\r\nCentOS-Base.repo.backup    CentOS-x86_64-kernel.repo\r\nCentOS-CR.repo             docker-ce.repo\r\nCentOS-Debuginfo.repo      epel.repo\r\nCentOS-fasttrack.repo      epel.repo.rpmnew\r\nCentOS-Media.repo          epel-testing.repo\r\nCentOS-Sources.repo        kubernetes.repo\r\n[root@test1 ~]# rm -rf /etc/yum.repos.d/"}
+{"time": 1765812747.5507982, "data": "d"}
+{"time": 1765812747.6898298, "data": "o"}
+{"time": 1765812747.8903172, "data": "cker-ce.repo "}
+{"time": 1765812749.5570939, "data": "/"}
+{"time": 1765812749.6432226, "data": "e"}
+{"time": 1765812749.7795763, "data": "tc/"}
+{"time": 1765812751.4626944, "data": "y"}
+{"time": 1765812751.5691733, "data": "u"}
+{"time": 1765812751.719631, "data": "\u0007m"}
+{"time": 1765812752.467036, "data": "."}
+{"time": 1765812752.5937939, "data": "\u0007"}
+{"time": 1765812752.989243, "data": "e"}
+{"time": 1765812753.3983743, "data": "\b\u001b[K"}
+{"time": 1765812753.4854124, "data": "r"}
+{"time": 1765812753.611693, "data": "epos.d/"}
+{"time": 1765812754.6054468, "data": "k"}
+{"time": 1765812754.861027, "data": "u"}
+{"time": 1765812754.9380834, "data": "bernete\res.repo "}
+{"time": 1765812756.6287305, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812760.0967517, "data": "rm -rf /etc/yum.repos.d/docker-ce.repo /etc/yum.repos.d/kubernet \res.repo\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812776.1075108, "data": "rm -rf /etc/yum.repos.d/docker-ce.repo /etc/yum.repos.d/kubernete\res.repo"}
+{"time": 1765812776.2952306, "data": "\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[29Ptail -f /tmp/k8s_agent_install.log \r\n\r\u001b[K\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765812776.6715517, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[21Pkill -9 124770"}
+{"time": 1765812777.2463524, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\btail -f /tmp/k8s_agent_install.log "}
+{"time": 1765812777.8732712, "data": "\r\nfailure: repodata/repomd.xml from docker-ce-stable: [Errno 256] No more mirrors to try.\r\nhttps://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 12] Timeout on https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: (28, 'Operation timed out after 30001 milliseconds with 0 out of 0 bytes received')\r\nhttps://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 14] curl#35 - \"TCP connection reset by peer\"\r\n>>> K8s Agent \u5b89\u88c5\u5f00\u59cb (\u76ee\u6807\u7248\u672c: 1.30.14)\r\n>>> [0/6] \u68c0\u67e5\u4f9d\u8d56\u5de5\u5177 (wget)...\r\n>>> [1/6] \u4fee\u590d CentOS 7 EOL \u6e90\u95ee\u9898 (\u5207\u6362\u963f\u91cc\u4e91\u6e90)...\r\n\u68c0\u6d4b\u5230 CentOS 7\uff0c\u6b63\u5728\u66ff\u6362\u5e9f\u5f03\u7684\u5b98\u65b9\u6e90\u4e3a\u963f\u91cc\u4e91\u955c\u50cf...\r\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\r\n                                 Dload  Upload   Total   Spent    Left  Speed\r\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0"}
+{"time": 1765812777.8919797, "data": "\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0"}
+{"time": 1765812779.1587837, "data": "\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0"}
+{"time": 1765812780.1527922, "data": "\r  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0"}
+{"time": 1765812781.1566072, "data": "\r  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0"}
+{"time": 1765812782.1515431, "data": "\r  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0"}
+{"time": 1765812783.1734035, "data": "\r  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0"}
+{"time": 1765812783.2899742, "data": "\r100  2523  100  2523    0     0    446      0  0:00:05  0:00:05 --:--:--   609\r\n"}
+{"time": 1765812783.3552232, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765812783.3813558, "data": "Cleaning repos: base epel extras updates\r\nCleaning up list of fastest mirrors\r\n"}
+{"time": 1765812783.468544, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765812783.4735436, "data": "Determining fastest mirrors\r\n"}
+{"time": 1765812793.497142, "data": " * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765812871.7122767, "data": "\r\n"}
+{"time": 1765812871.8853805, "data": "\r\n"}
+{"time": 1765812875.9722276, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812877.363851, "data": "ping"}
+{"time": 1765812877.6794147, "data": " "}
+{"time": 1765812877.9566524, "data": "w"}
+{"time": 1765812878.269886, "data": "w"}
+{"time": 1765812878.8505077, "data": "w"}
+{"time": 1765812879.1626408, "data": "."}
+{"time": 1765812879.4065466, "data": "c"}
+{"time": 1765812880.3243945, "data": "\b\u001b[K"}
+{"time": 1765812880.658657, "data": "b"}
+{"time": 1765812880.7954369, "data": "a"}
+{"time": 1765812880.965288, "data": "i"}
+{"time": 1765812881.7264738, "data": "d"}
+{"time": 1765812881.897442, "data": "u"}
+{"time": 1765812882.3983755, "data": "."}
+{"time": 1765812882.5772328, "data": "c"}
+{"time": 1765812882.8895493, "data": "\b\u001b[K"}
+{"time": 1765812883.4385796, "data": "c"}
+{"time": 1765812883.7088485, "data": "o"}
+{"time": 1765812883.9191284, "data": "m"}
+{"time": 1765812884.203098, "data": "\r\n"}
+{"time": 1765812884.258872, "data": "PING www.wshifen.com (103.235.46.115) 56(84) bytes of data.\r\n"}
+{"time": 1765812884.358501, "data": "64 bytes from 103.235.46.115 (103.235.46.115): icmp_seq=1 ttl=128 time=43.3 ms\r\n"}
+{"time": 1765812885.3047128, "data": "64 bytes from 103.235.46.115 (103.235.46.115): icmp_seq=2 ttl=128 time=42.1 ms\r\n"}
+{"time": 1765812886.3055797, "data": "64 bytes from 103.235.46.115 (103.235.46.115): icmp_seq=3 ttl=128 time=43.5 ms\r\n"}
+{"time": 1765812886.4085443, "data": "^C\r\n--- www.wshifen.com ping statistics ---\r\n3 packets transmitted, 3 received, 0% packet loss, time 2002ms\r\nrtt min/avg/max/mdev = 42.126/43.007/43.572/0.653 ms\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765812886.7842345, "data": "\u0007"}
+{"time": 1765812886.9966674, "data": "ping www.baidu.com"}
+{"time": 1765812887.5445604, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Ctail -f /tmp/k8s_agent_install.log "}
+{"time": 1765812887.8705664, "data": "\r\n                                 Dload  Upload   Total   Spent    Left  Speed\r\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\r100  2523  100  2523    0     0    446      0  0:00:05  0:00:05 --:--:--   609\r\nLoaded plugins: fastestmirror\r\nCleaning repos: base epel extras updates\r\nCleaning up list of fastest mirrors\r\nLoaded plugins: fastestmirror\r\nDetermining fastest mirrors\r\n * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765812939.4179192, "data": "\r\n"}
+{"time": 1765812939.6071959, "data": "\r\n"}
+{"time": 1765812939.7906983, "data": "\r\n"}
+{"time": 1765813236.0037224, "data": "http://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/ee7ce72544e0fca006120c613404d937cc3da9d09c7d80aea269df31639f310c-updateinfo.xml.bz2: [Errno 12] Timeout on https://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/ee7ce72544e0fca006120c613404d937cc3da9d09c7d80aea269df31639f310c-updateinfo.xml.bz2: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')\r\nTrying other mirror.\r\n"}
+{"time": 1765813625.1341481, "data": "http://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/1e0f3b42efd8b5d54a6aa9feb1f03c7de2bb414b92268c3db5965bd38648b2da-filelists.sqlite.gz: [Errno 12] Timeout on https://archives.fedoraproject.org/pub/archive/epel/7/x86_64/repodata/1e0f3b42efd8b5d54a6aa9feb1f03c7de2bb414b92268c3db5965bd38648b2da-filelists.sqlite.gz: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')\r\nTrying other mirror.\r\n"}
+{"time": 1765813647.8268945, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813648.529815, "data": "tail -f /tmp/k8s_agent_install.log "}
+{"time": 1765813648.7505963, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[17Pping www.baidu.com"}
+{"time": 1765813649.2937243, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Ctail -f /tmp/k8s_agent_install.log "}
+{"time": 1765813649.842603, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Crm -rf /etc/yum.repos.d/docker-ce.repo /etc/yum.repos.d/kubernete\res.repo"}
+{"time": 1765813650.2698524, "data": "\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[29Ptail -f /tmp/k8s_agent_install.log \r\n\r\u001b[K\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765813650.5002382, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[21Pkill -9 124770"}
+{"time": 1765813651.4056528, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\btail -f /tmp/k8s_agent_install.log "}
+{"time": 1765813651.8534384, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[16Pps -ef|grep install"}
+{"time": 1765813652.0844033, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[5Pkill -9 124704"}
+{"time": 1765813652.5209136, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\bps -ef|grep install"}
+{"time": 1765813652.7557914, "data": "\r\n"}
+{"time": 1765813652.7874315, "data": "root       3697 125733  0 07:47 pts/0    00:00:00 grep --color=auto \u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K\r\nroot     130368 130301  0 07:32 ?        00:00:00 sudo K8S_VERSION=1.30.14 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     130374 130368  0 07:32 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     130375 130374  0 07:32 ?        00:00:00 bash /tmp/\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K_k8s.sh\r\nroot     130376 130375  0 07:32 ?        00:00:00 tee -a /tmp/k8s_agent_\u001b[01;31m\u001b[Kinstall\u001b[m\u001b[K.log\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813653.2354245, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813653.3775482, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813653.5647357, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813655.3438485, "data": "kill"}
+{"time": 1765813655.4611523, "data": "-"}
+{"time": 1765813656.8243546, "data": "\b\u001b[K"}
+{"time": 1765813657.0029416, "data": " "}
+{"time": 1765813657.9245338, "data": "-"}
+{"time": 1765813658.1802902, "data": "9"}
+{"time": 1765813658.328879, "data": " "}
+{"time": 1765813660.3555028, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813661.6776862, "data": "^[[A"}
+{"time": 1765813662.2709494, "data": "\b\b\b\bps -ef|grep install"}
+{"time": 1765813662.6667228, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C^[[A\u001b[K"}
+{"time": 1765813662.8667939, "data": "\u0007"}
+{"time": 1765813663.1723053, "data": "\u0007"}
+{"time": 1765813663.5476904, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813664.9517272, "data": "kill"}
+{"time": 1765813665.142206, "data": "-"}
+{"time": 1765813665.6295369, "data": "9"}
+{"time": 1765813665.8289282, "data": " "}
+{"time": 1765813666.9724832, "data": "\b\u001b[K"}
+{"time": 1765813667.149405, "data": "\b\u001b[K"}
+{"time": 1765813667.321488, "data": "\b\u001b[K"}
+{"time": 1765813667.4621112, "data": " "}
+{"time": 1765813667.9409275, "data": "-"}
+{"time": 1765813668.2117484, "data": "9"}
+{"time": 1765813668.4222083, "data": " "}
+{"time": 1765813670.2695565, "data": "#!/bin/bash\r\nkill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# # K8s Agent (Worker Node) \u56fd\u5185\u4f18\u5316\u5b89\u88c5\u811a\u672c - \u5305\u542bEPEL\u6e90\u4fee\u590d\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# # \u53ea\u4f7f\u7528\u56fd\u5185\u955c\u50cf\u6e90\uff0c\u4e0d\u8fde\u63a5\u4efb\u4f55\u56fd\u5916\u5b98\u65b9\u6e90\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# # \u4f7f\u7528\u65b9\u6cd5:\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# #   sudo K8S_VERSION=<Master\u7248\u672c> JOIN_COMMAND=\"<kubeadm join \u547d \r\u4ee4>\" bash /tmp"}
+{"time": 1765813670.2820528, "data": "/install_k8s_agent.sh\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# \r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# set -e\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# LOG_FILE=\"/tmp/k8s_agent_in"}
+{"time": 1765813670.290112, "data": "stall.log\"\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# exec > >(tee -a ${LOG_FILE}) 2>&1\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# \r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# echo \"================="}
+{"time": 1765813670.2994626, "data": "===============================\"\r\n================================================\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813670.3077307, "data": "echo \">>> Kubernetes Agent \u5b89\u88c5\u5f00\u59cb (\u5168\u56fd\u5185\u6e90\u7248)\"\r\n>>> Kubernetes Agent \u5b89\u88c5\u5f00\u59cb (\u5168\u56fd\u5185\u6e90\u7248)\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# echo \"========"}
+{"time": 1765813670.3172462, "data": "========================================\"\r\n================================================\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# \r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# # ===============================================\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813670.3274634, "data": "# 1. \u53d8\u91cf\u5b9a\u4e49\u4e0e\u6821\u9a8c\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# # ===============================================\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# K8S_VERSION"}
+{"time": 1765813670.3350239, "data": "=${K8S_VERSION:-\"\"}\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# JOIN_COMMAND=${JOIN_COMMAND:-\"\"}\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765813670.3467762, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# if [ -z \"$K8S_VERSION\" ]; t"}
+{"time": 1765813670.3697226, "data": "hen\r\n>     echo \"!!! \u81f4\u547d\u9519\u8bef: \u73af\u5883\u53d8\u91cf K8S_VERSION \u672a\u8bbe\u7f6e\"\r\n    echo \"if [ -z \"$K8S_VERSION\" ]; then! \u81f4\u547d\u9519\u8bef: \u73af\u5883\u53d8\u91cf K8S_VERSION \u672a\u8bbe\u7f6e\"\r\n>     exit 1\r\n> fi\r\nif [ -z  ]; then! \u81f4\u547d\u9519\u8bef: \u73af\u5883\u53d8\u91cf K8S_VERSION \u672a\u8bbe\u7f6e\r\nlogout\r\n\r\necho \">>> \u76ee\u6807\u7248\u672c: ${K8S_VERSION}\"\r\necho \">>>"}

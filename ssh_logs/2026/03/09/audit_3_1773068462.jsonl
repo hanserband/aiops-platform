@@ -1,0 +1,2 @@
+{"time": 1773068373.6722052, "data": "\r\nWelcome to Alibaba Cloud Elastic Compute Service !\r\n\r\n    * Enhanced with OS AI Extensions *\r\n\r\n      * python3 is default to python3.12 in /opt/aiext/bin\r\n      * /usr/bin/python3 is still linked to python3.6\r\n      * run 'deactivate_py312' to fall back to python3.6\r\n\r\nLast login: Mon Mar  9 22:48:37 2026 from 49.52.97.189\r\r\n"}
+{"time": 1773068373.731777, "data": "\u001b]0;root@iZ0zewa3apqhymZ:~\u0007[root@iZ0zewa3apqhymZ ~]# "}

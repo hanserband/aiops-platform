@@ -1,0 +1,41 @@
+{"time": 1765859618.793269, "data": "Last login: Tue Dec 16 20:13:14 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765859618.8329992, "data": "\u001b]0;root@test1:~\u0007\u001b[?1034h[root@test1 ~]# "}
+{"time": 1765859619.8638303, "data": "\r\u001b[K[root@test1 ~]# "}
+{"time": 1765859621.4046946, "data": "ls"}
+{"time": 1765859621.6057916, "data": "\r\nanaconda-ks.cfg\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765859621.7788715, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765859621.9471946, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765859622.107189, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765859623.4215376, "data": "c"}
+{"time": 1765859623.603729, "data": "d"}
+{"time": 1765859624.250027, "data": " "}
+{"time": 1765859624.506927, "data": "/"}
+{"time": 1765859624.6604936, "data": "a"}
+{"time": 1765859624.7960653, "data": "p"}
+{"time": 1765859624.9356968, "data": "p"}
+{"time": 1765859625.1793191, "data": "\r\n-bash: cd: /app: No such file or directory\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765859625.3491526, "data": "l"}
+{"time": 1765859625.4811416, "data": "s"}
+{"time": 1765859625.6168647, "data": "\r\nanaconda-ks.cfg\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765859625.920184, "data": "c"}
+{"time": 1765859626.0158694, "data": "d"}
+{"time": 1765859626.184978, "data": " "}
+{"time": 1765859626.5374675, "data": "/"}
+{"time": 1765859626.8159754, "data": "\r\n\u001b]0;root@test1:/\u0007[root@test1 /]# "}
+{"time": 1765859627.0168693, "data": "l"}
+{"time": 1765859627.1771936, "data": "s"}
+{"time": 1765859627.2569654, "data": "\r\n"}
+{"time": 1765859627.2619889, "data": "\u001b[0m\u001b[01;36mbin\u001b[0m  \u001b[01;34mboot\u001b[0m  \u001b[01;34mdev\u001b[0m  \u001b[01;34metc\u001b[0m  \u001b[01;34mhome\u001b[0m  \u001b[01;36mlib\u001b[0m  \u001b[01;36mlib64\u001b[0m  \u001b[01;34mmedia\u001b[0m  \u001b[01;34mmnt\u001b[0m  \u001b[01;34mopt\u001b[0m  \u001b[01;34mproc\u001b[0m  \u001b[01;34mroot\u001b[0m  \u001b[01;34mrun\u001b[0m  \u001b[01;36msbin\u001b[0m  \u001b[01;34msrv\u001b[0m  \u001b[01;34msys\u001b[0m  \u001b[30;42mtmp\u001b[0m  \u001b[01;34musr\u001b[0m  \u001b[01;34mvar\u001b[0m\r\n\u001b]0;root@test1:/\u0007[root@test1 /]# "}
+{"time": 1765859627.5033948, "data": "c"}
+{"time": 1765859627.617072, "data": "d"}
+{"time": 1765859627.768911, "data": " "}
+{"time": 1765859628.6070158, "data": "\b\u001b[K"}
+{"time": 1765859628.7771277, "data": "\b\u001b[K"}
+{"time": 1765859628.9155912, "data": "\b\u001b[K"}
+{"time": 1765859629.0954566, "data": "\u0007"}
+{"time": 1765859629.9743378, "data": "l"}
+{"time": 1765859630.1112168, "data": "s"}
+{"time": 1765859630.243054, "data": "\r\n"}
+{"time": 1765859630.2492354, "data": "\u001b[0m\u001b[01;36mbin\u001b[0m  \u001b[01;34mboot\u001b[0m  \u001b[01;34mdev\u001b[0m  \u001b[01;34metc\u001b[0m  \u001b[01;34mhome\u001b[0m  \u001b[01;36mlib\u001b[0m  \u001b[01;36mlib64\u001b[0m  \u001b[01;34mmedia\u001b[0m  \u001b[01;34mmnt\u001b[0m  \u001b[01;34mopt\u001b[0m  \u001b[01;34mproc\u001b[0m  \u001b[01;34mroot\u001b[0m  \u001b[01;34mrun\u001b[0m  \u001b[01;36msbin\u001b[0m  \u001b[01;34msrv\u001b[0m  \u001b[01;34msys\u001b[0m  \u001b[30;42mtmp\u001b[0m  \u001b[01;34musr\u001b[0m  \u001b[01;34mvar\u001b[0m\r\n\u001b]0;root@test1:/\u0007[root@test1 /]# "}
+{"time": 1765859630.4180613, "data": "\r\n\u001b]0;root@test1:/\u0007[root@test1 /]# "}
+{"time": 1765859630.6111734, "data": "\r\n\u001b]0;root@test1:/\u0007[root@test1 /]# "}

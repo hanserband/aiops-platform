@@ -1,0 +1,743 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════
+   Design tokens — mirrors login page
+═══════════════════════════════════════ */
+:root {
+  --bg:      #0f1117;
+  --panel:   #161b27;
+  --panel2:  #1c2333;
+  --border:  #232b3e;
+  --accent:  #3b82f6;
+  --accent2: #22d3ee;
+  --text:    #e2e8f0;
+  --muted:   #64748b;
+  --success: #10b981;
+  --warn:    #f59e0b;
+  --danger:  #ef4444;
+  --purple:  #a855f7;
+  --mono:    'IBM Plex Mono', monospace;
+  --sans:    'IBM Plex Sans', sans-serif;
+}
+
+.jp-page, .jp-page * { font-family: var(--sans); color: var(--text); }
+
+.jp-page {
+  background: var(--bg);
+  background-image: radial-gradient(circle, rgba(59,130,246,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  min-height: calc(100vh - 120px);
+  padding-bottom: 32px;
+}
+
+/* ── Animations ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.jp-row { animation: fade-up 0.35s ease both; }
+.jp-row:nth-child(1) { animation-delay: 0.05s; }
+.jp-row:nth-child(2) { animation-delay: 0.15s; }
+
+/* ── Cards ── */
+.jp-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.jp-card:hover {
+  border-color: rgba(59,130,246,0.25);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.jp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+}
+.jp-card.accent-green::before  { background: var(--success); }
+.jp-card.accent-cyan::before   { background: var(--accent2); }
+
+.jp-card-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel2);
+}
+.jp-card-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.jp-card-title i { color: var(--accent); }
+.jp-card-body { padding: 18px; }
+
+/* ── Server selector bar ── */
+.jp-selector-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.jp-selector-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.jp-selector-label i { color: var(--accent); }
+
+.jp-select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 14px;
+  min-width: 260px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2364748b' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+.jp-select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+.jp-select option { background: var(--panel); }
+
+/* ── Buttons ── */
+.jp-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.jp-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.jp-btn-primary:hover { background: #2563eb; color: #fff; }
+
+.jp-btn-success {
+  background: rgba(16,185,129,0.12);
+  color: var(--success);
+  border-color: rgba(16,185,129,0.25);
+}
+.jp-btn-success:hover { background: rgba(16,185,129,0.22); }
+
+.jp-btn-ghost {
+  background: var(--panel2);
+  color: var(--muted);
+  border-color: var(--border);
+}
+.jp-btn-ghost:hover { color: var(--text); border-color: var(--muted); }
+
+/* ── Table ── */
+.jp-table-wrap { overflow-x: auto; }
+.jp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.jp-table thead tr { border-bottom: 1px solid var(--border); }
+.jp-table thead th {
+  padding: 11px 16px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  background: var(--panel2);
+}
+.jp-table tbody tr {
+  border-bottom: 1px solid rgba(35,43,62,0.6);
+  transition: background 0.15s;
+}
+.jp-table tbody tr:hover { background: rgba(59,130,246,0.04); }
+.jp-table tbody tr:last-child { border-bottom: none; }
+.jp-table tbody td {
+  padding: 13px 16px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* badges */
+.jp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.badge-docker  { background: rgba(34,211,238,0.1);  color: var(--accent2); border: 1px solid rgba(34,211,238,0.2); }
+.badge-host    { background: var(--panel2);          color: var(--muted);   border: 1px solid var(--border); }
+.badge-pid     { background: rgba(59,130,246,0.1);   color: var(--accent);  border: 1px solid rgba(59,130,246,0.2); }
+.badge-ver-ok  { background: rgba(16,185,129,0.1);   color: var(--success); border: 1px solid rgba(16,185,129,0.2); }
+.badge-ver-old { background: rgba(245,158,11,0.1);   color: var(--warn);    border: 1px solid rgba(245,158,11,0.2); }
+.badge-ver-unk { background: var(--panel2);          color: var(--muted);   border: 1px solid var(--border); }
+
+.proc-count-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(59,130,246,0.12);
+  color: var(--accent);
+  border: 1px solid rgba(59,130,246,0.2);
+}
+
+/* container name / user cell */
+.proc-name  { font-weight: 500; font-size: 13px; color: var(--text); }
+.proc-sub   { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* resource cell */
+.res-cpu  { font-family: var(--mono); font-size: 12px; color: var(--danger); }
+.res-sep  { color: var(--border); margin: 0 4px; }
+.res-mem  { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+
+/* cmd cell */
+.cmd-cell {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* empty / loading state */
+.jp-state-cell {
+  text-align: center;
+  padding: 52px 20px;
+  color: var(--muted);
+  font-size: 13px;
+  font-family: var(--mono);
+}
+.jp-state-cell i { font-size: 22px; margin-bottom: 10px; color: var(--border); display: block; }
+
+/* ── Modal ── */
+.jp-modal .modal-content {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+}
+.jp-modal .modal-header {
+  background: var(--panel2);
+  border-bottom: 1px solid var(--border);
+  border-radius: 10px 10px 0 0;
+  padding: 14px 20px;
+}
+.jp-modal .modal-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+.jp-modal .modal-footer {
+  background: var(--panel2);
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 10px 10px;
+  padding: 12px 20px;
+}
+.jp-modal .close { color: var(--muted); opacity: 1; }
+.jp-modal .close:hover { color: var(--text); }
+
+/* target info bar inside modal */
+.diag-target-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+.diag-target-bar strong { color: var(--text); }
+
+/* form inside modal */
+.jp-modal .field-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  display: block;
+}
+.jp-modal .jp-input,
+.jp-modal .jp-select-sm {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.jp-modal .jp-input::placeholder { color: var(--muted); }
+.jp-modal .jp-input:focus,
+.jp-modal .jp-select-sm:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+}
+.jp-modal .jp-select-sm option { background: var(--panel); }
+.jp-modal .field-hint {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 5px;
+  display: block;
+}
+.jp-modal .field-hint .hint-ok { color: var(--success); }
+
+.jp-divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+/* loading state in modal */
+.jp-loading-box {
+  text-align: center;
+  padding: 36px 0;
+}
+.spinner-ring {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--success);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.jp-loading-box p {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.jp-scan-steps {
+  display: inline-block;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 2;
+}
+.jp-scan-steps .step-ok { color: var(--success); margin-right: 6px; }
+.jp-scan-steps .step-ai { color: var(--accent2); margin-right: 6px; }
+
+/* AI result */
+.jp-result {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.jp-result .markdown-body {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text);
+}
+.jp-result .markdown-body p  { margin-bottom: 10px; color: var(--text); }
+.jp-result .markdown-body ul { padding-left: 18px; margin-bottom: 10px; }
+.jp-result .markdown-body li { margin-bottom: 4px; color: var(--text); }
+.jp-result .markdown-body pre {
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  overflow-x: auto;
+  color: var(--accent2);
+}
+.jp-result .markdown-body h3,
+.jp-result .markdown-body h4 { color: var(--accent2); font-size: 14px; margin: 14px 0 6px; }
+.jp-result .markdown-body strong { color: var(--text); }
+.jp-result .markdown-body code { color: var(--accent2); background: var(--panel2); padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+.jp-alert-danger {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #fca5a5;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+</style>
+
+<div class="jp-page">
+
+  <!-- ═══ Row 1: Server selector ═══ -->
+  <div class="row jp-row mb-3">
+    <div class="col-12">
+      <div class="jp-card">
+        <div class="jp-card-header">
+          <div class="jp-card-title"><i class="fab fa-java"></i> Java 应用诊断</div>
+        </div>
+        <div class="jp-card-body">
+          <div class="jp-selector-bar">
+            <span class="jp-selector-label"><i class="fas fa-server"></i> 目标服务器</span>
+            <select id="serverSelect" class="jp-select">
+              <option value="">— 请选择服务器 —</option>
+              {% for s in servers %}
+              <option value="{{ s.id }}">{{ s.hostname }}  ·  {{ s.ip_address }}</option>
+              {% endfor %}
+            </select>
+            <button class="jp-btn jp-btn-primary" onclick="fetchProcesses()">
+              <i class="fas fa-search"></i> 扫描 Java 进程
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Row 2: Process table ═══ -->
+  <div class="row jp-row">
+    <div class="col-12">
+      <div class="jp-card accent-green">
+        <div class="jp-card-header">
+          <div class="jp-card-title"><i class="fas fa-list-ul"></i> Java 进程列表</div>
+          <span class="proc-count-badge" id="procCount">0 进程</span>
+        </div>
+        <div class="jp-table-wrap">
+          <table class="jp-table">
+            <thead>
+              <tr>
+                <th>类型 / PID</th>
+                <th>Java 版本</th>
+                <th>用户 / 容器名</th>
+                <th>CPU / MEM</th>
+                <th>启动命令 / 镜像</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="procTableBody">
+              <tr>
+                <td colspan="6">
+                  <div class="jp-state-cell">
+                    <i class="fas fa-terminal"></i>
+                    请先选择服务器并点击"扫描 Java 进程"
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /jp-page -->
+
+
+<!-- ═══ Modal: JVM Diagnose ═══ -->
+<div class="modal fade jp-modal" id="javaModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title"><i class="fab fa-java mr-2" style="color:var(--success);"></i>JVM 深度诊断</div>
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Target info bar -->
+        <div class="diag-target-bar">
+          <span>诊断目标:</span>
+          <strong id="lblTargetType"></strong>
+          <span id="lblTargetName" class="jp-badge badge-pid"></span>
+          <span>JDK:</span>
+          <span id="lblJdkVer" class="jp-badge badge-ver-ok"></span>
+        </div>
+
+        <!-- Model select -->
+        <div style="margin-bottom:14px;">
+          <label class="field-label">选择 AI 分析模型</label>
+          <select id="aiModelSelect" class="jp-select-sm">
+            {% for m in ai_models %}
+            <option value="{{ m.id }}">{{ m.name }}</option>
+            {% empty %}
+            <option value="">默认模型</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!-- Log path -->
+        <div style="margin-bottom:14px;">
+          <label class="field-label">应用日志文件路径 <span style="color:var(--muted);font-size:9px;">(可选)</span></label>
+          <input type="text" id="logPathInput" class="jp-input" placeholder="/var/log/app/error.log">
+          <span class="field-hint" id="logPathHelp">
+            <i class="fas fa-info-circle"></i> 填写路径后，AI 将分析日志末尾的异常信息。
+          </span>
+        </div>
+
+        <hr class="jp-divider">
+
+        <!-- Loading -->
+        <div id="aiLoading" class="jp-loading-box" style="display:none;">
+          <div class="spinner-ring"></div>
+          <p>正在进行全方位深度扫描...</p>
+          <div class="jp-scan-steps">
+            <div id="stepSidecar"><i class="fas fa-check step-ok"></i> 挂载诊断 Sidecar (JDK / Arthas)...</div>
+            <div><i class="fas fa-check step-ok"></i> 采集 JVM 内存直方图 / GC 状态...</div>
+            <div><i class="fas fa-check step-ok"></i> 审计 JVM 启动参数 (jinfo)...</div>
+            <div><i class="fas fa-check step-ok"></i> 运行 Arthas Dashboard 获取实时大盘...</div>
+            <div><i class="fas fa-brain step-ai"></i> AI 专家正在综合分析...</div>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="aiContent" style="display:none;">
+          <div class="jp-result">
+            <div class="markdown-body"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="jp-btn jp-btn-ghost" data-dismiss="modal">关闭</button>
+        <button type="button" class="jp-btn jp-btn-success" onclick="startDiagnose()">
+          <i class="fas fa-play-circle"></i> 开始深度分析
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+let currentServerId = null;
+let selectedProc = { pid: '', type: 'host', container_id: '', java_version: '8' };
+
+function fetchProcesses() {
+  const sid = $('#serverSelect').val();
+  if (!sid) { alert("请选择服务器"); return; }
+  currentServerId = sid;
+
+  $('#procCount').text('扫描中...');
+  $('#procTableBody').html(`
+    <tr><td colspan="6">
+      <div class="jp-state-cell">
+        <i class="fas fa-circle-notch fa-spin" style="color:var(--accent);"></i>
+        正在扫描宿主机与容器中的 Java 进程...
+      </div>
+    </td></tr>`);
+
+  $.ajax({
+    url: '{% url "get_java_processes" %}',
+    data: { server_id: sid },
+    success: function(res) {
+      if (res.status) {
+        const list = res.data;
+        $('#procCount').text(list.length + ' 进程');
+
+        if (!list.length) {
+          $('#procTableBody').html(`
+            <tr><td colspan="6">
+              <div class="jp-state-cell">
+                <i class="fas fa-inbox"></i> 未发现 Java 进程
+              </div>
+            </td></tr>`);
+          return;
+        }
+
+        let html = '';
+        list.forEach(p => {
+          const isDocker = p.type === 'docker';
+
+          const typeLabel = isDocker
+            ? `<span class="jp-badge badge-docker"><i class="fab fa-docker"></i> Docker</span>`
+            : `<span class="jp-badge badge-host"><i class="fas fa-server"></i> Host</span>`;
+
+          const pidBadge = `<span class="jp-badge badge-pid" style="margin-left:5px;">${p.pid}</span>`;
+
+          const nameDisplay = isDocker
+            ? `<div class="proc-name">${p.container_name}</div>
+               <div class="proc-sub" title="${p.container_id}">ID: ${p.container_id.substring(0,12)}</div>`
+            : `<div class="proc-name">${p.user}</div>`;
+
+          let verClass = 'badge-ver-unk';
+          if (p.java_version && (p.java_version.includes('17') || p.java_version.includes('21'))) verClass = 'badge-ver-ok';
+          else if (p.java_version && (p.java_version.includes('1.8') || p.java_version.includes('8'))) verClass = 'badge-ver-old';
+          const verBadge = `<span class="jp-badge ${verClass}">${p.java_version || 'Unknown'}</span>`;
+
+          const cidClean = (p.container_id || '').replace(/'/g, "");
+          const verClean = (p.java_version || '8').replace(/'/g, "");
+
+          html += `
+          <tr>
+            <td>${typeLabel} ${pidBadge}</td>
+            <td>${verBadge}</td>
+            <td>${nameDisplay}</td>
+            <td>
+              <span class="res-cpu">${p.cpu}</span>
+              <span class="res-sep">/</span>
+              <span class="res-mem">${p.mem}</span>
+            </td>
+            <td><div class="cmd-cell" title="${p.cmd}">${p.cmd}</div></td>
+            <td>
+              <button class="jp-btn jp-btn-success" style="padding:5px 12px;"
+                onclick="openDiagnose('${p.pid}','${p.type}','${cidClean}','${verClean}')">
+                <i class="fas fa-user-md"></i> 诊断
+              </button>
+            </td>
+          </tr>`;
+        });
+        $('#procTableBody').html(html);
+
+      } else {
+        $('#procCount').text('0 进程');
+        $('#procTableBody').html(`
+          <tr><td colspan="6">
+            <div class="jp-state-cell" style="color:var(--danger);">
+              <i class="fas fa-exclamation-triangle" style="color:var(--danger);"></i>
+              扫描失败：${res.msg}
+            </div>
+          </td></tr>`);
+      }
+    },
+    error: function() {
+      $('#procCount').text('0 进程');
+      $('#procTableBody').html(`
+        <tr><td colspan="6">
+          <div class="jp-state-cell" style="color:var(--danger);">
+            <i class="fas fa-wifi" style="color:var(--danger);"></i>
+            网络请求失败，请检查服务器连接
+          </div>
+        </td></tr>`);
+    }
+  });
+}
+
+function openDiagnose(pid, type, cid, ver) {
+  selectedProc = { pid, type, container_id: cid, java_version: ver };
+
+  const typeText = type === 'docker' ? 'Docker 容器' : '宿主机进程';
+  const nameText = type === 'docker' ? cid.substring(0, 12) : pid;
+
+  $('#lblTargetType').text(typeText);
+  $('#lblTargetName').text(nameText);
+  $('#lblJdkVer').text(ver);
+
+  if (type === 'docker') {
+    $('#stepSidecar').show();
+    $('#logPathInput').prop('disabled', true).attr('placeholder', 'Docker 模式自动采集 logs (stdout)，无需填写');
+    $('#logPathHelp').html('<i class="fas fa-check-circle hint-ok"></i> 系统将自动采集 docker logs 最后 100 行。');
+  } else {
+    $('#stepSidecar').hide();
+    $('#logPathInput').prop('disabled', false).attr('placeholder', '/var/log/app/error.log');
+    $('#logPathHelp').html('<i class="fas fa-info-circle"></i> Host 模式：请填写日志文件的绝对路径。');
+  }
+
+  $('#javaModal').modal('show');
+  $('#aiContent').hide().find('.markdown-body').html('');
+  $('#aiLoading').hide();
+  $('#logPathInput').val('');
+}
+
+function startDiagnose() {
+  $('#aiLoading').show();
+  $('#aiContent').hide();
+
+  $.ajax({
+    url: '{% url "diagnose_java_process" %}',
+    type: 'POST',
+    data: {
+      server_id: currentServerId,
+      model_id: $('#aiModelSelect').val(),
+      log_path: $('#logPathInput').val(),
+      pid: selectedProc.pid,
+      type: selectedProc.type,
+      container_id: selectedProc.container_id,
+      java_version: selectedProc.java_version,
+      csrfmiddlewaretoken: '{{ csrf_token }}'
+    },
+    success: function(res) {
+      $('#aiLoading').hide();
+      if (res.status) {
+        $('#aiContent').find('.markdown-body').html(marked.parse(res.analysis));
+        $('#aiContent').show();
+      } else {
+        $('#aiContent').find('.markdown-body').html(
+          `<div class="jp-alert-danger"><i class="fas fa-ban mr-2"></i>诊断失败：${res.msg}</div>`
+        );
+        $('#aiContent').show();
+      }
+    },
+    error: function() {
+      $('#aiLoading').hide();
+      let msg = "请求超时或网络错误。";
+      if (selectedProc.type === 'docker') {
+        msg += "<br><small>Docker 模式首次诊断可能因拉取 Sidecar 镜像较慢导致超时，请稍后重试。</small>";
+      }
+      $('#aiContent').find('.markdown-body').html(`<div class="jp-alert-danger">${msg}</div>`);
+      $('#aiContent').show();
+    }
+  });
+}
+
+$('#aiModelSelect').change(function() {
+  if ($('#aiContent').is(':visible')) {
+    if (confirm("切换模型将重新进行分析，是否继续？")) startDiagnose();
+  }
+});
+</script>
+{% endblock %}

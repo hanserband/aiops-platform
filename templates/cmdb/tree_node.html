@@ -1,0 +1,19 @@
+<li class="nav-item">
+    <a href="?group={{ node.id }}" class="nav-link {% if current_group_id == node.id %}active bg-primary{% endif %}">
+        <i class="far fa-folder nav-icon"></i>
+        <p>
+            {{ node.name }}
+            {% if node.children.exists %}
+                <i class="right fas fa-angle-left"></i>
+            {% endif %}
+        </p>
+    </a>
+
+    {% if node.children.exists %}
+        <ul class="nav nav-treeview" style="display: {% if current_group_id == node.id %}block{% else %}none{% endif %};">
+            {% for child in node.children.all %}
+                {% include "cmdb/tree_node.html" with node=child %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

@@ -1,0 +1,8 @@
+{"time": 1765439506.9277594, "data": "\r\nWelcome to Alibaba Cloud Elastic Compute Service !\r\n\r\nUpdates Information Summary: available\r\n    6 Security notice(s)\r\n        3 Important Security notice(s)\r\n        3 Moderate Security notice(s)\r\nRun \"dnf upgrade-minimal --security\" to apply all updates.More details please refer to:\r\nhttps://help.aliyun.com/document_detail/416274.html\r\nLast failed login: Thu Dec 11 15:47:52 CST 2025 from 62.3.34.93 on ssh:notty\r\nThere were 2 failed login attempts since the last successful login.\r\nLast login: Thu Dec 11 15:36:52 2025 from 120.228.111.44\r\r\n"}
+{"time": 1765439506.9731483, "data": "\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765439512.39953, "data": "l"}
+{"time": 1765439512.4908762, "data": "s"}
+{"time": 1765439512.6629388, "data": "\r\n\u001b[0m\u001b[01;34mjava-demo\u001b[0m  \u001b[01;34mlogs\u001b[0m  log.txt\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765439519.305124, "data": ";"}
+{"time": 1765439519.4282644, "data": "s"}
+{"time": 1765439519.5359747, "data": "\r\n-bash: syntax error near unexpected token `;'\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}

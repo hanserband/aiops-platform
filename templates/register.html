@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>注册 | AiOps</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="card card-outline card-success">
+    <div class="card-header text-center"><a href="#" class="h1"><b>Ops</b>Engine</a></div>
+    <div class="card-body">
+      <p class="login-box-msg">注册后需等待管理员审批</p>
+      {% if messages %}{% for m in messages %}<p class="text-danger">{{ m }}</p>{% endfor %}{% endif %}
+      <form method="post">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          <input type="text" name="username" class="form-control" placeholder="用户名" required>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" name="password" class="form-control" placeholder="密码" required>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" name="password_confirm" class="form-control" placeholder="确认密码" required>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">注册</button>
+      </form>
+      <a href="{% url 'login' %}" class="text-center d-block mt-3">已有账号，去登录</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

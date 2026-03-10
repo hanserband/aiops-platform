@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AiOps | 智能运维平台</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+
+  <style>
+  /* ═══════════════════════════════════════════
+     Design tokens
+  ═══════════════════════════════════════════ */
+  :root {
+    --bg:      #0f1117;
+    --panel:   #161b27;
+    --panel2:  #1c2333;
+    --border:  #232b3e;
+    --accent:  #3b82f6;
+    --accent2: #22d3ee;
+    --text:    #e2e8f0;
+    --muted:   #64748b;
+    --success: #10b981;
+    --warn:    #f59e0b;
+    --danger:  #ef4444;
+    --mono:    'IBM Plex Mono', monospace;
+    --sans:    'IBM Plex Sans', sans-serif;
+  }
+
+  /* ── Global base ── */
+  body,
+  .wrapper {
+    font-family: var(--sans) !important;
+    background: var(--bg) !important;
+    color: var(--text) !important;
+  }
+
+  /* dot-grid texture on content area */
+  .content-wrapper {
+    background: var(--bg) !important;
+    background-image: radial-gradient(circle, rgba(59,130,246,0.06) 1px, transparent 1px) !important;
+    background-size: 28px 28px !important;
+  }
+
+  /* ── Top navbar ── */
+  .main-header.navbar {
+    background: var(--panel) !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+  .main-header .nav-link,
+  .main-header .nav-link span {
+    color: var(--muted) !important;
+  }
+  .main-header .nav-link:hover,
+  .main-header .nav-link:hover span {
+    color: var(--text) !important;
+  }
+  .main-header .dropdown-menu {
+    background: var(--panel) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+  }
+  .main-header .dropdown-menu .dropdown-header {
+    color: var(--muted) !important;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .main-header .dropdown-menu .dropdown-item {
+    color: var(--muted) !important;
+    font-size: 13px;
+  }
+  .main-header .dropdown-menu .dropdown-item:hover {
+    background: var(--panel2) !important;
+    color: var(--text) !important;
+  }
+  .main-header .dropdown-menu .dropdown-divider {
+    border-color: var(--border) !important;
+  }
+  .main-header .dropdown-item.text-danger { color: var(--danger) !important; }
+
+  /* ── Sidebar ── */
+  .main-sidebar {
+    background: var(--panel) !important;
+    border-right: 1px solid var(--border) !important;
+    box-shadow: none !important;
+  }
+  .brand-link {
+    border-bottom: 1px solid var(--border) !important;
+    background: var(--panel2) !important;
+  }
+  .brand-link:hover { background: var(--panel2) !important; }
+  .brand-text { color: var(--text) !important; font-family: var(--mono) !important; }
+
+  /* sidebar nav links */
+  .nav-sidebar .nav-link {
+    color: var(--muted) !important;
+    border-radius: 6px !important;
+    font-size: 13px;
+    transition: background 0.15s, color 0.15s !important;
+  }
+  .nav-sidebar .nav-link:hover {
+    background: var(--panel2) !important;
+    color: var(--text) !important;
+  }
+  .nav-sidebar .nav-link.active {
+    background: rgba(59,130,246,0.15) !important;
+    color: var(--accent) !important;
+    box-shadow: none !important;
+  }
+  .nav-sidebar .nav-link p { color: inherit !important; }
+  .nav-sidebar .nav-icon { color: inherit !important; }
+  .nav-sidebar > .nav-item > .nav-link { margin-bottom: 0.2rem; }
+
+  /* treeview sub-items */
+  .nav-treeview > .nav-item > .nav-link {
+    color: var(--muted) !important;
+    font-size: 12px;
+  }
+  .nav-treeview > .nav-item > .nav-link:hover {
+    background: var(--panel2) !important;
+    color: var(--text) !important;
+  }
+  .nav-treeview > .nav-item > .nav-link.active {
+    background: rgba(59,130,246,0.12) !important;
+    color: var(--accent) !important;
+  }
+
+  /* ── Content header ── */
+  .content-header h1 {
+    font-family: var(--sans) !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: var(--text) !important;
+  }
+  .breadcrumb {
+    background: transparent !important;
+  }
+  .breadcrumb-item a { color: var(--accent) !important; font-size: 13px; }
+  .breadcrumb-item.active { color: var(--muted) !important; font-size: 13px; }
+  .breadcrumb-item + .breadcrumb-item::before { color: var(--border) !important; }
+
+  /* ── Cards (global default) ── */
+  .card {
+    background: var(--panel) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    color: var(--text) !important;
+  }
+  .card-header {
+    background: var(--panel2) !important;
+    border-bottom: 1px solid var(--border) !important;
+    color: var(--text) !important;
+    border-radius: 10px 10px 0 0 !important;
+  }
+  .card-title { color: var(--text) !important; font-size: 13px !important; }
+  .card-footer {
+    background: var(--panel2) !important;
+    border-top: 1px solid var(--border) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+  .card-body { color: var(--text) !important; }
+
+  /* card accent stripe */
+  .card-primary  { border-top: 2px solid var(--accent)  !important; }
+  .card-success  { border-top: 2px solid var(--success) !important; }
+  .card-warning  { border-top: 2px solid var(--warn)    !important; }
+  .card-danger   { border-top: 2px solid var(--danger)  !important; }
+  .card-info     { border-top: 2px solid var(--accent2) !important; }
+  .card-outline.card-primary { border: 1px solid var(--border) !important; border-top: 2px solid var(--accent) !important; }
+
+  /* ── Tables ── */
+  .table { color: var(--text) !important; }
+  .table thead th {
+    background: var(--panel2) !important;
+    color: var(--muted) !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-top: none !important;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .table tbody td {
+    border-top: 1px solid rgba(35,43,62,0.6) !important;
+    color: var(--text) !important;
+    font-size: 13px;
+  }
+  .table-hover tbody tr:hover {
+    background: rgba(59,130,246,0.05) !important;
+  }
+  .table-striped tbody tr:nth-of-type(odd) {
+    background: rgba(255,255,255,0.02) !important;
+  }
+
+  /* ── Forms ── */
+  .form-control {
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    color: var(--text) !important;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .form-control::placeholder { color: var(--muted) !important; }
+  .form-control:focus {
+    background: var(--bg) !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.1) !important;
+    color: var(--text) !important;
+  }
+  .form-control option { background: var(--panel); color: var(--text); }
+  label { color: var(--muted) !important; font-size: 12px; }
+  .input-group-text {
+    background: var(--panel2) !important;
+    border-color: var(--border) !important;
+    color: var(--muted) !important;
+  }
+
+  /* ── Buttons (default AdminLTE overrides) ── */
+  .btn-primary {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .btn-primary:hover { background: #2563eb !important; border-color: #2563eb !important; }
+
+  .btn-secondary, .btn-default {
+    background: var(--panel2) !important;
+    border-color: var(--border) !important;
+    color: var(--muted) !important;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .btn-secondary:hover, .btn-default:hover { color: var(--text) !important; border-color: var(--muted) !important; }
+
+  .btn-success {
+    background: rgba(16,185,129,0.15) !important;
+    border-color: rgba(16,185,129,0.3) !important;
+    color: var(--success) !important;
+    font-family: var(--mono); font-size: 12px;
+  }
+  .btn-success:hover { background: rgba(16,185,129,0.25) !important; color: var(--success) !important; }
+
+  .btn-danger {
+    background: rgba(239,68,68,0.12) !important;
+    border-color: rgba(239,68,68,0.3) !important;
+    color: var(--danger) !important;
+    font-family: var(--mono); font-size: 12px;
+  }
+  .btn-danger:hover { background: rgba(239,68,68,0.22) !important; color: var(--danger) !important; }
+
+  .btn-warning {
+    background: rgba(245,158,11,0.12) !important;
+    border-color: rgba(245,158,11,0.3) !important;
+    color: var(--warn) !important;
+    font-family: var(--mono); font-size: 12px;
+  }
+  .btn-warning:hover { background: rgba(245,158,11,0.22) !important; color: var(--warn) !important; }
+
+  .btn-info {
+    background: rgba(34,211,238,0.1) !important;
+    border-color: rgba(34,211,238,0.25) !important;
+    color: var(--accent2) !important;
+    font-family: var(--mono); font-size: 12px;
+  }
+  .btn-info:hover { background: rgba(34,211,238,0.2) !important; color: var(--accent2) !important; }
+
+  .btn-purple {
+    background: rgba(168,85,247,0.12) !important;
+    border-color: rgba(168,85,247,0.3) !important;
+    color: #a855f7 !important;
+    font-family: var(--mono); font-size: 12px;
+  }
+  .btn-purple:hover { background: rgba(168,85,247,0.22) !important; color: #a855f7 !important; }
+
+  /* ── Badges ── */
+  .badge-primary { background: rgba(59,130,246,0.15)  !important; color: var(--accent)  !important; border: 1px solid rgba(59,130,246,0.25); }
+  .badge-success { background: rgba(16,185,129,0.15)  !important; color: var(--success) !important; border: 1px solid rgba(16,185,129,0.25); }
+  .badge-warning { background: rgba(245,158,11,0.15)  !important; color: var(--warn)    !important; border: 1px solid rgba(245,158,11,0.25); }
+  .badge-danger  { background: rgba(239,68,68,0.15)   !important; color: var(--danger)  !important; border: 1px solid rgba(239,68,68,0.25); }
+  .badge-info    { background: rgba(34,211,238,0.12)  !important; color: var(--accent2) !important; border: 1px solid rgba(34,211,238,0.2); }
+  .badge-secondary,
+  .badge-dark    { background: var(--panel2) !important; color: var(--muted) !important; border: 1px solid var(--border); }
+
+  /* ── Modals ── */
+  .modal-content {
+    background: var(--panel) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    color: var(--text) !important;
+  }
+  .modal-header {
+    background: var(--panel2) !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-radius: 10px 10px 0 0 !important;
+  }
+  .modal-title { color: var(--text) !important; font-family: var(--mono); font-size: 13px; letter-spacing: 0.05em; }
+  .modal-footer {
+    background: var(--panel2) !important;
+    border-top: 1px solid var(--border) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+  .modal-header .close { color: var(--muted) !important; opacity: 1 !important; }
+  .modal-header .close:hover { color: var(--text) !important; }
+  /* coloured modal headers */
+  .modal-header.bg-primary  { background: rgba(59,130,246,0.15)  !important; }
+  .modal-header.bg-success  { background: rgba(16,185,129,0.12)  !important; }
+  .modal-header.bg-warning  { background: rgba(245,158,11,0.12)  !important; }
+  .modal-header.bg-danger   { background: rgba(239,68,68,0.12)   !important; }
+  .modal-header.bg-purple   { background: rgba(168,85,247,0.12)  !important; }
+  .modal-header.bg-light    { background: var(--panel2) !important; }
+
+  /* ── Alerts ── */
+  .alert { border-radius: 6px !important; font-size: 13px; border: 1px solid transparent; }
+  .alert-success  { background: rgba(16,185,129,0.1)  !important; border-color: rgba(16,185,129,0.25)  !important; color: #6ee7b7 !important; }
+  .alert-danger   { background: rgba(239,68,68,0.1)   !important; border-color: rgba(239,68,68,0.25)   !important; color: #fca5a5 !important; }
+  .alert-warning  { background: rgba(245,158,11,0.1)  !important; border-color: rgba(245,158,11,0.25)  !important; color: #fcd34d !important; }
+  .alert-info     { background: rgba(59,130,246,0.1)  !important; border-color: rgba(59,130,246,0.25)  !important; color: #93c5fd !important; }
+  .alert-light    { background: var(--panel2) !important; border-color: var(--border) !important; color: var(--muted) !important; }
+  .alert .close   { color: var(--muted) !important; opacity: 1 !important; }
+
+  /* ── Dropdowns ── */
+  .dropdown-menu {
+    background: var(--panel) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+  }
+  .dropdown-item { color: var(--muted) !important; font-size: 13px; }
+  .dropdown-item:hover { background: var(--panel2) !important; color: var(--text) !important; }
+  .dropdown-divider { border-color: var(--border) !important; }
+
+  /* ── Footer ── */
+  .main-footer {
+    background: var(--panel) !important;
+    border-top: 1px solid var(--border) !important;
+    color: var(--muted) !important;
+    font-size: 12px;
+    font-family: var(--mono);
+  }
+  .main-footer a { color: var(--accent) !important; }
+  .main-footer strong { color: var(--muted) !important; }
+
+  /* ── Custom file input ── */
+  .custom-file-label {
+    background: var(--bg) !important;
+    border-color: var(--border) !important;
+    color: var(--muted) !important;
+    border-radius: 6px !important;
+  }
+  .custom-file-label::after {
+    background: var(--panel2) !important;
+    border-left-color: var(--border) !important;
+    color: var(--muted) !important;
+  }
+
+  /* ── Misc text helpers ── */
+  .text-muted { color: var(--muted) !important; }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent2); }
+
+  /* ── Markdown content ── */
+  .markdown-body { font-size: 14px; line-height: 1.6; color: var(--text); }
+  .markdown-body pre { background: var(--panel2) !important; padding: 10px; border-radius: 6px; border: 1px solid var(--border); color: var(--accent2); }
+  .markdown-body code { color: var(--accent2); background: var(--panel2); padding: 1px 5px; border-radius: 3px; }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- ═══ Top navbar ═══ -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/" class="nav-link">首页</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-user-circle"></i>
+          <span class="d-none d-md-inline ml-1">{{ request.user.username }}</span>
+          {% if request.user.is_superuser %}
+            <span class="badge badge-danger navbar-badge" style="position:static; margin-left:5px; font-size:10px;">ADMIN</span>
+          {% endif %}
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-header">账户设置</span>
+          <div class="dropdown-divider"></div>
+          <a href="{% url 'change_own_password' %}" class="dropdown-item">
+            <i class="fas fa-lock mr-2"></i> 修改密码
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="{% url 'logout' %}" class="dropdown-item text-danger">
+            <i class="fas fa-sign-out-alt mr-2"></i> 退出登录
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ═══ Sidebar ═══ -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="/" class="brand-link">
+      <span class="brand-text font-weight-bold pl-3" style="font-size:1.1rem; font-family:var(--mono);">
+        <i class="fas fa-robot mr-1" style="color:var(--accent);"></i> AiOps
+      </span>
+    </a>
+
+    <div class="sidebar">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+          <!-- 仪表盘 -->
+          <li class="nav-item">
+            <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>仪表盘</p>
+            </a>
+          </li>
+
+          <!-- 服务器管理 -->
+          <li class="nav-item {% if '/cmdb/' in request.path or '/java/' in request.path or 'accounts' in request.path %}menu-open{% endif %}">
+            <a href="#" class="nav-link {% if '/cmdb/' in request.path or '/java/' in request.path or 'accounts' in request.path %}active{% endif %}">
+              <i class="nav-icon fas fa-server"></i>
+              <p>服务器管理 <i class="right fas fa-angle-left"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% url 'server_list' %}" class="nav-link {% if 'servers' in request.path %}active{% endif %}">
+                  <i class="far fa-circle nav-icon"></i><p>主机列表</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'java_ops_index' %}" class="nav-link {% if 'java/ops' in request.path %}active{% endif %}">
+                  <i class="fab fa-java nav-icon"></i><p>Java 应用诊断</p>
+                </a>
+              </li>
+              {% if request.user.is_superuser %}
+              <li class="nav-item">
+                <a href="{% url 'account_list' %}" class="nav-link {% if 'accounts' in request.path %}active{% endif %}">
+                  <i class="far fa-circle nav-icon"></i><p>云账号管理</p>
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+          </li>
+
+          <!-- K8s 容器管理 -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>K8s 容器管理</p>
+            </a>
+          </li>
+
+          <!-- AI 对话助手 -->
+          <li class="nav-item">
+            <a href="{% url 'chat_index' %}" class="nav-link {% if '/ai/chat/' in request.path %}active{% endif %}">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>AI 对话助手</p>
+            </a>
+          </li>
+
+          <!-- 系统设置 -->
+          {% if request.user.is_superuser %}
+          <li class="nav-item {% if '/sys/' in request.path or '/ai/models/' in request.path %}menu-open{% endif %}">
+            <a href="#" class="nav-link {% if '/sys/' in request.path or '/ai/models/' in request.path %}active{% endif %}">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>系统设置 <i class="right fas fa-angle-left"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% url 'user_list' %}" class="nav-link {% if 'users' in request.path %}active{% endif %}">
+                  <i class="far fa-circle nav-icon"></i><p>用户管理</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'role_list' %}" class="nav-link {% if 'roles' in request.path %}active{% endif %}">
+                  <i class="far fa-circle nav-icon"></i><p>角色管理</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'sys_setting' %}" class="nav-link {% if 'settings' in request.path %}active{% endif %}">
+                  <i class="far fa-circle nav-icon"></i><p>系统参数</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'model_list' %}" class="nav-link {% if '/ai/models/' in request.path %}active{% endif %}">
+                  <i class="far fa-circle nav-icon"></i><p>AI 模型配置</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          {% endif %}
+
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ═══ Content wrapper ═══ -->
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">{{ page_title|default:"AiOps Platform" }}</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/">首页</a></li>
+              <li class="breadcrumb-item active">{{ page_title|default:"Page" }}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              {% if message.tags == 'error' %}
+                <i class="icon fas fa-ban mr-1"></i> 错误:
+              {% elif message.tags == 'success' %}
+                <i class="icon fas fa-check mr-1"></i> 成功:
+              {% else %}
+                <i class="icon fas fa-info mr-1"></i> 提示:
+              {% endif %}
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b style="font-family:var(--mono); font-size:11px;">v2.0.0</b>
+    </div>
+    <strong>Copyright &copy; 2026ChinaMobile <a href="#">@AiOps Platform</a>. AI can make mistakes. Please double-check responses.</strong>
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

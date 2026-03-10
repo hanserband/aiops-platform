@@ -1,0 +1,30 @@
+{"time": 1765786450.0493183, "data": "Last login: Mon Dec 15 13:58:08 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765786450.082199, "data": "\u001b]0;root@localhost:~\u0007\u001b[?1034h[root@localhost ~]# "}
+{"time": 1765786452.8629506, "data": "kubectl"}
+{"time": 1765786453.1442618, "data": " "}
+{"time": 1765786453.8531382, "data": "g"}
+{"time": 1765786453.9567223, "data": "e"}
+{"time": 1765786454.1464684, "data": "t"}
+{"time": 1765786454.2720578, "data": " "}
+{"time": 1765786454.4089072, "data": "p"}
+{"time": 1765786454.5769362, "data": "o"}
+{"time": 1765786454.6826215, "data": "d"}
+{"time": 1765786454.873503, "data": "\r\n"}
+{"time": 1765786455.0508633, "data": "No resources found in default namespace.\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765786455.7490442, "data": "kubectl get pod"}
+{"time": 1765786456.0505095, "data": "\b\u001b[K"}
+{"time": 1765786456.2267866, "data": "\b\u001b[K"}
+{"time": 1765786456.3836179, "data": "\b\u001b[K"}
+{"time": 1765786456.9134176, "data": "n"}
+{"time": 1765786457.0481896, "data": "o"}
+{"time": 1765786457.208297, "data": "d"}
+{"time": 1765786457.2620652, "data": "e"}
+{"time": 1765786457.4588172, "data": "\r\n"}
+{"time": 1765786457.5023084, "data": "NAME                    STATUS   ROLES           AGE   VERSION\r\nlocalhost.localdomain   Ready    control-plane   24h   v1.30.14\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765786458.1774042, "data": "kubectl get node"}
+{"time": 1765786458.3871975, "data": "\r\n"}
+{"time": 1765786458.4303925, "data": "NAME                    STATUS   ROLES           AGE   VERSION\r\nlocalhost.localdomain   Ready    control-plane   24h   v1.30.14\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765786637.9759376, "data": "docker run -d -p 6379:63"}
+{"time": 1765786637.97795, "data": "79 redis"}
+{"time": 1765786639.1840997, "data": "\r\n"}
+{"time": 1765786639.5160465, "data": "Unable to find image 'redis:latest' locally\r\n"}

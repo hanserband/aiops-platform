@@ -1,0 +1,21 @@
+{"time": 1765814570.74457, "data": "Last login: Tue Dec 16 08:01:57 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765814570.7495997, "data": "\u001b]0;root@test1:~\u0007\u001b[?1034h[root@test1 ~]# "}
+{"time": 1765814571.7839549, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814572.4548428, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814589.6048474, "data": "tail -f /tmp/k8s_agent_install.log "}
+{"time": 1765814589.8180711, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Csl;dlsa\u001b[K"}
+{"time": 1765814590.2680326, "data": "\b\b\b\b\b\b\btail -f /tmp/k8s_agent_install.log "}
+{"time": 1765814590.5295396, "data": "\r\nLoaded plugins: fastestmirror\r\nCleaning repos: base docker-ce-stable epel extras kubernetes updates\r\nCleaning up list of fastest mirrors\r\nLoaded plugins: fastestmirror\r\nDetermining fastest mirrors\r\nRetrieving key from https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg\r\nImporting GPG key 0x13EDEF05:\r\n Userid     : \"Rapture Automatic Signing Key (cloud-rapture-signing-key-2022-03-07-08_01_01.pub)\"\r\n Fingerprint: a362 b822 f6de dc65 2817 ea46 b53d c80d 13ed ef05\r\n From       : https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg\r\n"}
+{"time": 1765814591.3567636, "data": "\r\n"}
+{"time": 1765814591.560228, "data": "\r\n"}
+{"time": 1765814591.7620986, "data": "\r\n"}
+{"time": 1765814591.9125087, "data": "\r\n"}
+{"time": 1765814592.1521819, "data": "\r\n"}
+{"time": 1765814592.3557417, "data": "\r\n"}
+{"time": 1765814593.5594516, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814595.288893, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814597.4057171, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814598.6684349, "data": "cccc"}
+{"time": 1765814599.3122191, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814602.9057953, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765814603.9304745, "data": "^C\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}

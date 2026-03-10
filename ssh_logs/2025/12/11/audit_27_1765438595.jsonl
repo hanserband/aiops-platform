@@ -1,0 +1,31 @@
+{"time": 1765438494.6327052, "data": "\r\nWelcome to Alibaba Cloud Elastic Compute Service !\r\n\r\nUpdates Information Summary: available\r\n    6 Security notice(s)\r\n        3 Important Security notice(s)\r\n        3 Moderate Security notice(s)\r\nRun \"dnf upgrade-minimal --security\" to apply all updates.More details please refer to:\r\nhttps://help.aliyun.com/document_detail/416274.html\r\nLast login: Thu Dec 11 15:34:12 2025 from 120.228.111.44\r\r\n"}
+{"time": 1765438494.6765888, "data": "\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438500.5489678, "data": "l"}
+{"time": 1765438501.2443986, "data": "s\r\n\u001b[0m\u001b[01;34mjava-demo\u001b[0m  \u001b[01;34mlogs\u001b[0m\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438501.4644544, "data": "\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438526.2317765, "data": "\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438526.3696814, "data": "\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438526.5560222, "data": "\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438527.1187108, "data": "l"}
+{"time": 1765438527.2256029, "data": "s"}
+{"time": 1765438527.3472779, "data": "\r\n\u001b[0m\u001b[01;34mjava-demo\u001b[0m  \u001b[01;34mlogs\u001b[0m  log.txt\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438541.69939, "data": "^C\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438543.0629745, "data": "c"}
+{"time": 1765438543.1729615, "data": "d"}
+{"time": 1765438543.2972057, "data": " "}
+{"time": 1765438543.9370544, "data": "l"}
+{"time": 1765438544.1237137, "data": "o"}
+{"time": 1765438544.261772, "data": "g"}
+{"time": 1765438544.495339, "data": "s/"}
+{"time": 1765438545.054885, "data": "\u0007arthas"}
+{"time": 1765438545.2565892, "data": "\u0007"}
+{"time": 1765438545.8088472, "data": "\r\narthas/       arthas-cache/ \r\n[root@iZuf61utvvuklj7ht5wyz4Z ~]# cd logs/arthas"}
+{"time": 1765438546.2638302, "data": "\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~/logs/arthas\u0007[root@iZuf61utvvuklj7ht5wyz4Z arthas]# "}
+{"time": 1765438546.663783, "data": "l"}
+{"time": 1765438546.7857242, "data": "s"}
+{"time": 1765438546.9240966, "data": "\r\narthas.log\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~/logs/arthas\u0007[root@iZuf61utvvuklj7ht5wyz4Z arthas]# "}
+{"time": 1765438548.4727783, "data": "p"}
+{"time": 1765438548.5804574, "data": "w"}
+{"time": 1765438548.768954, "data": "d"}
+{"time": 1765438548.9674616, "data": "\r\n/root/logs/arthas\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~/logs/arthas\u0007[root@iZuf61utvvuklj7ht5wyz4Z arthas]# "}
+{"time": 1765438554.3898218, "data": "^C\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~/logs/arthas\u0007[root@iZuf61utvvuklj7ht5wyz4Z arthas]# "}

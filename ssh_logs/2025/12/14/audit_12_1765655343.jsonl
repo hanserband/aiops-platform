@@ -1,0 +1,16 @@
+{"time": 1765655329.9273508, "data": "Last login: Sun Dec 14 03:44:12 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765655329.9496617, "data": "\u001b]0;root@localhost:~\u0007\u001b[?1034h[root@localhost ~]# "}
+{"time": 1765655331.0333614, "data": "python3 get-pip.py "}
+{"time": 1765655331.8843174, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[1P\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765655332.69883, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bthon3\u001b[K"}
+{"time": 1765655333.440133, "data": "\b\b\b\b\b\b\byum install python3 "}
+{"time": 1765655334.521492, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[2Ppython get-pip.py\u001b[C"}
+{"time": 1765655335.5396209, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bhon3\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765655336.6558867, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765655337.4017866, "data": "\b\brm -rf /test"}
+{"time": 1765655338.2351656, "data": "\b\b\b\b\u001b[1Papp"}
+{"time": 1765655338.4242184, "data": "\b\b\b\b\b\b\b\b\b\b\bnetstat -lntup"}
+{"time": 1765655338.810017, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\bpip\u001b[K"}
+{"time": 1765655339.4442549, "data": "\b\b\bnetstat -lntup"}
+{"time": 1765655340.9208417, "data": "\r\n"}
+{"time": 1765655340.9218473, "data": "Active Internet connections (only servers)\r\nProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    \r\ntcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      903/sshd            \r\ntcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1088/master         \r\ntcp6       0      0 :::22                   :::*                    LISTEN      903/sshd            \r\ntcp6       0      0 ::1:25                  :::*                    LISTEN      1088/master         \r\nudp        0      0 0.0.0.0:68              0.0.0.0:*                           722/dhclient        \r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}

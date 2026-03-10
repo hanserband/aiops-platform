@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title">基本信息</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>角色名称</label>
+                {{ form.name }}
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-info card-outline">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-folder-tree"></i> 数据权限配置
+            </h3>
+        </div>
+        <div class="card-body">
+            <p class="text-muted mb-3">
+                <i class="fas fa-info-circle"></i> 勾选该角色可以看到的服务器分组（包含子分组）。不勾选则看不到任何服务器。
+            </p>
+            <div class="row">
+                {% for group in all_server_groups %}
+                <div class="col-md-3 col-sm-6">
+                    <div class="custom-control custom-checkbox mb-2">
+                        <input class="custom-control-input" type="checkbox"
+                               id="sg_{{ group.id }}"
+                               name="server_groups"
+                               value="{{ group.id }}"
+                               {% if group.id in current_group_ids %}checked{% endif %}>
+                        <label for="sg_{{ group.id }}" class="custom-control-label font-weight-normal">
+                            {{ group.name }}
+                            {% if group.parent %}
+                                <span class="text-muted text-xs">({{ group.parent.name }})</span>
+                            {% endif %}
+                        </label>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12 text-muted">暂无服务器分组，请先在“服务器管理”中创建分组。</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3 mb-5">
+        <a href="{% url 'role_list' %}" class="btn btn-default">取消</a>
+        <button type="submit" class="btn btn-primary float-right">保存配置</button>
+    </div>
+</form>
+{% endblock %}

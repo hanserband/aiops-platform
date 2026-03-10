@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-primary">
+            <div class="card-header"><h3 class="card-title">添加云账号</h3></div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="card-body">
+                    <div class="form-group"><label>账号别名</label>{{ form.name }}</div>
+                    <div class="form-group"><label>Region ID</label>{{ form.region }}</div>
+                    <div class="form-group"><label>AccessKey</label>{{ form.access_key }}</div>
+                    <div class="form-group"><label>SecretKey</label>{{ form.secret_key }}</div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-block">添加</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header"><h3 class="card-title">已配置账号列表</h3></div>
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover">
+                    <thead><tr><th>名称</th><th>Region</th><th>AK (部分)</th><th>添加时间</th><th>操作</th></tr></thead>
+                    <tbody>
+                        {% for acc in accounts %}
+                        <tr>
+                            <td><strong>{{ acc.name }}</strong></td>
+                            <td><span class="badge badge-info">{{ acc.region }}</span></td>
+                            <td>{{ acc.access_key|slice:":6" }}******</td>
+                            <td>{{ acc.create_at|date:"Y-m-d" }}</td>
+                            <td>
+                                <a href="{% url 'account_delete' acc.id %}" class="btn btn-sm btn-danger" onclick="return confirm('删除账号不会删除已同步的主机，确认删除？')">删除</a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr><td colspan="5" class="text-center">暂无账号，请在左侧添加</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

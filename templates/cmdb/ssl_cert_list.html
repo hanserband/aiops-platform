@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title"><i class="fas fa-lock text-success mr-2"></i>SSL 证书监控</h3>
+                <div class="card-tools">
+                    <button class="btn btn-warning btn-sm mr-2" onclick="$('#configModal').modal('show')">
+                        <i class="fas fa-bell"></i> 告警配置
+                    </button>
+                    <button class="btn btn-info btn-sm mr-2" onclick="location.href='{% url 'ssl_cert_refresh' %}'">
+                        <i class="fas fa-sync"></i> 立即检测
+                    </button>
+                    <button class="btn btn-success btn-sm" onclick="$('#addModal').modal('show')">
+                        <i class="fas fa-plus"></i> 添加域名
+                    </button>
+                </div>
+            </div>
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>域名</th>
+                            <th>端口</th>
+                            <th>颁发机构 (Issuer)</th>
+                            <th>过期时间</th>
+                            <th>剩余天数</th>
+                            <th>状态</th>
+                            <th>最后检测</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in certs %}
+                        <tr>
+                            <td class="font-weight-bold">{{ c.domain }}</td>
+                            <td>{{ c.port }}</td>
+                            <td>{{ c.issuer|default:"-" }}</td>
+                            <td>{{ c.expire_date|date:"Y-m-d" }}</td>
+                            <td>
+                                {% if c.remaining_days < 7 %}
+                                    <span class="badge badge-danger">{{ c.remaining_days }} 天</span>
+                                {% elif c.remaining_days < 30 %}
+                                    <span class="badge badge-warning">{{ c.remaining_days }} 天</span>
+                                {% else %}
+                                    <span class="badge badge-success">{{ c.remaining_days }} 天</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if c.is_valid %}
+                                    <span class="text-success"><i class="fas fa-check-circle"></i> 正常</span>
+                                {% else %}
+                                    <span class="text-danger" title="{{ c.error_msg }}"><i class="fas fa-times-circle"></i> 异常</span>
+                                {% endif %}
+                            </td>
+                            <td class="text-muted text-sm">{{ c.updated_at|date:"m-d H:i" }}</td>
+                            <td>
+                                <a href="{% url 'ssl_cert_delete' c.id %}" class="btn btn-xs btn-danger" onclick="return confirm('确定删除?')">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr><td colspan="8" class="text-center text-muted py-4">暂无监控域名，请点击右上角添加。</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">添加监控域名</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addForm">
+                    <div class="form-group">
+                        <label>域名 (Domain)</label>
+                        <input type="text" class="form-control" name="domain" placeholder="例如: www.example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>端口 (Port)</label>
+                        <input type="number" class="form-control" name="port" value="443">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="submitAdd()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="configModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h5 class="modal-title">告警 Webhook 配置</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="configForm">
+                    <div class="alert alert-info small">
+                        <i class="fas fa-info-circle"></i> 当证书剩余时间小于 15 天或检测异常时触发告警。
+                    </div>
+                    <div class="form-group">
+                        <label>钉钉 Webhook</label>
+                        <input type="text" class="form-control" name="dingtalk_webhook" value="{{ dingtalk_webhook }}" placeholder="https://oapi.dingtalk.com/robot/send?access_token=...">
+                    </div>
+                    <div class="form-group">
+                        <label>企业微信 Webhook</label>
+                        <input type="text" class="form-control" name="wechat_webhook" value="{{ wechat_webhook }}" placeholder="https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="submitConfig()">保存配置</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function submitAdd() {
+        $.post("{% url 'ssl_cert_add' %}", $('#addForm').serialize(), function(res) {
+            if(res.status) {
+                alert(res.msg);
+                location.reload();
+            } else {
+                alert(res.msg);
+            }
+        });
+    }
+
+    function submitConfig() {
+        $.post("{% url 'ssl_config_save' %}", $('#configForm').serialize(), function(res) {
+            if(res.status) {
+                alert(res.msg);
+                $('#configModal').modal('hide');
+            } else {
+                alert("保存失败");
+            }
+        });
+    }
+</script>
+{% endblock %}

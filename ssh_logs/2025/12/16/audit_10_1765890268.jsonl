@@ -1,0 +1,315 @@
+{"time": 1765890052.5929532, "data": "Last login: Wed Dec 17 04:58:50 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765890052.6217148, "data": "\u001b]0;root@test1:~\u0007\u001b[?1034h[root@test1 ~]# "}
+{"time": 1765890053.9234798, "data": "l"}
+{"time": 1765890054.0246332, "data": "s"}
+{"time": 1765890054.2089014, "data": "\r\nanaconda-ks.cfg\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765890054.3665922, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765890054.5230138, "data": "\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765890054.894553, "data": "c"}
+{"time": 1765890055.019531, "data": "a"}
+{"time": 1765890055.5279694, "data": "t"}
+{"time": 1765890056.1435351, "data": "/"}
+{"time": 1765890056.343269, "data": " "}
+{"time": 1765890056.8846638, "data": "\b\u001b[K"}
+{"time": 1765890057.0327935, "data": "\b\u001b[K"}
+{"time": 1765890057.1813946, "data": " "}
+{"time": 1765890060.5194206, "data": "/"}
+{"time": 1765890060.7736094, "data": "t"}
+{"time": 1765890061.1146348, "data": "m"}
+{"time": 1765890061.2835517, "data": "p"}
+{"time": 1765890061.579773, "data": "\r\ncat: /tmp: Is a directory\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765890061.8119764, "data": "l"}
+{"time": 1765890061.9177763, "data": "s"}
+{"time": 1765890062.0694602, "data": "\r\nanaconda-ks.cfg\r\n\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765890062.512204, "data": "c"}
+{"time": 1765890062.6395264, "data": "d"}
+{"time": 1765890062.758918, "data": " "}
+{"time": 1765890062.8446589, "data": "/"}
+{"time": 1765890063.447123, "data": "t"}
+{"time": 1765890063.7096357, "data": "mp/"}
+{"time": 1765890064.1808124, "data": "\r\n\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890064.391337, "data": "l"}
+{"time": 1765890064.4793663, "data": "s"}
+{"time": 1765890064.670536, "data": "\r\ninstall_k8s.sh     k8s_agent_install.log  \u001b[0m\u001b[01;32mks-script-LEJq2t\u001b[0m\r\ninstall_k8s.shell  k8s_install.log        yum.log\r\n\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890065.9344602, "data": "t"}
+{"time": 1765890066.1295073, "data": "a"}
+{"time": 1765890067.0109735, "data": "i"}
+{"time": 1765890067.3279686, "data": "l"}
+{"time": 1765890068.039295, "data": " "}
+{"time": 1765890068.4746296, "data": "-"}
+{"time": 1765890068.6592922, "data": "f"}
+{"time": 1765890068.830007, "data": " "}
+{"time": 1765890071.3167872, "data": "k"}
+{"time": 1765890071.467491, "data": "\u0007"}
+{"time": 1765890073.5589263, "data": "8"}
+{"time": 1765890073.7186694, "data": "\u0007s_"}
+{"time": 1765890074.8412824, "data": "\b\u001b[K"}
+{"time": 1765890075.3558764, "data": "\b\u001b[K"}
+{"time": 1765890075.3608797, "data": "\b\u001b[K"}
+{"time": 1765890075.3955054, "data": "\b\u001b[K"}
+{"time": 1765890075.432744, "data": "\b\u001b[K"}
+{"time": 1765890075.4802213, "data": "\b\u001b[K"}
+{"time": 1765890075.5047038, "data": "\b\u001b[K"}
+{"time": 1765890075.5295613, "data": "\b\u001b[K"}
+{"time": 1765890075.5635602, "data": "\b\u001b[K"}
+{"time": 1765890075.5989714, "data": "\b\u001b[K"}
+{"time": 1765890075.623214, "data": "\b\u001b[K"}
+{"time": 1765890076.024662, "data": "\b\u001b[K"}
+{"time": 1765890076.1727135, "data": "\u0007"}
+{"time": 1765890076.782684, "data": "p"}
+{"time": 1765890077.0948427, "data": "y"}
+{"time": 1765890077.8889954, "data": "t"}
+{"time": 1765890077.9984336, "data": "h"}
+{"time": 1765890078.1519363, "data": "o"}
+{"time": 1765890078.3749099, "data": "n"}
+{"time": 1765890079.2568457, "data": " "}
+{"time": 1765890079.7158756, "data": "\b\u001b[K"}
+{"time": 1765890080.361497, "data": " "}
+{"time": 1765890080.9146833, "data": "i"}
+{"time": 1765890081.065876, "data": "\u0007nstall_k8s.sh"}
+{"time": 1765890081.5678475, "data": "\r\n"}
+{"time": 1765890081.597626, "data": "  File \"install_k8s.sh\", line 2\r\nSyntaxError: Non-ASCII character '\\xe5' in file install_k8s.sh on line 2, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details\r\n\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890111.5400355, "data": "vi"}
+{"time": 1765890111.7013142, "data": " "}
+{"time": 1765890112.3505282, "data": "i"}
+{"time": 1765890112.5847976, "data": "n"}
+{"time": 1765890112.6919243, "data": "\u0007stall_k8s.sh"}
+{"time": 1765890113.186335, "data": "\r\n"}
+{"time": 1765890113.2023187, "data": "\u001b[?1049h\u001b[?1h\u001b="}
+{"time": 1765890113.2103837, "data": "\u001b[1;24r\u001b[?12;25h\u001b[?12l\u001b[?25h\u001b[27m\u001b[m\u001b[H\u001b[2J\u001b[?25l\u001b[24;1H\"install_k8s.sh\" [noeol] 337L, 12013C\u001b[1;1H#!/bin/bash\r\n# K8s Agent (Worker Node) \u56fd\u5185\u4f18\u5316\u5b89\u88c5\u811a\u672c - \u5305\u542bEPEL\u6e90\u4fee\u590d\r\n# \u53ea\u4f7f\u7528\u56fd\u5185\u955c\u50cf\u6e90\uff0c\u4e0d\u8fde\u63a5\u4efb\u4f55\u56fd\u5916\u5b98\u65b9\u6e90\r\n# \u4f7f\u7528\u65b9\u6cd5:\r\n#   sudo K8S_VERSION=<Master\u7248\u672c> JOIN_COMMAND=\"<kubeadm join \u547d\u4ee4>\" bash /tmp/ii\u001b[6;1Hnstall_k8s_agent.sh\r\n\r\nset -e\r\nLOG_FILE=\"/tmp/k8s_agent_install.log\"\r\nexec > >(tee -a ${LOG_FILE}) 2>&1\r\n\r\necho \"================================================\"\r\necho \">>> Kubernetes Agent \u5b89\u88c5\u5f00\u59cb (\u5168\u56fd\u5185\u6e90\u7248)\"\r\necho \"================================================\"\r\n\r\n# ===============================================\r\n# 1. \u53d8\u91cf\u5b9a\u4e49\u4e0e\u6821\u9a8c\r\n# ===============================================\r\nK8S_VERSION=${K8S_VERSION:-\"\"}\r\n\r\nif [ -z \"$K8S_VERSION\" ]; then\r\n    echo \"!!! \u81f4\u547d\u9519\u8bef: \u73af\u5883\u53d8\u91cf K8S_VERSION \u672a\u8bbe\u7f6e\"\r\n    exit 1\u001b[1;1H\u001b[?12l\u001b[?25h"}
+{"time": 1765890114.3845432, "data": "\r\n"}
+{"time": 1765890114.8809993, "data": "\r\n\r\n"}
+{"time": 1765890114.926991, "data": "\r\n\r\n\r\n"}
+{"time": 1765890114.992931, "data": "\r\n\r\n"}
+{"time": 1765890115.0503404, "data": "\r\n\r\n"}
+{"time": 1765890115.1277528, "data": "\r\n\r\n"}
+{"time": 1765890115.188927, "data": "\r\n"}
+{"time": 1765890115.238226, "data": "\r\n\r\n"}
+{"time": 1765890115.2846534, "data": "\r\n\r\n"}
+{"time": 1765890115.3611815, "data": "\r\n\r\n"}
+{"time": 1765890115.420972, "data": "\r\n"}
+{"time": 1765890115.9837139, "data": "\r\n"}
+{"time": 1765890116.473058, "data": "\r\n\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1Hfi\u001b[24;1H\u001b[K\u001b[23;1H\u001b[?12l\u001b[?25h"}
+{"time": 1765890116.5434818, "data": "\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1H\u001b[?12l\u001b[?25h"}
+{"time": 1765890116.5916626, "data": "\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1Hecho \">>> \u76ee\u6807\u7248\u672c: ${K8S_VERSION}\"\r\u001b[?12l\u001b[?25h\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1Hecho \">>> \u65e5\u5fd7\u6587\u4ef6: ${LOG_FILE}\"\r\u001b[?12l\u001b[?25h"}
+{"time": 1765890116.6584253, "data": "\u001b[?25l\u001b[1;23r\u001b[1;1H\u001b[2M\u001b[1;24r\u001b[23;1H# ==================================================\u001b[22;1H\u001b[?12l\u001b[?25h\r\n"}
+{"time": 1765890116.7323334, "data": "\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1H# 2. \u7cfb\u7edf\u6e90\u5168\u9762\u4fee\u590d (CentOS + EPEL)\r\u001b[?12l\u001b[?25h\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1H# ==================================================\r\u001b[?12l\u001b[?25h"}
+{"time": 1765890116.7915413, "data": "\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1Hecho \">>> [1/7] \u4fee\u590d\u7cfb\u7edf\u6e90\u914d\u7f6e (CentOS + EPEL \u963f\u91cc\u4e91\u955c\u50cf)...\"\r\u001b[?12l\u001b[?25h\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1HOS_RELEASE=\"\"\r\u001b[?12l\u001b[?25h"}
+{"time": 1765890116.839244, "data": "\u001b[?25l\u001b[1;23r\u001b[23;1H\r\n\u001b[1;24r\u001b[23;1Hif [ -f /etc/redhat-release ]; then\r\u001b[?12l\u001b[?25h\u001b[?25l\u001b[1;23r\u001b[1;1H\u001b[2M\u001b[1;24r\u001b[22;5Hif grep -q \"CentOS Linux 7\" /etc/os-release 2>/dev/null || grep -q \"CentOS LL\u001b[23;1Hinux release 7\" /etc/redhat-release 2>/dev/null; then\u001b[22;1H\u001b[?12l\u001b[?25h"}
+{"time": 1765890118.4572043, "data": "\r\n\r\n\u001b[?1l\u001b>\u001b[?1049l\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890129.0370698, "data": "ls"}
+{"time": 1765890129.208222, "data": "\r\ninstall_k8s.sh     k8s_agent_install.log  \u001b[0m\u001b[01;32mks-script-LEJq2t\u001b[0m\r\ninstall_k8s.shell  k8s_install.log        yum.log\r\n\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890132.4720237, "data": "f"}
+{"time": 1765890132.81757, "data": "i"}
+{"time": 1765890133.0725656, "data": "n"}
+{"time": 1765890134.4908955, "data": "d"}
+{"time": 1765890134.7126625, "data": " "}
+{"time": 1765890134.8929336, "data": "/"}
+{"time": 1765890136.191197, "data": " "}
+{"time": 1765890136.3945088, "data": "-"}
+{"time": 1765890136.567947, "data": "d"}
+{"time": 1765890137.0675032, "data": " "}
+{"time": 1765890138.3315046, "data": "'"}
+{"time": 1765890138.479719, "data": "'"}
+{"time": 1765890139.4913423, "data": "\b\u001b[K"}
+{"time": 1765890139.6523278, "data": "\b\u001b[K"}
+{"time": 1765890139.8333855, "data": "\b\u001b[K"}
+{"time": 1765890140.0330257, "data": "\b\u001b[K"}
+{"time": 1765890140.4007313, "data": "\b\u001b[K"}
+{"time": 1765890141.373615, "data": "-"}
+{"time": 1765890141.7287703, "data": "n"}
+{"time": 1765890141.8803709, "data": "a"}
+{"time": 1765890141.9986322, "data": "m"}
+{"time": 1765890142.1392927, "data": "e"}
+{"time": 1765890142.360984, "data": " "}
+{"time": 1765890143.0147336, "data": "\""}
+{"time": 1765890143.1564517, "data": "\""}
+{"time": 1765890143.6687655, "data": "\b"}
+{"time": 1765890175.8628473, "data": "^C\r\n\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890176.2801373, "data": "c"}
+{"time": 1765890176.4230242, "data": "a"}
+{"time": 1765890176.6566463, "data": "t"}
+{"time": 1765890176.8358262, "data": " "}
+{"time": 1765890177.799041, "data": "/"}
+{"time": 1765890178.5159812, "data": "o"}
+{"time": 1765890178.7933855, "data": "p"}
+{"time": 1765890178.887276, "data": "t/"}
+{"time": 1765890179.4395509, "data": "\u0007"}
+{"time": 1765890179.7960145, "data": "\r\ncat: /opt/: Is a directory\r\n\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890180.0832167, "data": "l"}
+{"time": 1765890180.2122393, "data": "s"}
+{"time": 1765890180.3634012, "data": "\r\ninstall_k8s.sh     k8s_agent_install.log  \u001b[0m\u001b[01;32mks-script-LEJq2t\u001b[0m\r\ninstall_k8s.shell  k8s_install.log        yum.log\r\n\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890180.823178, "data": "ls"}
+{"time": 1765890181.870633, "data": "\b\b\u001b[K"}
+{"time": 1765890182.0835562, "data": "c"}
+{"time": 1765890182.1922133, "data": "d"}
+{"time": 1765890182.33966, "data": " "}
+{"time": 1765890182.6638932, "data": "/"}
+{"time": 1765890183.1942313, "data": "o"}
+{"time": 1765890183.659755, "data": "\b\u001b[K"}
+{"time": 1765890184.078933, "data": "\b\u001b[K"}
+{"time": 1765890185.5619066, "data": "ops_agent.py"}
+{"time": 1765890187.060514, "data": "^C\r\n\u001b]0;root@test1:/tmp\u0007[root@test1 tmp]# "}
+{"time": 1765890189.8126879, "data": "\u6210\u90fd"}
+{"time": 1765890190.350054, "data": "\b\b\u001b[K"}
+{"time": 1765890190.5208495, "data": "\b\b\u001b[K"}
+{"time": 1765890191.3711975, "data": "d"}
+{"time": 1765890191.933755, "data": "\b\u001b[K"}
+{"time": 1765890192.1047108, "data": "c"}
+{"time": 1765890192.2237916, "data": "d"}
+{"time": 1765890192.35819, "data": " "}
+{"time": 1765890192.5497298, "data": "/"}
+{"time": 1765890193.022035, "data": "o"}
+{"time": 1765890193.1308436, "data": "p"}
+{"time": 1765890193.2416322, "data": "t/"}
+{"time": 1765890193.4858594, "data": "\r\n\u001b]0;root@test1:/opt\u0007[root@test1 opt]# "}
+{"time": 1765890193.6786065, "data": "l"}
+{"time": 1765890193.8062088, "data": "s"}
+{"time": 1765890193.9660437, "data": "\r\n\u001b[0m\u001b[01;34mcni\u001b[0m  \u001b[01;34mcontainerd\u001b[0m  ops_agent.py\r\n\u001b]0;root@test1:/opt\u0007[root@test1 opt]# "}
+{"time": 1765890195.1976428, "data": "c"}
+{"time": 1765890195.5834491, "data": "\b\u001b[K"}
+{"time": 1765890196.1065626, "data": "p"}
+{"time": 1765890197.0009844, "data": "y"}
+{"time": 1765890198.0923986, "data": "t"}
+{"time": 1765890198.2737687, "data": "j"}
+{"time": 1765890198.7537186, "data": "\b\u001b[K"}
+{"time": 1765890199.304586, "data": "h"}
+{"time": 1765890200.332261, "data": "o"}
+{"time": 1765890200.5325406, "data": "n"}
+{"time": 1765890201.4851627, "data": "3"}
+{"time": 1765890201.6648498, "data": " "}
+{"time": 1765890202.1031926, "data": "o"}
+{"time": 1765890202.2334924, "data": "p"}
+{"time": 1765890202.319179, "data": "s_agent.py "}
+{"time": 1765890202.6952786, "data": "\r\n"}
+{"time": 1765890202.742769, "data": "Traceback (most recent call last):\r\n  File \"ops_agent.py\", line 3, in <module>\r\n    import psutil\r\nModuleNotFoundError: No module named 'psutil'\r\n\u001b]0;root@test1:/opt\u0007[root@test1 opt]# "}
+{"time": 1765890205.4765415, "data": "p"}
+{"time": 1765890205.7195532, "data": "i"}
+{"time": 1765890205.8400898, "data": "p"}
+{"time": 1765890206.2386444, "data": " "}
+{"time": 1765890206.366913, "data": "i"}
+{"time": 1765890206.6209252, "data": "n"}
+{"time": 1765890206.8735704, "data": "s"}
+{"time": 1765890207.08822, "data": "t"}
+{"time": 1765890207.251221, "data": "a"}
+{"time": 1765890207.3367803, "data": "l"}
+{"time": 1765890207.514694, "data": "l"}
+{"time": 1765890207.7237952, "data": " "}
+{"time": 1765890212.5715606, "data": "psutil"}
+{"time": 1765890213.2401063, "data": "\r\n-bash: pip: command not found\r\n\u001b]0;root@test1:/opt\u0007[root@test1 opt]# "}
+{"time": 1765890215.3268867, "data": "pip install psutil"}
+{"time": 1765890215.5975845, "data": "\b"}
+{"time": 1765890216.2256432, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bython3 ops_agent.py "}
+{"time": 1765890216.5009859, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cls\u001b[K"}
+{"time": 1765890216.8991091, "data": "\b\bcd /opt/"}
+{"time": 1765890217.2250106, "data": "\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765890217.435916, "data": "\b\bcat /opt/"}
+{"time": 1765890217.6384218, "data": "\b\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765890217.8816168, "data": "\b\bvi install_k8s.sh"}
+{"time": 1765890218.0722387, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[4@python\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765890218.3450847, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cls\u001b[K"}
+{"time": 1765890218.6411536, "data": "\b\bcd /tmp/"}
+{"time": 1765890218.8423054, "data": "\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765890219.0549858, "data": "\b\bcat /tmp"}
+{"time": 1765890219.266984, "data": "\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765890219.446962, "data": "\b\bpip3 install requests"}
+{"time": 1765890219.6281302, "data": "\b\u001b[K"}
+{"time": 1765890220.669568, "data": "\b\u001b[K"}
+{"time": 1765890221.1690705, "data": "\b\u001b[K"}
+{"time": 1765890221.1720712, "data": "\b\u001b[K"}
+{"time": 1765890221.2277653, "data": "\b\u001b[K"}
+{"time": 1765890221.4196332, "data": "\b\u001b[K"}
+{"time": 1765890221.6112394, "data": "\b\u001b[K"}
+{"time": 1765890221.7919264, "data": "\b\u001b[K"}
+{"time": 1765890222.7279503, "data": "p"}
+{"time": 1765890222.9075513, "data": "i"}
+{"time": 1765890223.0366733, "data": "p"}
+{"time": 1765890223.4250362, "data": "\r\n"}
+{"time": 1765890223.5546448, "data": "\u001b[33mWARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.\u001b[0m\r\n"}
+{"time": 1765890223.571305, "data": "Requirement already satisfied: pip in /usr/lib/python3.6/site-packages\r\n"}
+{"time": 1765890223.6420472, "data": "\u001b]0;root@test1:/opt\u0007[root@test1 opt]# "}
+{"time": 1765890227.3898273, "data": "p"}
+{"time": 1765890227.5900288, "data": "i"}
+{"time": 1765890227.6991246, "data": "p"}
+{"time": 1765890228.0714827, "data": "\r\n-bash: pip: command not found\r\n\u001b]0;root@test1:/opt\u0007[root@test1 opt]# "}
+{"time": 1765890229.4758992, "data": "pip"}
+{"time": 1765890229.6558726, "data": "3 install pip"}
+{"time": 1765890229.8480363, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b install psutil"}
+{"time": 1765890230.070848, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bython3 ops_agent.py "}
+{"time": 1765890230.2491577, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cls\u001b[K"}
+{"time": 1765890230.8970914, "data": "\b\bcd /opt/"}
+{"time": 1765890231.1011498, "data": "\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765890231.3031158, "data": "\b\bcat /opt/"}
+{"time": 1765890231.4860275, "data": "\b\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765890231.689823, "data": "\b\bvi install_k8s.sh"}
+{"time": 1765890231.8703024, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[4@python\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765890232.8652728, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cls\u001b[K"}
+{"time": 1765890233.0564282, "data": "\b\bcd /tmp/"}
+{"time": 1765890233.2639508, "data": "\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765890233.449571, "data": "\b\bcat /tmp"}
+{"time": 1765890233.639725, "data": "\b\b\b\b\b\b\b\bls\u001b[K"}
+{"time": 1765890233.860684, "data": "\b\bpip3 install requests"}
+{"time": 1765890234.0417876, "data": "\b\u001b[K"}
+{"time": 1765890234.4820323, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[1P\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765890234.9605093, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\u001b[10Pss -lntup"}
+{"time": 1765890235.3180437, "data": "\b\b\b\b\b\b\b\b\b\u001b[5@netstat\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"}
+{"time": 1765890235.8079329, "data": "\b\b\b\b\b\b\b\b\b\b\b\b\b\byum install python3-pip"}
+{"time": 1765890236.8881798, "data": "\b"}
+{"time": 1765890237.7590487, "data": "\b"}
+{"time": 1765890237.9166055, "data": "\b"}
+{"time": 1765890238.1184902, "data": "\b"}
+{"time": 1765890238.41983, "data": "\b\u001b[1P-pip\b\b\b\b"}
+{"time": 1765890238.7049184, "data": "\r\n"}
+{"time": 1765890238.7644827, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765890238.7687912, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765890238.9281294, "data": "Resolving Dependencies\r\n--> Running transaction check\r\n---> Package python2-pip.noarch 0:8.1.2-14.el7 will be installed\r\n"}
+{"time": 1765890238.9321337, "data": "--> Processing Dependency: python-setuptools for package: python2-pip-8.1.2-14.el7.noarch\r\n"}
+{"time": 1765890239.0618787, "data": "--> Running transaction check\r\n---> Package python-setuptools.noarch 0:0.9.8-7.el7 will be installed\r\n--> Processing Dependency: python-backports-ssl_match_hostname for package: python-setuptools-0.9.8-7.el7.noarch\r\n--> Running transaction check\r\n---> Package python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 will be installed\r\n--> Processing Dependency: python-ipaddress for package: python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch\r\n--> Processing Dependency: python-backports for package: python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch\r\n--> Running transaction check\r\n---> Package python-backports.x86_64 0:1.0-8.el7 will be installed\r\n---> Package python-ipaddress.noarch 0:1.0.16-2.el7 will be installed\r\n"}
+{"time": 1765890239.1527221, "data": "--> Finished Dependency Resolution\r\n"}
+{"time": 1765890239.2431529, "data": "\r\nDependencies Resolved\r\n\r\n================================================================================\r\n Package                               Arch     Version            Repository\r\n                                                                           Size\r\n================================================================================\r\nInstalling:\r\n python2-pip                           noarch   8.1.2-14.el7       epel   1.7 M\r\nInstalling for dependencies:\r\n python-backports                      x86_64   1.0-8.el7          base   5.8 k\r\n python-backports-ssl_match_hostname   noarch   3.5.0.1-1.el7      base    13 k\r\n python-ipaddress                      noarch   1.0.16-2.el7       base    34 k\r\n python-setuptools                     noarch   0.9.8-7.el7        base   397 k\r\n\r\nTransaction Summary\r\n================================================================================\r\nInstall  1 Package (+4 Dependent packages)\r\n\r\nTotal download size: 2.1 M\r\nInstalled size: 9.4 M\r\nIs this ok [y/d/N]: "}
+{"time": 1765890240.3752725, "data": "y"}
+{"time": 1765890240.759962, "data": "\r\nDownloading packages:\r\n"}
+{"time": 1765890241.5709558, "data": "\r(2/5): python-backports-ss 0% [                 ]  0.0 B/s |    0 B   --:-- ETA \r\r(1/5): python-backports-ssl_match_hostname-3.5.0.1-1.el7.n |  13 kB   00:00     \r\n"}
+{"time": 1765890241.606682, "data": "\r(2/5): python-ipaddress-1.0.16-2.el7.noarch.rpm            |  34 kB   00:00     \r\n"}
+{"time": 1765890241.6736197, "data": "\r(3/5): python-setuptools-0.9.8-7.el7.noarch.rpm            | 397 kB   00:00     \r\n"}
+{"time": 1765890242.4856408, "data": "\r(5/5): python2-pip-8.1.2-1 20% [===             ]  0.0 B/s | 444 kB   --:-- ETA \r"}
+{"time": 1765890242.8004127, "data": "\r(4/5): python2-pip-8.1.2-14.el7.noarch.rpm                 | 1.7 MB   00:00     \r\n"}
+{"time": 1765890246.4432256, "data": "\r(5/5): python-backports-1. 99% [===============-] 353 kB/s | 2.1 MB   00:00 ETA \r\r(5/5): python-backports-1.0-8.el7.x86_64.rpm               | 5.8 kB   00:05     \r\n"}
+{"time": 1765890246.4517357, "data": "--------------------------------------------------------------------------------\r\nTotal                                              380 kB/s | 2.1 MB  00:05     \r\nRunning transaction check\r\nRunning transaction test\r\nTransaction test succeeded\r\nRunning transaction\r\n"}
+{"time": 1765890246.4876456, "data": "\r  Installing : python-backports-1.0-8.el7.x [                             ] 1/5\r  Installing : python-backports-1.0-8.el7.x [##                           ] 1/5\r  Installing : python-backports-1.0-8.el7.x [#####                        ] 1/5\r  Installing : python-backports-1.0-8.el7.x [#######                      ] 1/5\r  Installing : python-backports-1.0-8.el7.x [###########                  ] 1/5\r  Installing : python-backports-1.0-8.el7.x [#############                ] 1/5\r  Installing : python-backports-1.0-8.el7.x [##################           ] 1/5\r  Installing : python-backports-1.0-8.el7.x [#####################        ] 1/5\r  Installing : python-backports-1.0-8.el7.x [##########################   ] 1/5\r  Installing : python-backports-1.0-8.el7.x86_64                            1/5 \r\n\r  Installing : python-ipaddress-1.0.16-2.el [                             ] 2/5"}
+{"time": 1765890246.5076165, "data": "\r  Installing : python-ipaddress-1.0.16-2.el [########                     ] 2/5\r  Installing : python-ipaddress-1.0.16-2.el [#########                    ] 2/5\r  Installing : python-ipaddress-1.0.16-2.el [#################            ] 2/5\r  Installing : python-ipaddress-1.0.16-2.el [###################          ] 2/5\r  Installing : python-ipaddress-1.0.16-2.el [###########################  ] 2/5\r  Installing : python-ipaddress-1.0.16-2.el [############################ ] 2/5\r  Installing : python-ipaddress-1.0.16-2.el7.noarch                         2/5 \r\n"}
+{"time": 1765890246.5378726, "data": "\r  Installing : python-backports-ssl_match_h [                             ] 3/5\r  Installing : python-backports-ssl_match_h [######                       ] 3/5\r  Installing : python-backports-ssl_match_h [##############               ] 3/5\r  Installing : python-backports-ssl_match_h [##################           ] 3/5\r  Installing : python-backports-ssl_match_h [######################       ] 3/5\r  Installing : python-backports-ssl_match_h [############################ ] 3/5\r  Installing : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch     3/5 \r\n\r  Installing : python-setuptools-0.9.8-7.el [                             ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#                            ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [##                           ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [###                          ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [####                         ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#####                        ] 4/5"}
+{"time": 1765890246.5428715, "data": "\r  Installing : python-setuptools-0.9.8-7.el [######                       ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#######                      ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [########                     ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#########                    ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [##########                   ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [###########                  ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [############                 ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#############                ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [###############              ] 4/5"}
+{"time": 1765890246.5674772, "data": "\r  Installing : python-setuptools-0.9.8-7.el [################             ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#################            ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [##################           ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [###################          ] 4/5"}
+{"time": 1765890246.5726638, "data": "\r  Installing : python-setuptools-0.9.8-7.el [####################         ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#####################        ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [######################       ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#######################      ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [########################     ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [#########################    ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [##########################   ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [###########################  ] 4/5\r  Installing : python-setuptools-0.9.8-7.el [############################ ] 4/5"}
+{"time": 1765890246.5769312, "data": "\r  Installing : python-setuptools-0.9.8-7.el7.noarch                         4/5 \r\n"}
+{"time": 1765890246.613537, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [                             ] 5/5"}
+{"time": 1765890246.6177, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [#                            ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [##                           ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [###                          ] 5/5"}
+{"time": 1765890246.6319616, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [####                         ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [#####                        ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [######                       ] 5/5"}
+{"time": 1765890246.6365285, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [#######                      ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [########                     ] 5/5"}
+{"time": 1765890246.6745586, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [#########                    ] 5/5"}
+{"time": 1765890246.6790848, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [##########                   ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [###########                  ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [############                 ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [#############                ] 5/5"}
+{"time": 1765890246.6931553, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [##############               ] 5/5"}
+{"time": 1765890246.709477, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [###############              ] 5/5"}
+{"time": 1765890246.7135563, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [################             ] 5/5"}
+{"time": 1765890246.7391202, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [#################            ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [##################           ] 5/5"}
+{"time": 1765890246.753238, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [###################          ] 5/5"}
+{"time": 1765890246.7577736, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [####################         ] 5/5"}
+{"time": 1765890246.7836156, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [#####################        ] 5/5"}
+{"time": 1765890246.7866375, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [######################       ] 5/5"}
+{"time": 1765890246.81274, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [#######################      ] 5/5"}
+{"time": 1765890246.8266323, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [########################     ] 5/5"}
+{"time": 1765890246.842782, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [#########################    ] 5/5\r  Installing : python2-pip-8.1.2-14.el7.noa [##########################   ] 5/5"}
+{"time": 1765890246.8568177, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [###########################  ] 5/5"}
+{"time": 1765890246.882188, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noa [############################ ] 5/5"}
+{"time": 1765890246.8968074, "data": "\r  Installing : python2-pip-8.1.2-14.el7.noarch                              5/5 \r\n"}
+{"time": 1765890246.9122484, "data": "\r  Verifying  : python-ipaddress-1.0.16-2.el7.noarch                         1/5 \r\n\r  Verifying  : python2-pip-8.1.2-14.el7.noarch                              2/5 \r\n"}
+{"time": 1765890246.9162693, "data": "\r  Verifying  : python-setuptools-0.9.8-7.el7.noarch                         3/5 \r\n\r  Verifying  : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch     4/5 \r\n"}
+{"time": 1765890246.9216645, "data": "\r  Verifying  : python-backports-1.0-8.el7.x86_64                            5/5 \r\n"}
+{"time": 1765890246.9574149, "data": "\r\nInstalled:\r\n  python2-pip.noarch 0:8.1.2-14.el7                                             \r\n\r\nDependency Installed:\r\n  python-backports.x86_64 0:1.0-8.el7                                           \r\n  python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7                    \r\n  python-ipaddress.noarch 0:1.0.16-2.el7                                        \r\n  python-setuptools.noarch 0:0.9.8-7.el7                                        \r\n\r\nComplete!\r\n"}
+{"time": 1765890246.9718451, "data": "\u001b]0;root@test1:/opt\u0007[root@test1 opt]# "}
+{"time": 1765890253.1350713, "data": "yum install python-pip"}
+{"time": 1765890253.3156435, "data": "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cpip\u001b[K"}
+{"time": 1765890254.0647051, "data": "\r\n"}
+{"time": 1765890254.2271783, "data": "\r\nUsage:   \r\n  pip <command> [options]\r\n\r\nCommands:\r\n  install                     Install packages.\r\n  download                    Download packages.\r\n  uninstall                   Uninstall packages.\r\n  freeze                      Output installed packages in requirements format.\r\n  list                        List installed packages.\r\n  show                        Show information about installed packages.\r\n  search                      Search PyPI for packages.\r\n  wheel                       Build wheels from your requirements.\r\n  hash                        Compute hashes of package archives.\r\n  completion                  A helper command used for command completion\r\n  help                        Show help for commands.\r\n\r\nGeneral Options:\r\n  -h, --help                  Show help.\r\n  --isolated                  Run pip in an isolated mode, ignoring\r\n                              environment variables and user configuration.\r\n  -v, --verbose               Give more output. Option is additive, and can be\r\n                              used up to 3 times.\r\n  -V, --version               Show version and exit.\r\n  -q, --quiet                 Give less output.\r\n  --log <path>                Path to a verbose appending log.\r\n  --proxy <proxy>             Specify a proxy in the form\r\n                              [user:passwd@]proxy.server:port.\r\n  --retries <retries>         Maximum number of retries each connection should\r\n                              attempt (default 5 times).\r\n  --timeout <sec>             Set the socket timeout (default 15 seconds).\r\n  --exists-action <action>    Default action when a path already exists:\r\n                              (s)witch, (i)gnore, (w)ipe, (b)ackup.\r\n  --trusted-host <hostname>   Mark this host as trusted, even though it does\r\n                              not have valid or any HTTPS.\r\n  --cert <path>               Path to alternate CA bundle.\r\n  --client-cert <path>        Path to SSL client certificate, a single file\r\n                              containing the private key and the certificate\r\n                              in PEM format.\r\n  --cache-dir <dir>           Store the cache data in <dir>.\r\n  --no-cache-dir              Disable the cache.\r\n  --disable-pip-version-check\r\n                              Don't periodically check PyPI to determine\r\n                              whether a new version of pip is available for\r\n                              download. Implied with --no-index.\r\n"}
+{"time": 1765890254.2311828, "data": "\u001b]0;root@test1:/opt\u0007[root@test1 opt]# "}

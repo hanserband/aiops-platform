@@ -1,0 +1,14 @@
+{"time": 1765889920.7986479, "data": "Last login: Tue Dec 16 20:57:57 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765889920.813494, "data": "\u001b]0;root@localhost:~\u0007\u001b[?1034h[root@localhost ~]# "}
+{"time": 1765889922.1531696, "data": "l"}
+{"time": 1765889922.3235023, "data": "s"}
+{"time": 1765889922.495424, "data": "\r\n"}
+{"time": 1765889922.501477, "data": "1.sh                    install.sh\r\n2.sh                    install_web_ui.sh\r\n3.sh                    k8s_agent.py\r\nagent.yaml              ldap.sh\r\nanaconda-ks.cfg         monitor.ldif\r\nanro.ldif               ops-agent-svc.yaml\r\nbase.ldif               requirements.txt\r\nbase_structure.ldif     StackMemoryConsumer.class\r\nchroot.ldif             StackMemoryConsumer$ComplexObject.class\r\nconfig_reset.ldif       StackMemoryConsumer.java\r\nCpuOccupant.java        test.sh\r\nDockerfile              ubuntu.iso\r\nget-pip.py              uninstall_ldap.sh\r\ngo.sh                   uninstall_web.sh\r\n\u001b[0m\u001b[01;32minstall-k8s-centos7.sh\u001b[0m  user_anro.ldif\r\ninstall_k8s.sh\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765889922.8669658, "data": "c"}
+{"time": 1765889923.0149128, "data": "a"}
+{"time": 1765889923.2474492, "data": "t"}
+{"time": 1765889923.3868277, "data": " "}
+{"time": 1765889924.9355721, "data": "r"}
+{"time": 1765889925.0624852, "data": "e"}
+{"time": 1765889925.3048708, "data": "quirements.txt "}
+{"time": 1765889925.714673, "data": "\r\nrequests\r\npsutil\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">{{ page_title }}</h3>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>主机名</label>
+                                {{ form.hostname }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>IP地址</label>
+                                {{ form.ip_address }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>所属分组</label>
+                                {{ form.group }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>SSH端口</label>
+                                {{ form.port }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0;">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label style="color: #007bff;"><i class="fas fa-user"></i> SSH用户名</label>
+                                {{ form.username }}
+                                <small class="text-muted">（例如 root）</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label style="color: #007bff;"><i class="fas fa-key"></i> SSH密码</label>
+                                {{ form.password }}
+                                <small class="text-muted">（加密存储，若不修改请留空）</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>CPU核数</label>
+                                {{ form.cpu_cores }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>内存(GB)</label>
+                                {{ form.memory_gb }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>操作系统</label>
+                        {{ form.os_name }}
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>来源</label>
+                                {{ form.provider }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>状态</label>
+                                {{ form.status }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="{% url 'server_list' %}" class="btn btn-default">返回列表</a>
+                    <button type="submit" class="btn btn-primary float-right">保存信息</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

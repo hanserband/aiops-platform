@@ -1,0 +1,11 @@
+{"time": 1765291219.0984714, "data": "\r\nWelcome to Alibaba Cloud Elastic Compute Service !\r\n\r\nUpdates Information Summary: available\r\n    6 Security notice(s)\r\n        3 Important Security notice(s)\r\n        3 Moderate Security notice(s)\r\nRun \"dnf upgrade-minimal --security\" to apply all updates.More details please refer to:\r\nhttps://help.aliyun.com/document_detail/416274.html\r\nLast login: Tue Dec  9 22:14:01 2025 from 120.228.111.44\r\r\n"}
+{"time": 1765291219.1792507, "data": "\u001b]0;root@iZuf69n10moyt9ipe5q60sZ:~\u0007[root@iZuf69n10moyt9ipe5q60sZ ~]# "}
+{"time": 1765291222.197987, "data": "n"}
+{"time": 1765291222.3513858, "data": "g"}
+{"time": 1765291222.460753, "data": "i"}
+{"time": 1765291222.6314034, "data": "n"}
+{"time": 1765291222.7864854, "data": "x"}
+{"time": 1765291222.9866045, "data": "\r\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\r\nnginx: [emerg] bind() to [::]:80 failed (98: Address already in use)\r\n"}
+{"time": 1765291223.4866555, "data": "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\r\nnginx: [emerg] bind() to [::]:80 failed (98: Address already in use)\r\n"}
+{"time": 1765291223.9830413, "data": "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\r\nnginx: [emerg] bind() to [::]:80 failed (98: Address already in use)\r\n"}
+{"time": 1765291224.0149255, "data": "^C\r\n\u001b]0;root@iZuf69n10moyt9ipe5q60sZ:~\u0007[root@iZuf69n10moyt9ipe5q60sZ ~]# "}

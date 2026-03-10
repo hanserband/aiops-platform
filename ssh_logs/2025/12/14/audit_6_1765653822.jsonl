@@ -1,0 +1,120 @@
+{"time": 1765653633.1228955, "data": "Last login: Sun Dec 14 03:19:34 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765653633.1344726, "data": "\u001b]0;root@localhost:~\u0007\u001b[?1034h[root@localhost ~]# "}
+{"time": 1765653634.2931921, "data": "javac"}
+{"time": 1765653634.9219565, "data": "\b -version"}
+{"time": 1765653635.7429817, "data": "\b\b\b\b\b\b\b\b\bc\u001b[K"}
+{"time": 1765653635.9211342, "data": "\b\b\b\b\b\u001b[K"}
+{"time": 1765653636.1185093, "data": "\u0007"}
+{"time": 1765653637.8336022, "data": "net"}
+{"time": 1765653638.0432487, "data": "s"}
+{"time": 1765653638.2529018, "data": "t"}
+{"time": 1765653638.3906615, "data": "a"}
+{"time": 1765653638.4855452, "data": "t"}
+{"time": 1765653638.7362921, "data": " "}
+{"time": 1765653639.0906744, "data": "-"}
+{"time": 1765653639.4357655, "data": "l"}
+{"time": 1765653639.6868217, "data": "n"}
+{"time": 1765653639.8754783, "data": "t"}
+{"time": 1765653640.1180334, "data": "u"}
+{"time": 1765653640.2657623, "data": "p"}
+{"time": 1765653640.5674095, "data": "\r\n"}
+{"time": 1765653640.5792897, "data": "Active Internet connections (only servers)\r\nProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    \r\ntcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      903/sshd            \r\ntcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1088/master         \r\ntcp6       0      0 :::22                   :::*                    LISTEN      903/sshd            \r\ntcp6       0      0 ::1:25                  :::*                    LISTEN      1088/master         \r\nudp        0      0 0.0.0.0:68              0.0.0.0:*                           722/dhclient        \r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653641.3619325, "data": "\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653642.188572, "data": "netstat -lntup"}
+{"time": 1765653642.5975714, "data": "\r\n"}
+{"time": 1765653642.5986457, "data": "Active Internet connections (only servers)\r\nProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    \r\ntcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      903/sshd            \r\ntcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1088/master         \r\ntcp6       0      0 :::22                   :::*                    LISTEN      903/sshd            \r\ntcp6       0      0 ::1:25                  :::*                    LISTEN      1088/master         \r\nudp        0      0 0.0.0.0:68              0.0.0.0:*                           722/dhclient        \r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653643.8362863, "data": "netstat -lntup"}
+{"time": 1765653644.7950618, "data": "\r\n"}
+{"time": 1765653644.8086023, "data": "Active Internet connections (only servers)\r\nProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    \r\ntcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      903/sshd            \r\ntcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1088/master         \r\ntcp6       0      0 :::22                   :::*                    LISTEN      903/sshd            \r\ntcp6       0      0 ::1:25                  :::*                    LISTEN      1088/master         \r\nudp        0      0 0.0.0.0:68              0.0.0.0:*                           722/dhclient        \r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653769.5012655, "data": "pi"}
+{"time": 1765653770.8104286, "data": "p"}
+{"time": 1765653771.1423042, "data": " "}
+{"time": 1765653771.3042264, "data": "i"}
+{"time": 1765653771.4815054, "data": "n"}
+{"time": 1765653771.5787222, "data": "s"}
+{"time": 1765653771.7541258, "data": "t"}
+{"time": 1765653771.8804238, "data": "a"}
+{"time": 1765653771.9532726, "data": "l"}
+{"time": 1765653772.0890915, "data": "l"}
+{"time": 1765653772.3606021, "data": " "}
+{"time": 1765653786.3242621, "data": "^V"}
+{"time": 1765653787.2182517, "data": "\b\b\u001b[K"}
+{"time": 1765653789.0178888, "data": "psutil"}
+{"time": 1765653789.9095976, "data": "\r\n-bash: pip: command not found\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653790.7753139, "data": "\r\n\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}
+{"time": 1765653804.180039, "data": "yum"}
+{"time": 1765653804.389128, "data": " "}
+{"time": 1765653804.7121527, "data": "i"}
+{"time": 1765653804.9842143, "data": "n"}
+{"time": 1765653805.109723, "data": "s"}
+{"time": 1765653805.2966747, "data": "t"}
+{"time": 1765653805.4445813, "data": "a"}
+{"time": 1765653805.5801678, "data": "l"}
+{"time": 1765653805.7464948, "data": "l"}
+{"time": 1765653805.8812726, "data": " "}
+{"time": 1765653806.6522014, "data": "p"}
+{"time": 1765653806.9125085, "data": "y"}
+{"time": 1765653807.1307292, "data": "t"}
+{"time": 1765653807.2259464, "data": "h"}
+{"time": 1765653807.3623662, "data": "o"}
+{"time": 1765653807.5820818, "data": "n"}
+{"time": 1765653808.833995, "data": "n"}
+{"time": 1765653809.7482362, "data": "\b\u001b[K"}
+{"time": 1765653810.0714417, "data": " "}
+{"time": 1765653811.586184, "data": "-"}
+{"time": 1765653811.868103, "data": "y"}
+{"time": 1765653812.0241344, "data": "\r\n"}
+{"time": 1765653812.1906688, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765653812.2226365, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765653815.253511, "data": " * base: mirrors.aliyun.com\r\n * extras: mirrors.aliyun.com\r\n * updates: mirrors.aliyun.com\r\n"}
+{"time": 1765653815.6193738, "data": "Resolving Dependencies\r\n--> Running transaction check\r\n---> Package python.x86_64 0:2.7.5-92.el7_9 will be updated\r\n"}
+{"time": 1765653815.631136, "data": "---> Package python.x86_64 0:2.7.5-94.el7_9 will be an update\r\n"}
+{"time": 1765653815.642754, "data": "--> Processing Dependency: python-libs(x86-64) = 2.7.5-94.el7_9 for package: python-2.7.5-94.el7_9.x86_64\r\n"}
+{"time": 1765653815.6535287, "data": "--> Running transaction check\r\n---> Package python-libs.x86_64 0:2.7.5-92.el7_9 will be updated\r\n---> Package python-libs.x86_64 0:2.7.5-94.el7_9 will be an update\r\n"}
+{"time": 1765653815.915626, "data": "--> Finished Dependency Resolution\r\n"}
+{"time": 1765653816.0605805, "data": "\r\nDependencies Resolved\r\n\r\n================================================================================\r\n Package            Arch          Version                  Repository      Size\r\n================================================================================\r\nUpdating:\r\n python             x86_64        2.7.5-94.el7_9           updates         97 k\r\nUpdating for dependencies:\r\n python-libs        x86_64        2.7.5-94.el7_9           updates        5.6 M\r\n\r\nTransaction Summary\r\n================================================================================\r\nUpgrade  1 Package (+1 Dependent package)\r\n\r\nTotal download size: 5.7 M\r\nDownloading packages:\r\nDelta RPMs disabled because /usr/bin/applydeltarpm not installed.\r\n"}
+{"time": 1765653816.2903488, "data": "\r(1/2): python-2.7.5-94.el7_9.x86_64.rpm                    |  97 kB   00:00     \r\n"}
+{"time": 1765653816.4466095, "data": "\r(2/2): python-libs-2.7.5-9 48% [=======-        ]  0.0 B/s | 2.8 MB   --:-- ETA \r"}
+{"time": 1765653816.7492616, "data": "\r(2/2): python-libs-2.7.5-9 86% [=============-  ] 3.2 MB/s | 5.0 MB   00:00 ETA \r"}
+{"time": 1765653816.9169254, "data": "\r(2/2): python-libs-2.7.5-94.el7_9.x86_64.rpm               | 5.6 MB   00:00     \r\n"}
+{"time": 1765653816.9284627, "data": "--------------------------------------------------------------------------------\r\nTotal                                              6.7 MB/s | 5.7 MB  00:00     \r\nRunning transaction check\r\n"}
+{"time": 1765653817.0111349, "data": "Running transaction test\r\n"}
+{"time": 1765653817.0536332, "data": "Transaction test succeeded\r\nRunning transaction\r\n"}
+{"time": 1765653817.0866396, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [                             ] 1/4"}
+{"time": 1765653817.119508, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#                            ] 1/4"}
+{"time": 1765653817.1484797, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [##                           ] 1/4"}
+{"time": 1765653817.170645, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [###                          ] 1/4"}
+{"time": 1765653817.1942282, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [####                         ] 1/4"}
+{"time": 1765653817.2410886, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#####                        ] 1/4"}
+{"time": 1765653817.2715797, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [######                       ] 1/4"}
+{"time": 1765653817.303951, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#######                      ] 1/4"}
+{"time": 1765653817.31673, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [########                     ] 1/4"}
+{"time": 1765653817.3595724, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#########                    ] 1/4"}
+{"time": 1765653817.4086306, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [##########                   ] 1/4"}
+{"time": 1765653817.4401188, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [###########                  ] 1/4"}
+{"time": 1765653817.4556909, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [############                 ] 1/4"}
+{"time": 1765653817.4577239, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#############                ] 1/4"}
+{"time": 1765653817.4905443, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [##############               ] 1/4"}
+{"time": 1765653817.5128946, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [###############              ] 1/4"}
+{"time": 1765653817.579103, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [################             ] 1/4"}
+{"time": 1765653817.5810862, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#################            ] 1/4"}
+{"time": 1765653817.6036541, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [##################           ] 1/4"}
+{"time": 1765653817.6264324, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [###################          ] 1/4"}
+{"time": 1765653817.674036, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [####################         ] 1/4"}
+{"time": 1765653817.6855788, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#####################        ] 1/4"}
+{"time": 1765653817.7081494, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [######################       ] 1/4"}
+{"time": 1765653817.7521396, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#######################      ] 1/4"}
+{"time": 1765653817.7742622, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [########################     ] 1/4"}
+{"time": 1765653817.847589, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [#########################    ] 1/4"}
+{"time": 1765653817.9300275, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [##########################   ] 1/4"}
+{"time": 1765653818.0055509, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [###########################  ] 1/4"}
+{"time": 1765653818.059357, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x [############################ ] 1/4"}
+{"time": 1765653818.1068356, "data": "\r  Updating   : python-libs-2.7.5-94.el7_9.x86_64                            1/4 \r\n"}
+{"time": 1765653818.1288981, "data": "\r  Updating   : python-2.7.5-94.el7_9.x86_64 [                             ] 2/4"}
+{"time": 1765653818.140714, "data": "\r  Updating   : python-2.7.5-94.el7_9.x86_64 [##                           ] 2/4\r  Updating   : python-2.7.5-94.el7_9.x86_64 [#######                      ] 2/4\r  Updating   : python-2.7.5-94.el7_9.x86_64 [##########################   ] 2/4\r  Updating   : python-2.7.5-94.el7_9.x86_64 [############################ ] 2/4\r  Updating   : python-2.7.5-94.el7_9.x86_64                                 2/4 \r\n\r  Cleanup    : python-2.7.5-92.el7_9.x86_64                                 3/4 \r\n"}
+{"time": 1765653818.151521, "data": "\r  Cleanup    : python-libs-2.7.5-92.el7_9.x86_64                            4/4 \r\n"}
+{"time": 1765653818.1740491, "data": "\r  Verifying  : python-2.7.5-94.el7_9.x86_64                                 1/4 \r\n"}
+{"time": 1765653818.1750495, "data": "\r  Verifying  : python-libs-2.7.5-94.el7_9.x86_64                            2/4 \r\n"}
+{"time": 1765653818.1875858, "data": "\r  Verifying  : python-2.7.5-92.el7_9.x86_64                                 3/4 \r\n\r  Verifying  : python-libs-2.7.5-92.el7_9.x86_64                            4/4 \r\n"}
+{"time": 1765653818.2196865, "data": "\r\nUpdated:\r\n  python.x86_64 0:2.7.5-94.el7_9                                                \r\n\r\nDependency Updated:\r\n  python-libs.x86_64 0:2.7.5-94.el7_9                                           \r\n\r\nComplete!\r\n"}
+{"time": 1765653818.2318156, "data": "\u001b]0;root@localhost:~\u0007[root@localhost ~]# "}

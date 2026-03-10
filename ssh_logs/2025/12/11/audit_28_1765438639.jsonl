@@ -1,0 +1,29 @@
+{"time": 1765438611.6523972, "data": "\r\nWelcome to Alibaba Cloud Elastic Compute Service !\r\n\r\nUpdates Information Summary: available\r\n    6 Security notice(s)\r\n        3 Important Security notice(s)\r\n        3 Moderate Security notice(s)\r\nRun \"dnf upgrade-minimal --security\" to apply all updates.More details please refer to:\r\nhttps://help.aliyun.com/document_detail/416274.html\r\nLast login: Thu Dec 11 15:34:55 2025 from 120.228.111.44\r\r\n"}
+{"time": 1765438611.6883516, "data": "\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438613.579259, "data": "r"}
+{"time": 1765438613.7827933, "data": "m"}
+{"time": 1765438614.4008129, "data": " "}
+{"time": 1765438615.3462808, "data": "-"}
+{"time": 1765438616.474663, "data": "rf"}
+{"time": 1765438617.0152526, "data": " "}
+{"time": 1765438617.295683, "data": "/"}
+{"time": 1765438617.5134268, "data": "a"}
+{"time": 1765438617.6051826, "data": "p"}
+{"time": 1765438617.7428129, "data": "p"}
+{"time": 1765438618.0501683, "data": "\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438622.3388386, "data": "rm -rf /app"}
+{"time": 1765438623.161664, "data": "\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438624.9416258, "data": "r"}
+{"time": 1765438625.1851907, "data": "m"}
+{"time": 1765438625.3537788, "data": " "}
+{"time": 1765438625.5643427, "data": "-"}
+{"time": 1765438625.7648067, "data": "r"}
+{"time": 1765438625.9849167, "data": "f"}
+{"time": 1765438626.1674275, "data": " "}
+{"time": 1765438627.3889573, "data": "/"}
+{"time": 1765438628.6172626, "data": "t"}
+{"time": 1765438628.75445, "data": "e"}
+{"time": 1765438628.9393046, "data": "s"}
+{"time": 1765438629.1098888, "data": "t"}
+{"time": 1765438629.3391519, "data": "^C\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}
+{"time": 1765438633.2293482, "data": "rm -rf /test\r\n\u001b]0;root@iZuf61utvvuklj7ht5wyz4Z:~\u0007[root@iZuf61utvvuklj7ht5wyz4Z ~]# "}

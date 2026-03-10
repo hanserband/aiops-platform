@@ -1,0 +1,127 @@
+{"time": 1765889646.350511, "data": "Last login: Wed Dec 17 04:36:36 2025 from 192.168.10.1\r\r\n"}
+{"time": 1765889646.3657985, "data": "\u001b]0;root@test1:~\u0007\u001b[?1034h[root@test1 ~]# "}
+{"time": 1765889649.852781, "data": "yum"}
+{"time": 1765889650.0324543, "data": " "}
+{"time": 1765889650.1508563, "data": "i"}
+{"time": 1765889650.3832057, "data": "n"}
+{"time": 1765889650.4911776, "data": "s"}
+{"time": 1765889650.8501015, "data": "t"}
+{"time": 1765889651.7480135, "data": "a"}
+{"time": 1765889651.9088595, "data": "l"}
+{"time": 1765889652.037668, "data": "l"}
+{"time": 1765889652.167864, "data": " "}
+{"time": 1765889652.328304, "data": "p"}
+{"time": 1765889652.6489303, "data": "y"}
+{"time": 1765889652.8302312, "data": "t"}
+{"time": 1765889652.9584396, "data": "h"}
+{"time": 1765889653.0864947, "data": "o"}
+{"time": 1765889653.287756, "data": "n"}
+{"time": 1765889653.975815, "data": "-"}
+{"time": 1765889654.3048096, "data": "p"}
+{"time": 1765889654.4432952, "data": "i"}
+{"time": 1765889654.616935, "data": "p"}
+{"time": 1765889654.8200936, "data": "3"}
+{"time": 1765889655.0221891, "data": "\r\n"}
+{"time": 1765889655.0902224, "data": "Loaded plugins: fastestmirror\r\nLoading mirror speeds from cached hostfile\r\n"}
+{"time": 1765889655.2292566, "data": "No package \u001b[1mpython-pip3\u001b(B\u001b[m available.\r\n"}
+{"time": 1765889655.3493793, "data": "Error: Nothing to do\r\n"}
+{"time": 1765889655.3544855, "data": "\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
+{"time": 1765889655.9015691, "data": "yum install python-pip3"}
+{"time": 1765889656.1046681, "data": "\b"}
+{"time": 1765889656.2951531, "data": "\b"}
+{"time": 1765889656.508404, "data": "\u001b[C"}
+{"time": 1765889656.7045689, "data": "\u001b[C"}
+{"time": 1765889657.0445645, "data": "\b\u001b[K"}
+{"time": 1765889657.4645786, "data": "\b"}
+{"time": 1765889657.667815, "data": "\b"}
+{"time": 1765889657.8383954, "data": "\b"}
+{"time": 1765889657.9698315, "data": "\b"}
+{"time": 1765889658.2135856, "data": "3-pip\b\b\b\b"}
+{"time": 1765889658.3855746, "data": "\r\n"}
+{"time": 1765889658.4328482, "data": "Loaded plugins: fastestmirror\r\n"}
+{"time": 1765889658.4620006, "data": "Loading mirror speeds from cached hostfile\r\n"}
+{"time": 1765889658.59115, "data": "Resolving Dependencies\r\n--> Running transaction check\r\n---> Package python3-pip.noarch 0:9.0.3-8.el7 will be installed\r\n"}
+{"time": 1765889658.5956566, "data": "--> Processing Dependency: python(abi) = 3.6 for package: python3-pip-9.0.3-8.el7.noarch\r\n"}
+{"time": 1765889658.7874866, "data": "--> Processing Dependency: python3-setuptools for package: python3-pip-9.0.3-8.el7.noarch\r\n"}
+{"time": 1765889658.8172252, "data": "--> Processing Dependency: /usr/bin/python3 for package: python3-pip-9.0.3-8.el7.noarch\r\n--> Running transaction check\r\n---> Package python3.x86_64 0:3.6.8-21.el7_9 will be installed\r\n--> Processing Dependency: python3-libs(x86-64) = 3.6.8-21.el7_9 for package: python3-3.6.8-21.el7_9.x86_64\r\n--> Processing Dependency: libpython3.6m.so.1.0()(64bit) for package: python3-3.6.8-21.el7_9.x86_64\r\n---> Package python3-setuptools.noarch 0:39.2.0-10.el7 will be installed\r\n--> Running transaction check\r\n---> Package python3-libs.x86_64 0:3.6.8-21.el7_9 will be installed\r\n"}
+{"time": 1765889658.8217363, "data": "--> Processing Dependency: libtirpc.so.1()(64bit) for package: python3-libs-3.6.8-21.el7_9.x86_64\r\n--> Running transaction check\r\n---> Package libtirpc.x86_64 0:0.2.4-0.16.el7 will be installed\r\n"}
+{"time": 1765889659.1143355, "data": "--> Finished Dependency Resolution\r\n"}
+{"time": 1765889659.1312704, "data": "\r\nDependencies Resolved\r\n\r\n================================================================================\r\n Package                  Arch         Version              Repository     Size\r\n================================================================================\r\nInstalling:\r\n python3-pip              noarch       9.0.3-8.el7          base          1.6 M\r\nInstalling for dependencies:\r\n libtirpc                 x86_64       0.2.4-0.16.el7       base           89 k\r\n python3                  x86_64       3.6.8-21.el7_9       updates        71 k\r\n python3-libs             x86_64       3.6.8-21.el7_9       updates       7.0 M\r\n python3-setuptools       noarch       39.2.0-10.el7        base          629 k\r\n\r\nTransaction Summary\r\n================================================================================\r\nInstall  1 Package (+4 Dependent packages)\r\n\r\nTotal download size: 9.3 M\r\nInstalled size: 48 M\r\nIs this ok [y/d/N]: "}
+{"time": 1765889660.2599547, "data": "y"}
+{"time": 1765889660.4716952, "data": "\r\n"}
+{"time": 1765889660.479205, "data": "Downloading packages:\r\n"}
+{"time": 1765889660.9311407, "data": "\r(2/5): python3-3.6.8-21.el 0% [                 ]  0.0 B/s |    0 B   --:-- ETA \r"}
+{"time": 1765889661.247424, "data": "\r(2/5): python3-3.6.8-21.el 17% [==-             ]  0.0 B/s | 1.6 MB   --:-- ETA \r\r(1/5): python3-pip-9.0.3-8.el7.noarch.rpm                  | 1.6 MB   00:00     \r\n\r(2/5): python3-3.6.8-21.el7_9.x86_64.rpm                   |  71 kB   00:00     \r\n"}
+{"time": 1765889661.2523763, "data": "\r(3/5): libtirpc-0.2.4-0.16.el7.x86_64.rpm                  |  89 kB   00:00     \r\n"}
+{"time": 1765889661.434336, "data": "\r(4/5): python3-setuptools-39.2.0-10.el7.noarch.rpm         | 629 kB   00:00     \r\n"}
+{"time": 1765889661.5617306, "data": "\r(5/5): python3-libs-3.6.8- 57% [=========       ] 6.0 MB/s | 5.4 MB   00:00 ETA \r"}
+{"time": 1765889661.8652616, "data": "\r(5/5): python3-libs-3.6.8- 87% [=============-  ] 6.1 MB/s | 8.1 MB   00:00 ETA \r"}
+{"time": 1765889661.9945273, "data": "\r(5/5): python3-libs-3.6.8-21.el7_9.x86_64.rpm              | 7.0 MB   00:01     \r\n"}
+{"time": 1765889662.0089357, "data": "--------------------------------------------------------------------------------\r\nTotal                                              6.0 MB/s | 9.3 MB  00:01     \r\nRunning transaction check\r\n"}
+{"time": 1765889662.0145812, "data": "Running transaction test\r\n"}
+{"time": 1765889662.0602145, "data": "Transaction test succeeded\r\n"}
+{"time": 1765889662.084738, "data": "Running transaction\r\n"}
+{"time": 1765889662.131478, "data": "\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [                             ] 1/5"}
+{"time": 1765889662.1375241, "data": "\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [##########                   ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [####################         ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [###########################  ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_ [############################ ] 1/5\r  Installing : libtirpc-0.2.4-0.16.el7.x86_64                               1/5 \r\n"}
+{"time": 1765889662.1799338, "data": "\r  Installing : python3-setuptools-39.2.0-10 [                             ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#                            ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##                           ] 2/5"}
+{"time": 1765889662.2086806, "data": "\r  Installing : python3-setuptools-39.2.0-10 [###                          ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [####                         ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#####                        ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [######                       ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#######                      ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [########                     ] 2/5"}
+{"time": 1765889662.2136803, "data": "\r  Installing : python3-setuptools-39.2.0-10 [#########                    ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##########                   ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [###########                  ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [############                 ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#############                ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##############               ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [###############              ] 2/5"}
+{"time": 1765889662.22743, "data": "\r  Installing : python3-setuptools-39.2.0-10 [################             ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#################            ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##################           ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [###################          ] 2/5"}
+{"time": 1765889662.2340808, "data": "\r  Installing : python3-setuptools-39.2.0-10 [####################         ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [#####################        ] 2/5"}
+{"time": 1765889662.2385926, "data": "\r  Installing : python3-setuptools-39.2.0-10 [######################       ] 2/5"}
+{"time": 1765889662.2421434, "data": "\r  Installing : python3-setuptools-39.2.0-10 [#######################      ] 2/5"}
+{"time": 1765889662.270191, "data": "\r  Installing : python3-setuptools-39.2.0-10 [########################     ] 2/5"}
+{"time": 1765889662.274736, "data": "\r  Installing : python3-setuptools-39.2.0-10 [#########################    ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [##########################   ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [###########################  ] 2/5\r  Installing : python3-setuptools-39.2.0-10 [############################ ] 2/5\r  Installing : python3-setuptools-39.2.0-10.el7.noarch                      2/5 \r\n"}
+{"time": 1765889662.2904124, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [                             ] 3/5"}
+{"time": 1765889662.3154254, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#                            ] 3/5"}
+{"time": 1765889662.320426, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [##                           ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [###                          ] 3/5"}
+{"time": 1765889662.3768613, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [####                         ] 3/5"}
+{"time": 1765889662.3808613, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#####                        ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [######                       ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [#######                      ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [########                     ] 3/5"}
+{"time": 1765889662.4075925, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#########                    ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [##########                   ] 3/5"}
+{"time": 1765889662.4115894, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [###########                  ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [############                 ] 3/5"}
+{"time": 1765889662.4277894, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#############                ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [##############               ] 3/5"}
+{"time": 1765889662.4416306, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [###############              ] 3/5"}
+{"time": 1765889662.4474185, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [################             ] 3/5"}
+{"time": 1765889662.4988694, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#################            ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [##################           ] 3/5"}
+{"time": 1765889662.5028737, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [###################          ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [####################         ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [#####################        ] 3/5"}
+{"time": 1765889662.5073853, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [######################       ] 3/5"}
+{"time": 1765889662.5222106, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [#######################      ] 3/5"}
+{"time": 1765889662.5609303, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [########################     ] 3/5\r  Installing : python3-pip-9.0.3-8.el7.noar [#########################    ] 3/5"}
+{"time": 1765889662.565433, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [##########################   ] 3/5"}
+{"time": 1765889662.5911438, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [###########################  ] 3/5"}
+{"time": 1765889662.596654, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noar [############################ ] 3/5"}
+{"time": 1765889662.62154, "data": "\r  Installing : python3-pip-9.0.3-8.el7.noarch                               3/5 \r\n"}
+{"time": 1765889662.636801, "data": "\r  Installing : python3-3.6.8-21.el7_9.x86_6 [                             ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [#######                      ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [################             ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [#################            ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [####################         ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_6 [############################ ] 4/5\r  Installing : python3-3.6.8-21.el7_9.x86_64                                4/5 \r\n"}
+{"time": 1765889662.6532605, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [                             ] 5/5"}
+{"time": 1765889662.678929, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#                            ] 5/5"}
+{"time": 1765889662.704711, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##                           ] 5/5"}
+{"time": 1765889662.7395036, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###                          ] 5/5"}
+{"time": 1765889662.7744443, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [####                         ] 5/5"}
+{"time": 1765889662.8406854, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#####                        ] 5/5"}
+{"time": 1765889662.8702528, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [######                       ] 5/5"}
+{"time": 1765889662.884794, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#######                      ] 5/5"}
+{"time": 1765889662.9209397, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [########                     ] 5/5"}
+{"time": 1765889662.9826863, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#########                    ] 5/5"}
+{"time": 1765889662.9878116, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##########                   ] 5/5"}
+{"time": 1765889663.0242026, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###########                  ] 5/5"}
+{"time": 1765889663.091302, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [############                 ] 5/5"}
+{"time": 1765889663.1681857, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#############                ] 5/5"}
+{"time": 1765889663.2032895, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##############               ] 5/5"}
+{"time": 1765889663.308574, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###############              ] 5/5"}
+{"time": 1765889663.3857088, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [################             ] 5/5"}
+{"time": 1765889663.4317086, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#################            ] 5/5"}
+{"time": 1765889663.4675384, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##################           ] 5/5"}
+{"time": 1765889663.5085804, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###################          ] 5/5"}
+{"time": 1765889663.533259, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [####################         ] 5/5"}
+{"time": 1765889663.5790622, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#####################        ] 5/5"}
+{"time": 1765889663.6670825, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [######################       ] 5/5"}
+{"time": 1765889663.7426653, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#######################      ] 5/5"}
+{"time": 1765889663.7695704, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [########################     ] 5/5"}
+{"time": 1765889663.7944908, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [#########################    ] 5/5"}
+{"time": 1765889663.851216, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [##########################   ] 5/5"}
+{"time": 1765889663.8757133, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [###########################  ] 5/5"}
+{"time": 1765889663.9319613, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9. [############################ ] 5/5"}
+{"time": 1765889663.9948416, "data": "\r  Installing : python3-libs-3.6.8-21.el7_9.x86_64                           5/5 \r\n"}
+{"time": 1765889664.0066943, "data": "\r  Verifying  : libtirpc-0.2.4-0.16.el7.x86_64                               1/5 \r\n\r  Verifying  : python3-libs-3.6.8-21.el7_9.x86_64                           2/5 \r\n\r  Verifying  : python3-3.6.8-21.el7_9.x86_64                                3/5 \r\n\r  Verifying  : python3-setuptools-39.2.0-10.el7.noarch                      4/5 \r\n\r  Verifying  : python3-pip-9.0.3-8.el7.noarch                               5/5 \r\n"}
+{"time": 1765889664.0732691, "data": "\r\nInstalled:\r\n  python3-pip.noarch 0:9.0.3-8.el7                                              \r\n\r\nDependency Installed:\r\n  libtirpc.x86_64 0:0.2.4-0.16.el7                                              \r\n  python3.x86_64 0:3.6.8-21.el7_9                                               \r\n  python3-libs.x86_64 0:3.6.8-21.el7_9                                          \r\n  python3-setuptools.noarch 0:39.2.0-10.el7                                     \r\n\r\nComplete!\r\n"}
+{"time": 1765889664.0807762, "data": "\u001b]0;root@test1:~\u0007[root@test1 ~]# "}
